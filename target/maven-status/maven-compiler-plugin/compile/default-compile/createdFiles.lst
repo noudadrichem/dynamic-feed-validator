@@ -1,2 +1,3 @@
 redis/Main.class
 servlets/MainServlet.class
+endpoints/MainEndpoint.class
