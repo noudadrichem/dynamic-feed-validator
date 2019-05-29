@@ -8,7 +8,7 @@ import javax.servlet.http.*;
 @WebServlet(urlPatterns = "/MainServlet.do")
 public class MainServlet extends HttpServlet {
   protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-    String name = req.getParameter("test");
+    String name = req.getParameter("moetje");
 
     PrintWriter out = res.getWriter();
     res.setContentType("text/html");
