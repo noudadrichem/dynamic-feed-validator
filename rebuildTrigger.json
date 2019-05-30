@@ -1,0 +1,13 @@
+[
+  "trigger",
+  "./",
+  {
+    "name": "rebuild",
+    "expression": [
+      "anyof",
+      ["match", "src/**/*.java", "wholename"]
+    ],
+    "command": ["sh", "start.sh"],
+    "append_files": true
+  }
+]
