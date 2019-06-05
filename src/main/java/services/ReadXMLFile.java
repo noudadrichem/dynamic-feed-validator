@@ -1,10 +1,8 @@
 package services;
 
-import java.io.FileInputStream;
-import java.io.InputStream;
-
 import nl.nigelvanhattum.util.http.HTTPHandler;
 
+import org.junit.Test;
 import org.w3c.dom.*;
 import javax.xml.parsers.*;
 import java.io.*;
@@ -17,7 +15,6 @@ public class ReadXMLFile {
   public ReadXMLFile(String xmlFileUrl) {
     this.xmlFileUrl = xmlFileUrl;
   }
-
 
   public void StreamXMLFile() {
     try {
@@ -33,6 +30,7 @@ public class ReadXMLFile {
       e.printStackTrace();
     }
   }
+
 
   // public Document loadDocument() {
   //   String result = HTTPHandler.doGet(this.xmlFileUrl);

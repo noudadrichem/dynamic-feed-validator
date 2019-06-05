@@ -92,6 +92,11 @@
       <artifactId>util</artifactId>
       <version>1.0.1</version>
     </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+    </dependency>
 
   </dependencies>
 
@@ -110,7 +115,7 @@
           </configuration>
         </plugin>
 
-        <plugin>
+        <!--<plugin>
           <groupId>com.fizzed</groupId>
           <artifactId>fizzed-watcher-maven-plugin</artifactId>
           <version>1.0.4</version>
@@ -126,7 +131,7 @@
               <param>optional-profile-to-activate-while-running-goals</param>
             </profiles>
           </configuration>
-        </plugin>
+        </plugin>-->
 
       </plugins>
     </pluginManagement>
