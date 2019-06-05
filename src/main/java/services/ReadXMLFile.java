@@ -2,55 +2,87 @@ package services;
 
 import nl.nigelvanhattum.util.http.HTTPHandler;
 
-import org.junit.Test;
 import org.w3c.dom.*;
 import org.xml.sax.InputSource;
 
 import javax.xml.parsers.*;
 import java.io.*;
+import java.net.URL;
 
-// import javax.xml.stream.*;
-// import javax.xml.stream.XMLEventReader;
-// import javax.xml.stream.XMLStreamException;
-// import javax.xml.stream.events.Characters;
-// import javax.xml.stream.events.XMLEvent;
+import javax.xml.stream.*;
+import javax.xml.stream.XMLEventReader;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.events.Characters;
+import javax.xml.stream.events.XMLEvent;
 
-public class ReadXMLFile {
+public class ReadXMLFile extends Object {
 
-  private String xmlFileUrl;
+  private final URL feedUrl;
 
-  public ReadXMLFile(String xmlFileUrl) {
-    this.xmlFileUrl = xmlFileUrl;
-  }
-
-  // public void StreamXMLFile() {
-  // XMLInputFactory f = XMLInputFactory.newInstance();
-  // XMLStreamReader r = f.createXMLStreamReader(loadDocument());
-  // while (r.hasNext()) {
-  // r.next();
-  // }
-  // }
-
-  public Document StreamXMLFile() {
+  public ReadXMLFile(String feedUrl) {
     try {
-      StringBuilder xmlStringBuilder = new StringBuilder();
-      xmlStringBuilder.append(HTTPHandler.doGet(xmlFileUrl));
-      DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-      DocumentBuilder builder = factory.newDocumentBuilder();
-      ByteArrayInputStream input = new ByteArrayInputStream(xmlStringBuilder.toString().getBytes("UTF-8"));
-
-      return builder.parse(input);
+      this.feedUrl = new URL(feedUrl);
     } catch (Exception e) {
-      e.printStackTrace();
       throw new RuntimeException(e);
     }
   }
 
+  public void StreamXMLFile() throws XMLStreamException {
+    // First create a new XMLInputFactory
+    XMLInputFactory inputFactory = XMLInputFactory.newInstance();
+    // Setup a new eventReader
+    InputStream in = read();
+    XMLEventReader reader = inputFactory.createXMLEventReader(in);
+
+    while (reader.hasNext()) {
+      XMLEvent event = reader.nextEvent();
+      System.out.println(event.toString());
+    }
+    // read the XML document
+
+    // XMLInputFactory f = XMLInputFactory.newInstance();
+    // XMLStreamReader r = f.createXMLStreamReader(loadDocument());
+
+    // // First create a new XMLInputFactory
+    // XMLInputFactory inputFactory = XMLInputFactory.newInstance();
+    // // Setup a new eventReader
+    // InputStream in = read();
+    // XMLEventReader eventReader = inputFactory.createXMLEventReader(in);
+  
+    // while (r.hasNext()) {
+    //   r.next();
+    // }
+  }
+
+  private InputStream read() {
+    try {
+        return this.feedUrl.openStream();
+    } catch (IOException e) {
+        throw new RuntimeException(e);
+    }
+  }
+
+  // public Document StreamXMLFile() {
+  //   try {
+  //     StringBuilder xmlStringBuilder = new StringBuilder();
+  //     xmlStringBuilder.append(HTTPHandler.doGet(feedUrl));
+  //     DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+  //     DocumentBuilder builder = factory.newDocumentBuilder();
+  //     ByteArrayInputStream input = new ByteArrayInputStream(xmlStringBuilder.toString().getBytes("UTF-8"));
+
+  //     return builder.parse(input);
+  //   } catch (Exception e) {
+  //     e.printStackTrace();
+  //     throw new RuntimeException(e);
+  //   }
+  // }
+
   // getElementsByTagName("user").item(0).getTextContent();
 
   public Document loadDocument() {
-    String result = HTTPHandler.doGet(this.xmlFileUrl);
-    return convertStringToXMLDocument(result);
+    // String result = HTTPHandler.doGet(this.feedUrl);
+    // return convertStringToXMLDocument(result);
+    return null;
   }
 
   public Document convertStringToXMLDocument(String xmlString) {

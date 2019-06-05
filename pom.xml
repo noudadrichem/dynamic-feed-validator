@@ -10,7 +10,6 @@
   <packaging>war</packaging>
 
   <name>dynamic-feed-validator</name>
-  <url>http://www.example.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -19,13 +18,6 @@
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-
     <dependency>
       <groupId>org.glassfish.jersey.containers</groupId>
       <artifactId>jersey-container-servlet</artifactId>
@@ -49,12 +41,6 @@
       <groupId>javax.activation</groupId>
       <artifactId>activation</artifactId>
       <version>1.1.1</version>
-    </dependency>
-
-    <dependency>
-      <groupId>stax</groupId>
-      <artifactId>stax-api</artifactId>
-      <version>1.0.1</version>
     </dependency>
 
     <dependency>
@@ -99,12 +85,6 @@
       <version>1.0.1</version>
     </dependency>
 
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.12</version>
-    </dependency>
-
   </dependencies>
 
   <build>
@@ -116,29 +96,11 @@
           <artifactId>tomcat7-maven-plugin</artifactId>
           <version>2.2</version>
           <configuration>
-            <path>/webapp</path>
+            <path>/</path>
             <port>9090</port>
             <contextReloadable>true</contextReloadable>
           </configuration>
         </plugin>
-
-        <!--<plugin>
-          <groupId>com.fizzed</groupId>
-          <artifactId>fizzed-watcher-maven-plugin</artifactId>
-          <version>1.0.4</version>
-          <configuration>
-            <files>
-              <param>src/main/java</param>
-            </files>
-            <goals>
-              <param>clean</param>
-              <param>compile</param>
-            </goals>
-            <profiles>
-              <param>optional-profile-to-activate-while-running-goals</param>
-            </profiles>
-          </configuration>
-        </plugin>-->
 
       </plugins>
     </pluginManagement>

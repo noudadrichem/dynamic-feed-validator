@@ -21,12 +21,12 @@ public class UploadXMLFeedUrl {
     try {
       JsonObjectBuilder messageBuilder = Json.createObjectBuilder();
       String XMLURL = uploadedObject.getUrl();
+
       ReadXMLFile readXMLFile = new ReadXMLFile(XMLURL);
+      readXMLFile.StreamXMLFile();
 
-      Document doc = readXMLFile.StreamXMLFile();
-
-      Element root = doc.getDocumentElement();
-      System.out.println(root.getTagName());
+      // Element root = doc.getDocumentElement();
+      // System.out.println(root.getTagName());
       // Document loaded = readXMLFile.loadDocument();
 
       // System.out.println("loaded");

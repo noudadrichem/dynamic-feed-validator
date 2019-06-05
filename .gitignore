@@ -97,6 +97,7 @@ fabric.properties
 
 # JetBrains templates
 **___jb_tmp___
+.settings
 
 ### JetBrains+all Patch ###
 # Ignores the whole .idea folder and all .iml files
