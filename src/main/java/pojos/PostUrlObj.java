@@ -1,6 +1,6 @@
 package pojos;
 
-public class UploadedObject {
+public class PostUrlObj {
 
 	String url;
 	String uploadDate;

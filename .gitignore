@@ -39,5 +39,11 @@ buildNumber.properties
 .mvn/wrapper/maven-wrapper.jar
 
 .DS_Store
-.settings
 .vscode
+\.idea/artifacts/
+
+\.idea/
+
+\.project
+.settings
+\.classpath
