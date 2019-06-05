@@ -1,12 +1,17 @@
 package services;
 
 import org.junit.Test;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
 public class ReadXMLFileTest {
 
     @Test
     public void testParser() {
-        ReadXMLFile reader = new ReadXMLFile("http://www.java2s.com/Tutorials/Java/XML_HTML_How_to/DOM/Read_XML_Document_from_URL.htm");
-        reader.StreamXMLFile();
+        ReadXMLFile reader = new ReadXMLFile("https://www.wirliebenhunter.de/backend/export/index/export.txt?feedID=1&hash=4ebfa063359a73c356913df45b3fbe7f");
+        Document doc = reader.StreamXMLFile();
+
+        Element root = doc.getDocumentElement();
+        System.out.println(root.getTagName());
     }
 }

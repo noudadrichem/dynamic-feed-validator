@@ -16,18 +16,16 @@ public class ReadXMLFile {
     this.xmlFileUrl = xmlFileUrl;
   }
 
-  public void StreamXMLFile() {
-    try {
-      String xmlResponse = HTTPHandler.doGet(xmlFileUrl);
-      DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-      DocumentBuilder builder = factory.newDocumentBuilder();
-
-      ByteArrayInputStream input = new ByteArrayInputStream(xmlResponse.getBytes("UTF-8"));
-      Document doc = builder.parse(input);
-      System.out.println(doc);
-
+  public Document StreamXMLFile() {
+    try { StringBuilder xmlStringBuilder = new StringBuilder();
+        xmlStringBuilder.append(HTTPHandler.doGet(xmlFileUrl));
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        ByteArrayInputStream input = new ByteArrayInputStream(xmlStringBuilder.toString().getBytes("UTF-8"));
+        return builder.parse(input);
     } catch(Exception e) {
-      e.printStackTrace();
+        e.printStackTrace();
+        throw new RuntimeException(e);
     }
   }
 
