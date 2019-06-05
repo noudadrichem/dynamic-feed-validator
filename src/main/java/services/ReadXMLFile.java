@@ -7,7 +7,6 @@ import org.w3c.dom.*;
 import javax.xml.parsers.*;
 import java.io.*;
 
-
 public class ReadXMLFile {
 
   private String xmlFileUrl;
@@ -17,40 +16,40 @@ public class ReadXMLFile {
   }
 
   public Document StreamXMLFile() {
-    try { StringBuilder xmlStringBuilder = new StringBuilder();
-        xmlStringBuilder.append(HTTPHandler.doGet(xmlFileUrl));
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder builder = factory.newDocumentBuilder();
-        ByteArrayInputStream input = new ByteArrayInputStream(xmlStringBuilder.toString().getBytes("UTF-8"));
-        return builder.parse(input);
-    } catch(Exception e) {
-        e.printStackTrace();
-        throw new RuntimeException(e);
+    try {
+      StringBuilder xmlStringBuilder = new StringBuilder();
+      xmlStringBuilder.append(HTTPHandler.doGet(xmlFileUrl));
+      DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+      DocumentBuilder builder = factory.newDocumentBuilder();
+      ByteArrayInputStream input = new ByteArrayInputStream(xmlStringBuilder.toString().getBytes("UTF-8"));
+      return builder.parse(input);
+    } catch (Exception e) {
+      e.printStackTrace();
+      throw new RuntimeException(e);
     }
   }
 
+  // getElementsByTagName("user").item(0).getTextContent();
 
   // public Document loadDocument() {
-  //   String result = HTTPHandler.doGet(this.xmlFileUrl);
-  //   return convertStringToXMLDocument(result);
+  // String result = HTTPHandler.doGet(this.xmlFileUrl);
+  // return convertStringToXMLDocument(result);
   // }
 
   // public Document convertStringToXMLDocument(String xmlString) {
-  //   DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+  // DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 
-  //   try {
-  //     DocumentBuilder builder = factory.newDocumentBuilder();
-  //     Document doc = builder.parse(new InputSource(new StringReader(xmlString)));
+  // try {
+  // DocumentBuilder builder = factory.newDocumentBuilder();
+  // Document doc = builder.parse(new InputSource(new StringReader(xmlString)));
 
-  //     return doc;
-  //   } catch (Exception e) {
-  //     e.printStackTrace();
+  // return doc;
+  // } catch (Exception e) {
+  // e.printStackTrace();
 
-  //     return null;
-  //   }
+  // return null;
   // }
-
-
+  // }
 
 }
 
