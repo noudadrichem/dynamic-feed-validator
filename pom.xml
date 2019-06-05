@@ -4,14 +4,12 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>redis</groupId>
-  <artifactId>poc</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <groupId>bw</groupId>
+  <artifactId>dynamic-feed-validator</artifactId>
+  <version>1.0</version>
   <packaging>war</packaging>
 
-  <name>poc</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <name>dynamic-feed-validator</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -20,13 +18,6 @@
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-
     <dependency>
       <groupId>org.glassfish.jersey.containers</groupId>
       <artifactId>jersey-container-servlet</artifactId>
@@ -57,6 +48,7 @@
       <artifactId>javax.json</artifactId>
       <version>1.0.4</version>
     </dependency>
+
     <dependency>
       <groupId>com.google.code.gson</groupId>
       <artifactId>gson</artifactId>
@@ -92,11 +84,6 @@
       <artifactId>util</artifactId>
       <version>1.0.1</version>
     </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.12</version>
-    </dependency>
 
   </dependencies>
 
@@ -109,29 +96,11 @@
           <artifactId>tomcat7-maven-plugin</artifactId>
           <version>2.2</version>
           <configuration>
-            <path>/webapp</path>
+            <path>/</path>
             <port>9090</port>
             <contextReloadable>true</contextReloadable>
           </configuration>
         </plugin>
-
-        <!--<plugin>
-          <groupId>com.fizzed</groupId>
-          <artifactId>fizzed-watcher-maven-plugin</artifactId>
-          <version>1.0.4</version>
-          <configuration>
-            <files>
-              <param>src/main/java</param>
-            </files>
-            <goals>
-              <param>clean</param>
-              <param>compile</param>
-            </goals>
-            <profiles>
-              <param>optional-profile-to-activate-while-running-goals</param>
-            </profiles>
-          </configuration>
-        </plugin>-->
 
       </plugins>
     </pluginManagement>

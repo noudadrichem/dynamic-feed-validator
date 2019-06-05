@@ -3,6 +3,8 @@ package endpoints;
 import javax.json.*;
 import javax.ws.rs.*;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 
 import pojos.PostUrlObj;
 import services.ReadXMLFile;
@@ -19,7 +21,12 @@ public class UploadXMLFeedUrl {
     try {
       JsonObjectBuilder messageBuilder = Json.createObjectBuilder();
       String XMLURL = uploadedObject.getUrl();
+
       ReadXMLFile readXMLFile = new ReadXMLFile(XMLURL);
+      readXMLFile.StreamXMLFile();
+
+      // Element root = doc.getDocumentElement();
+      // System.out.println(root.getTagName());
       // Document loaded = readXMLFile.loadDocument();
 
       // System.out.println("loaded");
