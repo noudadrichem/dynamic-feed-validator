@@ -1,18 +1,13 @@
 package services;
 
+import java.io.FileInputStream;
 import java.io.InputStream;
-import java.io.StringReader;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-
-import javax.xml.stream.XMLEventReader;
-
-import org.w3c.dom.Document;
 
 import nl.nigelvanhattum.util.http.HTTPHandler;
 
-import java.util.*;
-
+import org.w3c.dom.*;
+import javax.xml.parsers.*;
+import java.io.*;
 
 
 public class ReadXMLFile {
@@ -26,13 +21,14 @@ public class ReadXMLFile {
 
   public void StreamXMLFile() {
     try {
-      // First, create a new XMLInputFactory
-      XMLInputFactory inputFactory = XMLInputFactory.newInstance();
-      // Setup a new eventReader
-      InputStream in = new FileInputStream(configFile);
-      XMLEventReader eventReader = inputFactory.createXMLEventReader(in);
-      // read the XML document
-      Item item = null;
+      String xmlResponse = HTTPHandler.doGet(xmlFileUrl);
+      DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+      DocumentBuilder builder = factory.newDocumentBuilder();
+
+      ByteArrayInputStream input = new ByteArrayInputStream(xmlResponse.getBytes("UTF-8"));
+      Document doc = builder.parse(input);
+      System.out.println(doc);
+
     } catch(Exception e) {
       e.printStackTrace();
     }
