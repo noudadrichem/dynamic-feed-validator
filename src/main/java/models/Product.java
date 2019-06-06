@@ -1,4 +1,4 @@
-package pojos;
+package models;
 
 public class Product {
 
