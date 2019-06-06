@@ -1,7 +1,5 @@
 package services;
 
-import nl.nigelvanhattum.util.http.HTTPHandler;
-
 import org.w3c.dom.*;
 import org.xml.sax.InputSource;
 
@@ -15,74 +13,60 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.events.Characters;
 import javax.xml.stream.events.XMLEvent;
 
-public class ReadXMLFile extends Object {
+public class ReadXMLFile {
 
   private final URL feedUrl;
+  private XMLInputFactory inputFactory;
+  private XMLEventReader reader;
 
   public ReadXMLFile(String feedUrl) {
     try {
       this.feedUrl = new URL(feedUrl);
+      this.inputFactory = XMLInputFactory.newInstance();
+      this.reader = inputFactory.createXMLEventReader(read());
     } catch (Exception e) {
       throw new RuntimeException(e);
     }
   }
 
   public void StreamXMLFile() throws XMLStreamException {
-    // First create a new XMLInputFactory
-    XMLInputFactory inputFactory = XMLInputFactory.newInstance();
-    // Setup a new eventReader
-    InputStream in = read();
-    XMLEventReader reader = inputFactory.createXMLEventReader(in);
-
     while (reader.hasNext()) {
-      XMLEvent event = reader.nextEvent();
-      System.out.println(event.toString());
+      XMLEvent line = reader.nextEvent();
+      validateLine(line);
     }
-    // read the XML document
-
-    // XMLInputFactory f = XMLInputFactory.newInstance();
-    // XMLStreamReader r = f.createXMLStreamReader(loadDocument());
-
-    // // First create a new XMLInputFactory
-    // XMLInputFactory inputFactory = XMLInputFactory.newInstance();
-    // // Setup a new eventReader
-    // InputStream in = read();
-    // XMLEventReader eventReader = inputFactory.createXMLEventReader(in);
+  }
   
-    // while (r.hasNext()) {
-    //   r.next();
-    // }
+  public void validateLine(XMLEvent line) {
+    // System.out.println(line);
+
+    if (line.isStartElement()) {
+      String key = line.asStartElement().getName().getLocalPart();
+      System.out.println("xml key: " + key);
+
+      try {
+        getValuebyKey(line);
+      } catch(Exception e ) {
+        e.printStackTrace();
+      }
+    }
+    // validate by line here.
   }
 
   private InputStream read() {
     try {
-        return this.feedUrl.openStream();
+      return this.feedUrl.openStream();
     } catch (IOException e) {
-        throw new RuntimeException(e);
+      throw new RuntimeException(e);
     }
   }
-
-  // public Document StreamXMLFile() {
-  //   try {
-  //     StringBuilder xmlStringBuilder = new StringBuilder();
-  //     xmlStringBuilder.append(HTTPHandler.doGet(feedUrl));
-  //     DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-  //     DocumentBuilder builder = factory.newDocumentBuilder();
-  //     ByteArrayInputStream input = new ByteArrayInputStream(xmlStringBuilder.toString().getBytes("UTF-8"));
-
-  //     return builder.parse(input);
-  //   } catch (Exception e) {
-  //     e.printStackTrace();
-  //     throw new RuntimeException(e);
-  //   }
-  // }
-
-  // getElementsByTagName("user").item(0).getTextContent();
-
-  public Document loadDocument() {
-    // String result = HTTPHandler.doGet(this.feedUrl);
-    // return convertStringToXMLDocument(result);
-    return null;
+  
+  private String getValuebyKey(XMLEvent line) throws XMLStreamException {
+    String result = "";
+    line = this.reader.nextEvent();
+    if (line instanceof Characters) {
+      result = line.asCharacters().getData();
+    }
+    return result;
   }
 
   public Document convertStringToXMLDocument(String xmlString) {
@@ -101,8 +85,3 @@ public class ReadXMLFile extends Object {
   }
 
 }
-
-// source:
-// http://www.java2s.com/Tutorials/Java/XML_HTML_How_to/DOM/Read_XML_Document_from_URL.htm
-// https://www.mkyong.com/java/how-to-read-xml-file-in-java-dom-parser/
-// nigel van hattum maven dep

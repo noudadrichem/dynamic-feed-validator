@@ -2,11 +2,8 @@ package endpoints;
 
 import javax.json.*;
 import javax.ws.rs.*;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
 
-
-import pojos.PostUrlObj;
+import models.PostUrlObj;
 import services.ReadXMLFile;
 
 @Path("/xmlservice")
@@ -19,23 +16,20 @@ public class UploadXMLFeedUrl {
     System.out.println("made contact");
 
     try {
-      JsonObjectBuilder messageBuilder = Json.createObjectBuilder();
       String XMLURL = uploadedObject.getUrl();
+      JsonObjectBuilder messageBuilder = Json.createObjectBuilder();
 
-      ReadXMLFile readXMLFile = new ReadXMLFile(XMLURL);
-      readXMLFile.StreamXMLFile();
+      if(XMLURL.startsWith("http")) {
+        messageBuilder.add("message", "Succesfully upload URL");
 
-      // Element root = doc.getDocumentElement();
-      // System.out.println(root.getTagName());
-      // Document loaded = readXMLFile.loadDocument();
-
-      // System.out.println("loaded");
-      // System.out.println(loaded.getFirstChild().getNodeName());
+        ReadXMLFile readXMLFile = new ReadXMLFile(XMLURL);
+        readXMLFile.StreamXMLFile();
+      } else {
+        messageBuilder.add("message", "Not a valid URL");
+      }
       
-      messageBuilder
-        .add("message", "Succesfully upload URL");
-
       return messageBuilder.build().toString();
+
     } catch(Exception e) {
       e.printStackTrace();
       JsonObjectBuilder messageBuilder = Json.createObjectBuilder();
