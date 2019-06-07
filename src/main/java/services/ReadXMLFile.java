@@ -36,20 +36,11 @@ public class ReadXMLFile {
     }
   }
   
-  public void validateLine(XMLEvent line) {
-    // System.out.println(line);
-
+  public void validateLine(XMLEvent line) throws XMLStreamException {
     if (line.isStartElement()) {
       String key = line.asStartElement().getName().getLocalPart();
-      System.out.println("xml key: " + key);
-
-      try {
-        getValuebyKey(line);
-      } catch(Exception e ) {
-        e.printStackTrace();
-      }
+      System.out.println("xml key: " + key + "  __ " + getValuebyKey(line));
     }
-    // validate by line here.
   }
 
   private InputStream read() {
@@ -61,7 +52,7 @@ public class ReadXMLFile {
   }
   
   private String getValuebyKey(XMLEvent line) throws XMLStreamException {
-    String result = "";
+    String result = "-";
     line = this.reader.nextEvent();
     if (line instanceof Characters) {
       result = line.asCharacters().getData();
@@ -85,3 +76,5 @@ public class ReadXMLFile {
   }
 
 }
+
+// source: https://www.vogella.com/tutorials/RSSFeed/article.html

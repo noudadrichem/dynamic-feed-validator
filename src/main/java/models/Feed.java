@@ -1,5 +1,6 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Feed {
@@ -8,12 +9,14 @@ public class Feed {
   private String description;
   private String feedLink;
   private Date publicationDate;
+  private ArrayList<Product> products;
 
   public Feed(String title, String description, String feedLink, Date publicationDate) {
     this.title = title;
     this.description = description;
     this.feedLink = feedLink;
     this.publicationDate = publicationDate;
+    this.products = new ArrayList<Product>();
   }
 
   public void setTitle(String title) {
@@ -46,6 +49,19 @@ public class Feed {
 
   public Date getPublicationDate() {
     return publicationDate;
+  }
+
+  public boolean addProduct(Product product) {
+    if(!products.contains(product)) {
+      products.add(product);
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  public ArrayList<Product> getProducts() {
+    return products;
   }
 
 }

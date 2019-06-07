@@ -4,7 +4,7 @@ import javax.json.*;
 import javax.ws.rs.*;
 
 import models.PostUrlObj;
-import services.ReadXMLFile;
+import services.ValidationThread;
 
 @Path("/xmlservice")
 public class UploadXMLFeedUrl {
@@ -22,8 +22,9 @@ public class UploadXMLFeedUrl {
       if(XMLURL.startsWith("http")) {
         messageBuilder.add("message", "Succesfully upload URL");
 
-        ReadXMLFile readXMLFile = new ReadXMLFile(XMLURL);
-        readXMLFile.StreamXMLFile();
+        ValidationThread validationThread = new ValidationThread(XMLURL);
+        validationThread.start();
+
       } else {
         messageBuilder.add("message", "Not a valid URL");
       }
