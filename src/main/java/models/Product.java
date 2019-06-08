@@ -12,7 +12,7 @@ public class Product {
   private String googleProductCategory;
   private int gtin;
   private int id;
-  private String image_link;
+  private String imageLink;
   private String itemGroupId;
   private String material;
   private int mpn;
@@ -35,7 +35,7 @@ public class Product {
     String googleProductCategory,
     int gtin,
     int id,
-    String image_link,
+    String imageLink,
     String itemGroupId,
     String material,
     int mpn,
@@ -55,7 +55,7 @@ public class Product {
     this.googleProductCategory = googleProductCategory;
     this.gtin = gtin;
     this.id = id;
-    this.image_link = image_link;
+    this.imageLink = imageLink;
     this.itemGroupId = itemGroupId;
     this.material = material;
     this.mpn = mpn;
@@ -66,7 +66,9 @@ public class Product {
     this.link = link;
   }
 
+  public Product() {}
 
+  @Override
   public String toString() {
     return "[product] :: " + title
     + " " + description
@@ -78,7 +80,7 @@ public class Product {
     + " " + googleProductCategory 
     + " " + gtin
     + " " + id
-    + " " + image_link
+    + " " + imageLink
     + " " + itemGroupId
     + " " + material
     + " " + mpn
