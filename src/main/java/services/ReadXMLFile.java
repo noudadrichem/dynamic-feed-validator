@@ -70,7 +70,7 @@ public class ReadXMLFile {
 
     if (line.isStartElement()) {
       String key = line.asStartElement().getName().getLocalPart();
-
+      System.out.println("key=" + key);
       switch(key) {
         case "item":
           // IF FEED NOT NIET IS GEmAAAKT DOE DAT HIER
@@ -126,7 +126,11 @@ public class ReadXMLFile {
           break;
         case "mpn":
           System.out.println(key + ":" + getValuebyKey(line));
-          mpn = Integer.parseInt(getValuebyKey(line));
+          try {
+            mpn = Integer.parseInt(getValuebyKey(line));
+          } catch(NumberFormatException e) {
+              e.printStackTrace();
+          }
           break;
         case "price":
           System.out.println(key + ":" + getValuebyKey(line));
@@ -169,27 +173,25 @@ public class ReadXMLFile {
 
           // VOEG HIER PRODUCT TOE
           Product product = new Product();
-          product.setTitle(itemTitle);
-          product.setDescription(itemDescription);
-          product.setAgeGroup(ageGroup);
-          product.setAvailability(availability);
-          product.setBrand(brand);
-          product.setColor(color);
-          product.setGender(gender);
-          product.setGoogleProductCategory(googleProductCategory);
-          product.setGtin(gtin);
-          product.setId(itemId);
-          product.setImageLink(imageLink);
-          product.setItemGroupId(itemGroupId);
-          product.setMaterial(material);
-          product.setMpn(mpn);
-          product.setPrice(price);
-          product.setProductType(productType);
-          product.setShippingWeight(shippingWeight);
-          product.setSize(size);
-          product.setLink(link);
-
-
+          // product.setTitle(itemTitle);
+          // product.setDescription(itemDescription);
+          // product.setAgeGroup(ageGroup);
+          // product.setAvailability(availability);
+          // product.setBrand(brand);
+          // product.setColor(color);
+          // product.setGender(gender);
+          // product.setGoogleProductCategory(googleProductCategory);
+          // product.setGtin(gtin);
+          // product.setId(itemId);
+          // product.setImageLink(imageLink);
+          // product.setItemGroupId(itemGroupId);
+          // product.setMaterial(material);
+          // product.setMpn(mpn);
+          // product.setPrice(price);
+          // product.setProductType(productType);
+          // product.setShippingWeight(shippingWeight);
+          // product.setSize(size);
+          // product.setLink(link);
         }
       }
   }
