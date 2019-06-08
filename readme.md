@@ -1,4 +1,4 @@
-# test
+# Dynamic feed Validator
 
 
 > http://localhost:9090/webapp/MainServlet.do?moetje=JE TEKST
