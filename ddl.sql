@@ -18,7 +18,7 @@ create table feed (
  title varchar(255) not null,
  description varchar(255),
  feed_link varchar(255) not null,
- publication_date Date
+ publication_date varchar(255)
 );
 
 create table product (
