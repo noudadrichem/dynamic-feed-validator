@@ -2,7 +2,6 @@ package persistence;
 
 import java.sql.*;
 import javax.naming.InitialContext;
-import javax.sql.DataSource;
 
 public class PostgresBaseDao {
 
@@ -22,7 +21,7 @@ public class PostgresBaseDao {
 //		return result;
 //	}
 	
-	public static final String URL = "jdbc:postgresql://localhost:5432/test";
+	public static final String URL = "jdbc:postgresql://localhost:5432/feed_validator";
     public static final String USERNAME = "noud";
     public static final String PASSWORD = "test1234";
 

@@ -11,6 +11,7 @@ public class ValidationThread extends Thread {
   }
 
   public void run() {
+    System.out.println("started thread for url=" + url);
     ReadXMLFile readXMLFile = new ReadXMLFile(this.url);
 
     try {

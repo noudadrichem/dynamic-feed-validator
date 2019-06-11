@@ -7,7 +7,7 @@ import models.PostUrlObj;
 import services.ValidationThread;
 
 @Path("/xmlservice")
-public class UploadXMLFeedUrl {
+public class XmlService {
 
   @POST
   @Path("/upload")
@@ -25,6 +25,8 @@ public class UploadXMLFeedUrl {
         ValidationThread validationThread = new ValidationThread(XMLURL);
         validationThread.start();
 
+        System.out.println("validation thread status = " + validationThread.toString());
+
       } else {
         messageBuilder.add("message", "Not a valid URL");
       }
@@ -38,5 +40,16 @@ public class UploadXMLFeedUrl {
 
       return messageBuilder.build().toString();
     }
+  }
+
+  @GET
+  @Path("/all")
+  @Produces("application/json")
+  public String getAllFeeds() {
+    JsonObjectBuilder messageBuilder = Json.createObjectBuilder();
+
+    messageBuilder.add("get", "all feeds");
+
+    return messageBuilder.build().toString();
   }
 }

@@ -17,7 +17,13 @@ public class MainEndpoint {
   }
 
   @GET
-  @Path("{message}")
+  @Path("/pong")
+  public String pong() {
+    return "<h1>Dit is h1 in HTML</h1>";
+  }
+
+  @GET
+  @Path("/a/{message}")
   @Produces("application/json")
   public String pingThePong(@PathParam("message") String message) {
     JsonObjectBuilder pingObject = Json.createObjectBuilder();

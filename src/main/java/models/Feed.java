@@ -9,14 +9,13 @@ public class Feed {
   private String description;
   private String feedLink;
   private Date publicationDate;
-  private ArrayList<Product> products;
+  final private ArrayList<Product> products = new ArrayList<Product>();
 
-  public Feed(String title, String description, String feedLink, Date publicationDate) {
+  public Feed(String title, String description, String feedLink/*, Date publicationDate*/) {
     this.title = title;
     this.description = description;
     this.feedLink = feedLink;
-    this.publicationDate = publicationDate;
-    this.products = new ArrayList<Product>();
+    // this.publicationDate = publicationDate;
   }
 
   public void setTitle(String title) {
@@ -62,6 +61,11 @@ public class Feed {
 
   public ArrayList<Product> getProducts() {
     return products;
+  }
+
+  @Override
+  public String toString() {
+    return "feed=[title=" + this.title + " productCount="+ this.products.size() +"]";
   }
 
 }

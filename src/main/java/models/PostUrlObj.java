@@ -1,5 +1,6 @@
 package models;
 
+
 public class PostUrlObj {
 
 	String url;
