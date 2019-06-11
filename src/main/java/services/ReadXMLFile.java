@@ -9,6 +9,7 @@ import java.io.*;
 import java.util.*;
 import java.net.URL;
 import java.nio.charset.Charset;
+import java.text.SimpleDateFormat;
 
 import javax.xml.stream.*;
 import javax.xml.stream.events.*;
@@ -74,41 +75,85 @@ public class ReadXMLFile {
 
         if (line.isStartElement()) {
           String key = line.asStartElement().getName().getLocalPart();
-
-          System.out.println(key);
+        
+          System.out.println("checkking key : " + key);
 
           switch (key) {
           case "item":
             if (isFeedHeader) {
               isFeedHeader = false;
               this.feedId = getRandomString();
-              feed = new Feed(this.feedId, title, description, feedLink);
+              feed = new Feed(this.feedId, title, description, feedLink, publicationDate);
               dao.saveFeed(feed); // save to database.
             }
             line = eventReader.nextEvent();
             break;
-          case "title": title = getValuebyKey(line, eventReader); break;
-          case "description": description = getValuebyKey(line, eventReader); break;
-          case "pubDate": publicationDate = getValuebyKey(line, eventReader); break;
-          case "link": feedLink = getValuebyKey(line, eventReader); break;
-          case "age_group": ageGroup = getValuebyKey(line, eventReader); break;
-          case "availability": availability = getValuebyKey(line, eventReader); break;
-          case "brand": brand = getValuebyKey(line, eventReader); break;
-          case "color": color = getValuebyKey(line, eventReader); break;
-          case "gender": gender = getValuebyKey(line, eventReader); break;
-          case "google_product_category": googleProductCategory = getValuebyKey(line, eventReader); break;
-          case "gtin": gtin = getValuebyKey(line, eventReader); break;
-          case "id": itemId = getValuebyKey(line, eventReader); break;
-          case "image_link": imageLink = getValuebyKey(line, eventReader).trim(); break;
-          case "item_group_id": itemGroupId = getValuebyKey(line, eventReader); break;
-          case "material": material = getValuebyKey(line, eventReader); break;
-          case "mpn": mpn = getValuebyKey(line, eventReader); break;
-          case "price": price = getValuebyKey(line, eventReader); break;
-          case "product_type": productType = getValuebyKey(line, eventReader); break;
-          case "shipping": shipping = getValuebyKey(line, eventReader); break;
-          case "country": country = getValuebyKey(line, eventReader); break;
-          case "shipping_weight": shippingWeight = getValuebyKey(line, eventReader); break;
-          case "size": size = getValuebyKey(line, eventReader); break;
+          case "title":
+            title = getValuebyKey(line, eventReader);
+            break;
+          case "description":
+            description = getValuebyKey(line, eventReader);
+            break;
+          case "pubDate":
+            publicationDate = getValuebyKey(line, eventReader);
+            break;
+          case "link":
+            feedLink = getValuebyKey(line, eventReader);
+            break;
+          case "age_group":
+            ageGroup = getValuebyKey(line, eventReader);
+            break;
+          case "availability":
+            availability = getValuebyKey(line, eventReader);
+            break;
+          case "brand":
+            brand = getValuebyKey(line, eventReader);
+            break;
+          case "color":
+            color = getValuebyKey(line, eventReader);
+            break;
+          case "gender":
+            gender = getValuebyKey(line, eventReader);
+            break;
+          case "google_product_category":
+            googleProductCategory = getValuebyKey(line, eventReader);
+            break;
+          case "gtin":
+            gtin = getValuebyKey(line, eventReader);
+            break;
+          case "id":
+            itemId = getValuebyKey(line, eventReader);
+            break;
+          case "image_link":
+            imageLink = getValuebyKey(line, eventReader).trim();
+            break;
+          case "item_group_id":
+            itemGroupId = getValuebyKey(line, eventReader);
+            break;
+          case "material":
+            material = getValuebyKey(line, eventReader);
+            break;
+          case "mpn":
+            mpn = getValuebyKey(line, eventReader);
+            break;
+          case "price":
+            price = getValuebyKey(line, eventReader);
+            break;
+          case "product_type":
+            productType = getValuebyKey(line, eventReader);
+            break;
+          case "shipping":
+            shipping = getValuebyKey(line, eventReader);
+            break;
+          case "country":
+            country = getValuebyKey(line, eventReader);
+            break;
+          case "shipping_weight":
+            shippingWeight = getValuebyKey(line, eventReader);
+            break;
+          case "size":
+            size = getValuebyKey(line, eventReader);
+            break;
           default:
             System.out.println("___No case specified___");
           }

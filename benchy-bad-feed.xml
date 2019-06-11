@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:g="http://base.google.com/ns/1.0" xmlns:c="http://base.google.com/cns/1.0" version="2.0">
+  <channel>
+    <title>
+      Bannerwise NL
+    </title>
+    <description>
+      Bannerwise NL
+    </description>
+    <link> https://files.channable.com/e9yvfO3J2ESxGVVtz9lKag==.xml
+    </link>
+    <pubDate>
+      Mon, 04 Mar 2019 01:31:39 -0000Ò
+    </pubDate>
+    <item>
+      <description>Red ankle-strap summer pumps. Perfect for all of your party outfits!</description>
+      <g:age_group>adultx</g:age_group>
+      <g:availability>in stock</g:availability>
+      <g:brand>Benchy</g:brand>
+      <g:color>Red</g:color>
+      <g:gender>female</g:gender>
+      <g:google_product_category>Shoes</g:google_product_category>
+      <g:gtin>87196893300583</g:gtin>
+      <g:id>1</g:id>
+      <g:image_link>https://s3.eu-central-1.amazonaws.com/bannerwise-assets/images/3red.png</g:image_link>
+      <g:item_group_id>165723176983</g:item_group_id>
+      <g:material>leather</g:material>
+      <g:mpn>1865201025047</g:mpn>
+      <g:price>69.99 EUR</g:price>
+      <g:product_type>Shoes</g:product_type>
+      <g:shipping>
+        <g:country>nl</g:country>
+      </g:shipping>
+      <g:shipping_weight>225 g</g:shipping_weight>
+      <g:size>37</g:size>
+      <link>https://bannerwise.io/</link>
+      <title>Loviti Spring Pumps</title>
+    </item>
+    <item>
+      <description>Nude suede stiletto heels. For weddings, summer evenings, and romantic dates.</description>
+      <g:age_group>adultx</g:age_group>
+      <g:availability>in stock</g:availability>
+      <g:brand>Benchy</g:brand>
+      <g:color>Nude</g:color>
+      <g:gender>female</g:gender>
+      <g:google_product_category>Shoes</g:google_product_category>
+      <g:gtin>87196893300583</g:gtin>
+      <g:id>2</g:id>
+      <g:image_link>https://s3.eu-central-1.amazonaws.com/bannerwise-assets/images/1beige.png</g:image_link>
+      <g:item_group_id>165723176983</g:item_group_id>
+      <g:material>leather</g:material>
+      <g:mpn>1865201025057</g:mpn>
+      <g:price>59.99 EUR</g:price>
+      <g:product_type>Shoes</g:product_type>
+      <g:additional_image_link>http://www.example.com/image2.jpg</g:additional_image_link>
+      <g:shipping>
+        <g:country>nl</g:country>
+      </g:shipping>
+      <g:shipping_weight>225 g</g:shipping_weight>
+      <g:size>37</g:size>
+      <link></link>
+      <title>Loviti Stiletto Heels</title>
+    </item>
+    <item>
+      <description>Sexy black lace sandals. Provide your outfit with an extra-urban touch.</description>
+      <g:age_group>adultx</g:age_group>
+      <g:availability>in stock</g:availability>
+      <g:brand>Benchy</g:brand>
+      <g:color>Black</g:color>
+      <g:gender>female</g:gender>
+      <g:google_product_category>Shoes</g:google_product_category>
+      <g:gtin>87196893300583</g:gtin>
+      <g:id>3</g:id>
+      <g:image_link>https://s3.eu-central-1.amazonaws.com/bannerwise-assets/images/2black.png</g:image_link>
+      <g:item_group_id>165723176993</g:item_group_id>
+      <g:material>leather</g:material>
+      <g:mpn>1865201025067</g:mpn>
+      <g:price>69.00 EUR</g:price>
+      <g:product_type>Shirt</g:product_type>
+      <g:shipping>
+        <g:country>nl</g:country>
+      </g:shipping>
+      <g:shipping_weight>225 g</g:shipping_weight>
+      <g:size>37</g:size>
+      <link>https://bannerwise.io/</link>
+      <title>Loviti Strappy Sandle</title>
+    </item>
+
+  </channel>
+</rss>

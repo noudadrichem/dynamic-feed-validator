@@ -11,10 +11,10 @@ public class Feed {
   private String description;
   private String feedLink;
   private String id;
-  private Date publicationDate;
+  private String publicationDate;
   final private ArrayList<Product> products = new ArrayList<Product>();
 
-  public Feed(String id, String title, String description, String feedLink/*, Date publicationDate*/) {
+  public Feed(String id, String title, String description, String feedLink, String publicationDate) {
     this.id = id;
     this.title = title;
     this.description = description;
@@ -67,11 +67,11 @@ public class Feed {
     return feedLink;
   }
 
-  public void setPublicationDate(Date publicationDate) {
+  public void setPublicationDate(String publicationDate) {
     this.publicationDate = publicationDate;
   } 
 
-  public Date getPublicationDate() {
+  public String getPublicationDate() {
     return publicationDate;
   }
 
@@ -90,7 +90,12 @@ public class Feed {
 
   @Override
   public String toString() {
-    return "feed=[id=" + this.id + "description=" + this.description + " title=" + this.title + " productCount="+ this.products.size() +"]";
+    return "feed=[id=" + this.id 
+    + " description=" + this.description 
+    + " title=" + this.title 
+    + " pubicationDate = "+ this.publicationDate 
+    + " productCount="+ this.products.size() 
+    +"]";
   }
 
 }

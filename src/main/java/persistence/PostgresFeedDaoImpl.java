@@ -11,8 +11,6 @@ public class PostgresFeedDaoImpl extends PostgresBaseDao {
   public boolean saveFeed(Feed feed) throws ClassNotFoundException {
     try (Connection con = super.getConnection()) {
 
-      Date newDate = new Date(2019, 5, 13);
-
       PreparedStatement pstmt = con.prepareStatement(
         "insert into feed(feed_id, title, description, feed_link, publication_date, account_id) values(?,?,?,?,?,?)"
       );
@@ -20,7 +18,7 @@ public class PostgresFeedDaoImpl extends PostgresBaseDao {
       pstmt.setString(2, feed.getTitle());
       pstmt.setString(3, feed.getDescription());
       pstmt.setString(4, feed.getFeedLink());
-      pstmt.setDate(5, newDate);
+      pstmt.setString(5, feed.getPublicationDate());
       pstmt.setInt(6, 1);
       pstmt.executeQuery();
 
