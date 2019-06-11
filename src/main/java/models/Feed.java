@@ -8,14 +8,24 @@ public class Feed {
   private String title;
   private String description;
   private String feedLink;
+  private String id;
   private Date publicationDate;
   final private ArrayList<Product> products = new ArrayList<Product>();
 
-  public Feed(String title, String description, String feedLink/*, Date publicationDate*/) {
+  public Feed(String id, String title, String description, String feedLink/*, Date publicationDate*/) {
+    this.id = id;
     this.title = title;
     this.description = description;
     this.feedLink = feedLink;
     // this.publicationDate = publicationDate;
+  }
+
+  public void setId(String id) {
+    this.id = id;
+  } 
+
+  public String getId() {
+    return id;
   }
 
   public void setTitle(String title) {

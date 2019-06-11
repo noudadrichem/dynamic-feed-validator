@@ -1,5 +1,7 @@
 package models;
 
+import org.apache.commons.codec.digest.DigestUtils;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,18 +17,18 @@ public class Product {
   private String color;
   private String gender;
   private String googleProductCategory;
-  private int gtin;
-  private int id;
+  private String gtin;
+  private String id;
   private String imageLink;
   private String itemGroupId;
   private String material;
-  private int mpn;
-  private double price;
+  private String mpn;
+  private String price;
   private String productType;
-  // private String shipping;
-  //   private String countrynl;
+  private String shipping;
+  private String countrynl;
   private String shippingWeight;
-  private int size;
+  private String size;
   private String link;
 
   public Product(
@@ -38,16 +40,16 @@ public class Product {
     String color,
     String gender,
     String googleProductCategory,
-    int gtin,
-    int id,
+    String gtin,
+    String id,
     String imageLink,
     String itemGroupId,
     String material,
-    int mpn,
-    double price,
+    String mpn,
+    String price,
     String productType,
     String shippingWeight,
-    int size,
+    String size,
     String link
   ) {
     this.title = title;
@@ -72,6 +74,19 @@ public class Product {
   }
 
   public Product() {}
+
+  public String getProductHashCode() {
+    String md5productHash = DigestUtils.md5Hex(
+      this.toString().trim().replace(" ", "")
+    ).toUpperCase();
+
+    // assertThat(md5productHash.equals(hash)).isTrue();
+    return md5productHash;
+  }
+
+  public boolean equals(String hash) {
+    return hash.equals(this.getProductHashCode());
+  }
 
   public String getAgeGroup() {
     return ageGroup;
@@ -121,19 +136,19 @@ public class Product {
     this.googleProductCategory = googleProductCategory;
   }
 
-  public int getGtin() {
+  public String getGtin() {
     return gtin;
   }
 
-  public void setGtin(int gtin) {
+  public void setGtin(String gtin) {
     this.gtin = gtin;
   }
 
-  public int getId() {
+  public String getId() {
     return id;
   }
 
-  public void setId(int id) {
+  public void setId(String id) {
     this.id = id;
   }
 
@@ -161,19 +176,19 @@ public class Product {
     this.material = material;
   }
 
-  public int getMpn() {
+  public String getMpn() {
     return mpn;
   }
 
-  public void setMpn(int mpn) {
+  public void setMpn(String mpn) {
     this.mpn = mpn;
   }
 
-  public double getPrice() {
+  public String getPrice() {
     return price;
   }
 
-  public void setPrice(double price) {
+  public void setPrice(String price) {
     this.price = price;
   }
 
@@ -193,11 +208,11 @@ public class Product {
     this.shippingWeight = shippingWeight;
   }
 
-  public int getSize() {
+  public String getSize() {
     return size;
   }
 
-  public void setSize(int size) {
+  public void setSize(String size) {
     this.size = size;
   }
 

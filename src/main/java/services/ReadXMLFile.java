@@ -1,5 +1,6 @@
 package services;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import org.w3c.dom.*;
 import org.xml.sax.InputSource;
 
@@ -7,6 +8,7 @@ import javax.xml.parsers.*;
 import java.io.*;
 import java.util.*;
 import java.net.URL;
+import java.nio.charset.Charset;
 
 import javax.xml.stream.*;
 import javax.xml.stream.events.*;
@@ -18,6 +20,7 @@ import persistence.PostgresFeedDaoImpl;
 public class ReadXMLFile {
 
   final URL feedUrl;
+  private String feedId;
   private XMLInputFactory inputFactory;
   private XMLEventReader reader;
   
@@ -72,17 +75,16 @@ public class ReadXMLFile {
         if (line.isStartElement()) {
           String key = line.asStartElement().getName().getLocalPart();
 
+          System.out.println(key);
+
           switch (key) {
           case "item":
             if (isFeedHeader) {
               isFeedHeader = false;
-              feed = new Feed(title, description, feedLink);
-
-              try {
-                dao.saveFeed(feed);
-              } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-              }
+              this.feedId = generateRandomString();
+              System.out.println(this.feedId);
+              feed = new Feed(this.feedId, title, description, feedLink);
+              dao.saveFeed(feed); // save to database.
             }
             line = eventReader.nextEvent();
             break;
@@ -153,11 +155,10 @@ public class ReadXMLFile {
             size = getValuebyKey(line, eventReader);
             break;
           default:
-            System.out.println("___DEFAULT___");
+            System.out.println("___No case specified___");
           }
         } else if (line.isEndElement()) {
           if (line.asEndElement().getName().getLocalPart() == "item") {
-            System.out.println("ITEM END");
 
             Product product = new Product();
             product.setTitle(title);
@@ -168,25 +169,27 @@ public class ReadXMLFile {
             product.setColor(color);
             product.setGender(gender);
             product.setGoogleProductCategory(googleProductCategory);
-            // product.setGtin(Integer.parseInt(gtin));
-            // product.setId(Integer.parseInt(itemId));
+            product.setGtin(gtin);
+            product.setId(itemId);
             product.setImageLink(imageLink);
             product.setItemGroupId(itemGroupId);
             product.setMaterial(material);
-            // product.setMpn(Integer.parseInt (mpn));
-            // product.setPrice(Integer.parseInt(price));
+            product.setMpn(mpn);
+            product.setPrice(price);
             product.setProductType(productType);
             product.setShippingWeight(shippingWeight);
-            // product.setSize(Integer.parseInt(size));
+            product.setSize(size);
             product.setLink(link);
 
-            System.out.println("NEW product: " + product.toString());
+            // FIX DATE PARSING 
+            // LocalDateTime dateTime = f.parseLocalDateTime("2012-01-10
 
-            // FIX DATE PARSING LocalDateTime dateTime = f.parseLocalDateTime("2012-01-10
-            // 23:13:26");
+            System.out.println("___product hash___");
+            System.out.println(product.getProductHashCode());
 
             if (feed.addProduct(product)) {
               System.out.println("Added product to feed");
+              dao.saveProduct(product, this.feedId);
             } else {
               System.out.println("Failed to add product to feed.");
             }
@@ -195,14 +198,11 @@ public class ReadXMLFile {
             continue;
           }
         }
-
       }
     } catch (Exception e) {
       e.printStackTrace();
     }
   }
-
-  public void validateLine(XMLEvent line) throws XMLStreamException {}
 
   private InputStream read() {
     try {
@@ -212,11 +212,11 @@ public class ReadXMLFile {
     }
   }
 
-  private String getValuebyKey(XMLEvent event, XMLEventReader eventReader) throws XMLStreamException {
+  private String getValuebyKey(XMLEvent line, XMLEventReader eventReader) throws XMLStreamException {
     String result = "";
-    event = eventReader.nextEvent();
-    if (event instanceof Characters) {
-      result = event.asCharacters().getData();
+    line = eventReader.nextEvent();
+    if (line instanceof Characters) {
+      result = line.asCharacters().getData();
     }
 
     return result;
@@ -235,6 +235,10 @@ public class ReadXMLFile {
 
       return null;
     }
+  }
+
+  public String generateRandomString() {
+    return UUID.randomUUID().toString().replace("-", "");
   }
 
 }

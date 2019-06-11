@@ -4,6 +4,7 @@ import java.sql.*;
 import java.text.*;
 
 import models.Feed;
+import models.Product;
 
 public class PostgresFeedDaoImpl extends PostgresBaseDao {
 
@@ -13,21 +14,40 @@ public class PostgresFeedDaoImpl extends PostgresBaseDao {
       Date newDate = new Date(2019, 5, 13);
 
       PreparedStatement pstmt = con.prepareStatement(
-        "insert into feed(title, description, feed_link, publication_date, product_id, account_id) values(?,?,?,?,?,?)"
+        "insert into feed(feed_id, title, description, feed_link, publication_date, account_id) values(?,?,?,?,?,?)"
       );
-      pstmt.setString(1, feed.getTitle());
-      pstmt.setString(2, feed.getDescription());
-      pstmt.setString(3, feed.getFeedLink());
-      pstmt.setDate(4, newDate);
-      pstmt.setInt(5, 1);
+      pstmt.setString(1, feed.getId());
+      pstmt.setString(2, feed.getTitle());
+      pstmt.setString(3, feed.getDescription());
+      pstmt.setString(4, feed.getFeedLink());
+      pstmt.setDate(5, newDate);
       pstmt.setInt(6, 1);
       pstmt.executeQuery();
 
 			return true;
-		} catch (SQLException sqle) {
-			sqle.printStackTrace();
+		} catch (SQLException e) {
+      e.printStackTrace();
+
 			return false;
 		}
+  }
+
+  public boolean saveProduct(Product product, String feed_id) throws ClassNotFoundException {
+    try (Connection con = super.getConnection()) {
+
+      PreparedStatement pstmt = con.prepareStatement(
+        "insert into product(hashed, feed_id) values(?, ?)"
+      );
+      pstmt.setString(1, product.getProductHashCode());
+      pstmt.setString(2, feed_id);
+      pstmt.executeQuery();
+
+      return true;
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+      return false;
+    }
   }
 
 }
