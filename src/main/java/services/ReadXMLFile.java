@@ -81,79 +81,34 @@ public class ReadXMLFile {
           case "item":
             if (isFeedHeader) {
               isFeedHeader = false;
-              this.feedId = generateRandomString();
-              System.out.println(this.feedId);
+              this.feedId = getRandomString();
               feed = new Feed(this.feedId, title, description, feedLink);
               dao.saveFeed(feed); // save to database.
             }
             line = eventReader.nextEvent();
             break;
-          case "title":
-            title = getValuebyKey(line, eventReader);
-            break;
-          case "description":
-            description = getValuebyKey(line, eventReader);
-            break;
-          case "pubDate":
-            publicationDate = getValuebyKey(line, eventReader);
-            break;
-          case "link":
-            feedLink = getValuebyKey(line, eventReader);
-            break;
-          case "age_group":
-            ageGroup = getValuebyKey(line, eventReader);
-            break;
-          case "availability":
-            availability = getValuebyKey(line, eventReader);
-            break;
-          case "brand":
-            brand = getValuebyKey(line, eventReader);
-            break;
-          case "color":
-            color = getValuebyKey(line, eventReader);
-            break;
-          case "gender":
-            gender = getValuebyKey(line, eventReader);
-            break;
-          case "google_product_category":
-            googleProductCategory = getValuebyKey(line, eventReader);
-            break;
-          case "gtin":
-            gtin = getValuebyKey(line, eventReader);
-            break;
-          case "id":
-            itemId = getValuebyKey(line, eventReader);
-            break;
-          case "image_link":
-            imageLink = getValuebyKey(line, eventReader).trim();
-            break;
-          case "item_group_id":
-            itemGroupId = getValuebyKey(line, eventReader);
-            break;
-          case "material":
-            material = getValuebyKey(line, eventReader);
-            break;
-          case "mpn":
-            mpn = getValuebyKey(line, eventReader);
-            break;
-          case "price":
-            price = getValuebyKey(line, eventReader);
-            break;
-          case "product_type":
-            productType = getValuebyKey(line, eventReader);
-            break;
-          case "shipping":
-            shipping = getValuebyKey(line, eventReader);
-            break;
-          case "country":
-            country = getValuebyKey(line, eventReader);
-            break;
-          case "shipping_weight":
-            shippingWeight = getValuebyKey(line, eventReader);
-            break;
-          case "size":
-            size = getValuebyKey(line, eventReader);
-            break;
+          case "title": title = getValuebyKey(line, eventReader); break;
+          case "description": description = getValuebyKey(line, eventReader); break;
+          case "pubDate": publicationDate = getValuebyKey(line, eventReader); break;
+          case "link": feedLink = getValuebyKey(line, eventReader); break;
+          case "age_group": ageGroup = getValuebyKey(line, eventReader); break;
+          case "availability": availability = getValuebyKey(line, eventReader); break;
+          case "brand": brand = getValuebyKey(line, eventReader); break;
+          case "color": color = getValuebyKey(line, eventReader); break;
+          case "gender": gender = getValuebyKey(line, eventReader); break;
+          case "google_product_category": googleProductCategory = getValuebyKey(line, eventReader); break;
+          case "gtin": gtin = getValuebyKey(line, eventReader); break;
+          case "id": itemId = getValuebyKey(line, eventReader); break;
+          case "image_link": imageLink = getValuebyKey(line, eventReader).trim(); break;
+          case "item_group_id": itemGroupId = getValuebyKey(line, eventReader); break;
+          case "material": material = getValuebyKey(line, eventReader); break;
+          case "mpn": mpn = getValuebyKey(line, eventReader); break;
+          case "price": price = getValuebyKey(line, eventReader); break;
+          case "product_type": productType = getValuebyKey(line, eventReader); break;
+          case "shipping": shipping = getValuebyKey(line, eventReader); break;
+          case "country": country = getValuebyKey(line, eventReader); break;
+          case "shipping_weight": shippingWeight = getValuebyKey(line, eventReader); break;
+          case "size": size = getValuebyKey(line, eventReader); break;
           default:
             System.out.println("___No case specified___");
           }
@@ -182,10 +137,9 @@ public class ReadXMLFile {
             product.setLink(link);
 
             // FIX DATE PARSING 
-            // LocalDateTime dateTime = f.parseLocalDateTime("2012-01-10
+            // LocalDateTime dateTime = f.parseLocalDateTime("2012-01-10");
 
-            System.out.println("___product hash___");
-            System.out.println(product.getProductHashCode());
+            System.out.println("___product hash=" + product.getProductHashCode());
 
             if (feed.addProduct(product)) {
               System.out.println("Added product to feed");
@@ -216,28 +170,13 @@ public class ReadXMLFile {
     String result = "";
     line = eventReader.nextEvent();
     if (line instanceof Characters) {
-      result = line.asCharacters().getData();
+      result = line.asCharacters().getData().trim();
     }
 
     return result;
   }
 
-  public Document convertXMLStringToDocument(String xmlString) {
-    DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-
-    try {
-      DocumentBuilder builder = factory.newDocumentBuilder();
-      Document doc = builder.parse(new InputSource(new StringReader(xmlString)));
-
-      return doc;
-    } catch (Exception e) {
-      e.printStackTrace();
-
-      return null;
-    }
-  }
-
-  public String generateRandomString() {
+  public String getRandomString() {
     return UUID.randomUUID().toString().replace("-", "");
   }
 
