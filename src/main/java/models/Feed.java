@@ -3,6 +3,8 @@ package models;
 import java.util.ArrayList;
 import java.util.Date;
 
+import org.apache.commons.codec.digest.DigestUtils;
+
 public class Feed {
 
   private String title;
@@ -18,6 +20,19 @@ public class Feed {
     this.description = description;
     this.feedLink = feedLink;
     // this.publicationDate = publicationDate;
+  }
+
+  public String getProductHashCode() {
+    String md5productHash = DigestUtils.md5Hex(
+      this.toString().trim().replace(" ", "")
+    ).toUpperCase();
+
+    // assertThat(md5productHash.equals(hash)).isTrue();
+    return md5productHash;
+  }
+
+  public boolean equals(String hash) {
+    return hash.equals(this.getProductHashCode());
   }
 
   public void setId(String id) {
@@ -75,7 +90,7 @@ public class Feed {
 
   @Override
   public String toString() {
-    return "feed=[title=" + this.title + " productCount="+ this.products.size() +"]";
+    return "feed=[id=" + this.id + "description=" + this.description + " title=" + this.title + " productCount="+ this.products.size() +"]";
   }
 
 }
