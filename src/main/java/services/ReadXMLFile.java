@@ -1,15 +1,8 @@
 package services;
 
-import org.apache.commons.codec.digest.DigestUtils;
-import org.w3c.dom.*;
-import org.xml.sax.InputSource;
-
-import javax.xml.parsers.*;
 import java.io.*;
 import java.util.*;
 import java.net.URL;
-import java.nio.charset.Charset;
-import java.text.SimpleDateFormat;
 
 import javax.xml.stream.*;
 import javax.xml.stream.events.*;
@@ -22,14 +15,14 @@ public class ReadXMLFile {
 
   final URL feedUrl;
   private String feedId;
-  private XMLInputFactory inputFactory;
-  private XMLEventReader reader;
+  private static ValidateKeyValue validateUtil;
   
   private static final PostgresFeedDaoImpl dao = new PostgresFeedDaoImpl();
 
   public ReadXMLFile(String feedUrl) {
     try {
       this.feedUrl = new URL(feedUrl);
+      this.validateUtil = new ValidateKeyValue();
     } catch (Exception e) {
       throw new RuntimeException(e);
     }
@@ -76,8 +69,6 @@ public class ReadXMLFile {
         if (line.isStartElement()) {
           String key = line.asStartElement().getName().getLocalPart();
         
-          System.out.println("checkking key : " + key);
-
           switch (key) {
           case "item":
             if (isFeedHeader) {
@@ -155,7 +146,7 @@ public class ReadXMLFile {
             size = getValuebyKey(line, eventReader);
             break;
           default:
-            System.out.println("___No case specified___");
+            System.out.println("___no case specified for key: "+ key +"___");
           }
         } else if (line.isEndElement()) {
           if (line.asEndElement().getName().getLocalPart() == "item") {
@@ -181,10 +172,7 @@ public class ReadXMLFile {
             product.setSize(size);
             product.setLink(link);
 
-            // FIX DATE PARSING 
-            // LocalDateTime dateTime = f.parseLocalDateTime("2012-01-10");
-
-            System.out.println("___product hash=" + product.getProductHashCode());
+            System.out.println("hash=" + product.getProductHashCode());
 
             if (feed.addProduct(product)) {
               System.out.println("Added product to feed");
@@ -211,20 +199,24 @@ public class ReadXMLFile {
     }
   }
 
+  // validate here
   private String getValuebyKey(XMLEvent line, XMLEventReader eventReader) throws XMLStreamException {
-    String result = "";
+    String value = "";
+    String key = line.asStartElement().getName().getLocalPart();
     line = eventReader.nextEvent();
     if (line instanceof Characters) {
-      result = line.asCharacters().getData().trim();
+      value = line.asCharacters().getData().trim();
+
+      validateUtil.checkKeyValue(key, value);
     }
 
-    return result;
+    return value;
   }
 
   public String getRandomString() {
     return UUID.randomUUID().toString().replace("-", "");
   }
-
+  
 }
 
 // source: https://www.vogella.com/tutorials/RSSFeed/article.html
