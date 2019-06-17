@@ -25,8 +25,7 @@ public class Product {
   private String mpn;
   private String price;
   private String productType;
-  private String shipping;
-  private String countrynl;
+  private String shippingCountry;
   private String shippingWeight;
   private String size;
   private String link;
@@ -48,6 +47,7 @@ public class Product {
     String mpn,
     String price,
     String productType,
+    String shippingCountry,
     String shippingWeight,
     String size,
     String link
@@ -68,6 +68,7 @@ public class Product {
     this.mpn = mpn;
     this.price = price;
     this.productType = productType;
+    this.shippingCountry = shippingCountry;
     this.shippingWeight = shippingWeight;
     this.size = size;
     this.link = link;
@@ -228,13 +229,22 @@ public class Product {
     return title;
   }
 
+  public void setTitle(String title) {
+    this.title = title;
+  }
+
+  public String getShippingCountry() {
+    return shippingCountry;
+  }
+
+  public void setShippingCountry(String shippingCountry) {
+    this.shippingCountry = shippingCountry;
+  }
+
   public String getDescription() {
     return description;
   }
 
-  public void setTitle(String title) {
-    this.title = title;
-  }
 
   public void setDescription(String description) {
     this.description = description;

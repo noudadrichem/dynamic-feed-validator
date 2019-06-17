@@ -39,7 +39,6 @@ public class ReadXMLFile {
       // feed item:
       String title = "";
       String description = "";
-      String country = "";
       String ageGroup = "";
       String availability = "";
       String brand = "";
@@ -54,7 +53,7 @@ public class ReadXMLFile {
       String mpn = "";
       String price = "";
       String productType = "";
-      String shipping = "";
+      String shippingCountry = "";
       String shippingWeight = "";
       String size = "";
       String link = "";
@@ -134,10 +133,7 @@ public class ReadXMLFile {
             productType = getValuebyKey(line, eventReader);
             break;
           case "shipping":
-            shipping = getValuebyKey(line, eventReader);
-            break;
-          case "country":
-            country = getValuebyKey(line, eventReader);
+            shippingCountry = getValuebyKey(line, eventReader);
             break;
           case "shipping_weight":
             shippingWeight = getValuebyKey(line, eventReader);
