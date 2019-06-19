@@ -8,13 +8,11 @@ import org.apache.http.client.methods.*;
 import org.apache.http.impl.client.HttpClientBuilder;
 
 import models.Message;
-import persistence.PostgresMessageDaoImpl;
+import persistence.message.PostgresMessageDao;
 
 public class ValidateKeyValue {
 
-  public final String PREFIX = "MESSAGE__=";
-  private static final PostgresMessageDaoImpl messageDao = new PostgresMessageDaoImpl();
-  private boolean isRequiredKeysValue = false;
+  private static final PostgresMessageDao messageDao = new PostgresMessageDao();
   private String feedId;
   private String productId;
 
@@ -111,7 +109,7 @@ public class ValidateKeyValue {
     }
   }
 
-  public void areAllRequiredKeysThere(ArrayList<String> values) {
+  public void areAllRequiredKeysThere(ArrayList<String> keysFromItem) {
     ArrayList<String> requiredItems = new ArrayList<String>();
     requiredItems.add("id");
     requiredItems.add("title");
@@ -125,8 +123,7 @@ public class ValidateKeyValue {
     requiredItems.add("mpn");
 
     for(String requiredItem : requiredItems) {
-      if(!values.contains(requiredItem)) {
-        System.out.println("values heeft required item " + requiredItem);
+      if(!keysFromItem.contains(requiredItem)) {
         Message mes = new Message(
           requiredItem + " is a required field.",
           "Make sure to add "+requiredItem+" to item with id "+this.productId+".",
@@ -138,9 +135,5 @@ public class ValidateKeyValue {
       messageDao.saveMessage(mes);
       }
     } 
-  }
-
-  public boolean getRequiredKeysValue() {
-    return this.isRequiredKeysValue;
   }
 }

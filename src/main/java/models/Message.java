@@ -1,5 +1,7 @@
 package models;
 
+import org.apache.commons.codec.digest.DigestUtils;
+
 public class Message {
 
   private String title;
@@ -7,6 +9,7 @@ public class Message {
   private String productId;
   private String feedId;
   private String type;
+  private String hash;
 
   public Message(
     String title,
@@ -20,6 +23,16 @@ public class Message {
     this.productId = productId;
     this.type = type;
     this.feedId = feedId;
+  }
+
+  public String getMessageHashCode() {
+    String md5productHash = DigestUtils.md5Hex(
+      this.toString().trim().replace(" ", "")
+    ).toUpperCase();
+
+    // assertThat(md5productHash.equals(hash)).isTrue();
+    this.hash = md5productHash;
+    return md5productHash;
   }
 
   public Message(String productId, String feedId)  {
@@ -64,6 +77,15 @@ public class Message {
 
   public String getType() {
     return type;
+  }
+
+  @Override
+  public String toString() {
+    return "[message] :: " + title
+    + " description= " + description
+    + " productId= " + productId
+    + " type= " + type
+    + " feedId= " + feedId;
   }
 
 }

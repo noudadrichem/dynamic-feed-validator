@@ -1,6 +1,7 @@
 package persistence.product;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 import models.Product;
 import persistence.PostgresBaseDao;
@@ -46,5 +47,26 @@ public class PostgresProductDao extends PostgresBaseDao {
       return false;
     }
   }
+  
+  public ArrayList<String> getAllStringHashes(String feedId) {
+		ArrayList<String> tempList = new ArrayList<String>();
+		
+		try (Connection con = super.getConnection()) {
+			PreparedStatement ps = con.prepareStatement("SELECT hashed FROM product WHERE feed_id = ?");
+			ps.setString(1, feedId);
+			
+			ResultSet result = ps.executeQuery();
+			
+			while(result.next()) {
+				tempList.add(
+          result.getString("hashed")
+        );
+			}
+			
+		} catch(Exception e) {
+      e.printStackTrace();
+    }
 
+    return tempList;
+	}
 }

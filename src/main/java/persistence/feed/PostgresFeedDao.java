@@ -39,12 +39,34 @@ public class PostgresFeedDao extends PostgresBaseDao {
 			
       ResultSet result = ps.executeQuery();
 
-      return result.next();
+      return !result.next();
     } catch (SQLException e) {
       e.printStackTrace();
 
 			return false;
 		}
   }
+
+  public String getFeedIdByLink(String feedLink) throws ClassNotFoundException {
+    try (Connection con = super.getConnection()) {
+
+      PreparedStatement ps = con.prepareStatement("SELECT * FROM feed WHERE feed_link = ?");
+			ps.setString(1, feedLink);
+			
+      ResultSet result = ps.executeQuery();
+      String feedId = "";
+      while(result.next()) {
+        feedId = result.getString("feed_id");
+      }
+
+      return feedId;
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+			return null;
+		}
+  }
+
+
 
 }

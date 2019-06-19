@@ -31,7 +31,8 @@ create table message (
  message_id SERIAL PRIMARY KEY not null,
  title varchar(255) not null,
  description varchar(255),
- type varchar(8) not null
+ type varchar(8) not null,
+ hashed varchar(255)
 );
 
 create table email (

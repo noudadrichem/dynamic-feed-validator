@@ -8,22 +8,23 @@ import javax.xml.stream.*;
 import javax.xml.stream.events.*;
 
 import models.Feed;
-import models.Message;
 import models.Product;
-import persistence.PostgresFeedDaoImpl;
-import persistence.PostgresMessageDaoImpl;
+import persistence.feed.PostgresFeedDao;
+import persistence.product.PostgresProductDao;
 
 public class ReadXMLFile {
 
   final URL feedUrl;
   private String feedId;
   private String activeProductId;
-  private boolean isFeedHeader = true;
   private static ValidateKeyValue validateUtil = new ValidateKeyValue();
-  private static final PostgresFeedDaoImpl feedDao = new PostgresFeedDaoImpl();
-  private static final PostgresMessageDaoImpl messageDao = new PostgresMessageDaoImpl();
-  private boolean isEndOfItem = false;
+  private static final PostgresFeedDao feedDao = new PostgresFeedDao();
+  private static final PostgresProductDao productDao = new PostgresProductDao();
   private ArrayList<String> keysInItem = new ArrayList<String>();
+  private Feed feed;
+
+  private boolean isFeedHeader = true;
+  private boolean isEndOfItem = false;
 
   public ReadXMLFile(String feedUrl) {
     try {
@@ -34,7 +35,6 @@ public class ReadXMLFile {
   }
 
   public void StreamXMLFile() throws XMLStreamException {
-    Feed feed = null;
     try {
       // feed headers
       String feedLink = "";
@@ -82,9 +82,16 @@ public class ReadXMLFile {
             case "item":
               if (isFeedHeader) {
                 isFeedHeader = false;
-                this.feedId = getRandomString();
-                feed = new Feed(this.feedId, title, description, feedLink, publicationDate);
-                feedDao.saveFeed(feed); // save to database.
+                
+                if(feedDao.doesFeedExsist(feedLink)) {
+                  this.feed = new Feed(getRandomString(), title, description, feedLink, publicationDate);
+                  this.feedId = this.feed.getId();
+                  feedDao.saveFeed(this.feed);
+                } else {
+                  String feedId = feedDao.getFeedIdByLink(feedLink);
+                  this.feed = new Feed(feedId, title, description, feedLink, publicationDate);
+                  this.feedId = this.feed.getId();
+                }
               }
 
               this.isEndOfItem = false;
@@ -164,11 +171,9 @@ public class ReadXMLFile {
           if (line.asEndElement().getName().getLocalPart() == "item") {
             this.isEndOfItem = true;
 
-            System.out.println("are all keys there?:");
             validateUtil.areAllRequiredKeysThere(this.keysInItem);
 
-            // is end of item.
-            System.out.println("___________________END_ITEM_______________");
+            System.out.println("_________END_ITEM______"); // is end of item.
 
             Product product = new Product();
             product.setTitle(title);
@@ -192,16 +197,18 @@ public class ReadXMLFile {
             product.setSize(size);
             product.setLink(link);
             
-            System.out.println("hash=" + product.getProductHashCode());
+            feed.addProduct(product);
+            
+            String currentProductHash = product.getProductHashCode();
+            System.out.println("hash=" + currentProductHash);
 
-            // hier check of productID en hash hetzelfde zijn if ja dan update if no dan nieuwe product.
-            if (feed.addProduct(product)) {
-              feedDao.saveProduct(product, this.feedId);
+            ArrayList<String> allProductHashesForThisFeed = productDao.getAllStringHashes(this.feedId);
+            if(!allProductHashesForThisFeed.contains(currentProductHash)) {
+              productDao.saveProduct(product, this.feedId);
             }
 
             line = eventReader.nextEvent();
             continue;
-            // break;
           }
         }
       }

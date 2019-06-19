@@ -29,6 +29,8 @@ public class Product {
   private String shippingWeight;
   private String size;
   private String link;
+  private String hash;
+  private String productIdFromFeed;
 
   public Product(
     String title,
@@ -74,6 +76,11 @@ public class Product {
     this.link = link;
   }
 
+  public Product(String hash, String productIdFromFeed) {
+    this.hash = hash;
+    this.productIdFromFeed = productIdFromFeed;
+  }
+
   public Product() {}
 
   public String getProductHashCode() {
@@ -82,6 +89,7 @@ public class Product {
     ).toUpperCase();
 
     // assertThat(md5productHash.equals(hash)).isTrue();
+    this.hash = md5productHash;
     return md5productHash;
   }
 
@@ -245,9 +253,16 @@ public class Product {
     return description;
   }
 
-
   public void setDescription(String description) {
     this.description = description;
+  }
+
+  public void SetProductIdFromFeed(String description) {
+    this.productIdFromFeed = productIdFromFeed;
+  }
+
+  public String getProductIdFromFeed() {
+    return productIdFromFeed;
   }
 
   @Override
