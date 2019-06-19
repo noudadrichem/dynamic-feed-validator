@@ -17,9 +17,11 @@ public class ValidateKeyValue {
 
   public ValidateKeyValue() {}
 
-  public void checkKeyValue(String key, String value, String feedId, String productId) {
+  public void checkKeyValue(String key, String value, String feedId, String productId, boolean isEndOfItem) {
 
-    System.out.println(key + "=" + value);
+    // System.out.println(key + "=" + value); // print key/values to console.
+
+    this.areAllRequiredKeysThere(value);
 
     if (value.length() == 0) { // is value empty?
       Message mes = new Message(
@@ -34,7 +36,7 @@ public class ValidateKeyValue {
     } else if (value.startsWith("http")) { // is value an URL?
 
       boolean isSafeUrl = value.matches("^(https)://");
-      if(!isSafeUrl) {
+      if(!isSafeUrl) { // is it a safe url?
         Message mes = new Message(
           "Unsafe URL found.",
           key + " is an url that is unsafe, make sure to use HTTPS.",
@@ -44,7 +46,7 @@ public class ValidateKeyValue {
         );
         dao.saveMessage(mes);
       } 
-      if (!isURLValid(value)) {
+      if (!isURLValid(value)) { // is it a valid url?
         Message mes = new Message(
           "Unvalid URL found.",
           value + " is an url that is not valid and return a non success code.",
@@ -55,8 +57,8 @@ public class ValidateKeyValue {
         dao.saveMessage(mes);
       }
 
-      if(isUrlAnImageUrl(value)) {
-        if(!isUrlValidImage(value)) {
+      if(isUrlAnImageUrl(value)) { // is it an image URL?
+        if(!isUrlValidImage(value)) { // is the content type really an image?
           Message mes = new Message(
             "Unvalid image found.",
             value + " is an image that is not valid and return a non image header.",
@@ -67,9 +69,7 @@ public class ValidateKeyValue {
           dao.saveMessage(mes);
         }
       }
-    } else { // check if required node is there.
-
-    }
+    } // else if() {}
   }
 
   private boolean isUrlAnImageUrl(String url) {
@@ -108,7 +108,7 @@ public class ValidateKeyValue {
     }
   }
 
-  private boolean areAllRequiredKeysThere(String value) {
+  public boolean areAllRequiredKeysThere(String value) {
     boolean id = false;
     boolean title = false;
     boolean description = false;

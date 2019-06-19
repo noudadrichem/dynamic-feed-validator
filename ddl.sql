@@ -23,6 +23,7 @@ create table feed (
 
 create table product (
  product_id SERIAL PRIMARY KEY not null,
+ product_id_from_feed varchar(255) not null,
  hashed varchar(255) not null
 );
 
