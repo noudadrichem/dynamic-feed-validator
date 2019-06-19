@@ -23,6 +23,7 @@ public class ReadXMLFile {
   private static final PostgresFeedDaoImpl feedDao = new PostgresFeedDaoImpl();
   private static final PostgresMessageDaoImpl messageDao = new PostgresMessageDaoImpl();
   private boolean isEndOfItem = false;
+  private ArrayList<String> keysInItem = new ArrayList<String>();
 
   public ReadXMLFile(String feedUrl) {
     try {
@@ -70,7 +71,13 @@ public class ReadXMLFile {
 
         if (line.isStartElement()) {
           String key = line.asStartElement().getName().getLocalPart();
-        
+
+          if(key.equals("item")) {
+            keysInItem = new ArrayList<String>();
+          } else {
+            keysInItem.add(key);
+          }
+
           switch (key) {
             case "item":
               if (isFeedHeader) {
@@ -157,17 +164,20 @@ public class ReadXMLFile {
           if (line.asEndElement().getName().getLocalPart() == "item") {
             this.isEndOfItem = true;
 
-            if(validateUtil.areAllRequiredKeysThere("")) {
-              Message mes = new Message(
-                "Not all required keys are found.",
-                "Make sure all required keys are there, check Google Merchant center for further information.",
-                this.activeProductId,
-                "error",
-                this.feedId
-              );
+            System.out.println("are all keys there?:");
+            validateUtil.areAllRequiredKeysThere(this.keysInItem);
+
+            // if(!validateUtil.getRequiredKeysValue()) {
+            //   Message mes = new Message(
+            //     "Not all required keys are found.",
+            //     "Make sure all required keys are there, check Google Merchant center for further information.",
+            //     this.activeProductId,
+            //     "error",
+            //     this.feedId
+            //   );
         
-              messageDao.saveMessage(mes);
-            }
+            //   messageDao.saveMessage(mes);
+            // }
 
             // is end of item.
             System.out.println("___________________END_ITEM_______________");
@@ -199,12 +209,11 @@ public class ReadXMLFile {
             // hier check of productID en hash hetzelfde zijn if ja dan update if no dan nieuwe product.
             if (feed.addProduct(product)) {
               feedDao.saveProduct(product, this.feedId);
-            } else {
             }
 
             line = eventReader.nextEvent();
-            // continue;
-            break;
+            continue;
+            // break;
           }
         }
       }

@@ -1,6 +1,6 @@
 package services;
 
-import java.util.Optional;
+import java.util.*;
 
 import org.apache.http.*;
 import org.apache.http.client.*;
@@ -14,14 +14,13 @@ public class ValidateKeyValue {
 
   public final String PREFIX = "MESSAGE__=";
   private static final PostgresMessageDaoImpl messageDao = new PostgresMessageDaoImpl();
+  private boolean isRequiredKeysValue = false;
 
   public ValidateKeyValue() {}
 
   public void checkKeyValue(String key, String value, String feedId, String productId, boolean isEndOfItem) {
 
     System.out.println(key + "=" + value); // print key/values to console.
-
-    this.areAllRequiredKeysThere(value);
 
     if (value.length() == 0) { // is value empty?
       Message mes = new Message(
@@ -86,7 +85,7 @@ public class ValidateKeyValue {
   private boolean isUrlValidImage(String url) {
     HttpResponse response = doGetRequet(url);
     String contentType = response.getFirstHeader("Content-Type").getValue();
-
+    // hier moet nog een check met png, jpg, jpeg.  
     return true;
   }
 
@@ -108,43 +107,28 @@ public class ValidateKeyValue {
     }
   }
 
-  public boolean areAllRequiredKeysThere(String value) {
-    boolean id = false;
-    boolean title = false;
-    boolean description = false;
-    boolean link = false;
-    boolean image_link = false;
-    boolean availability  = false;
-    boolean price = false;
-    boolean brand = false;
-    boolean gtin = false;
-    boolean mpn = false;
+  public void areAllRequiredKeysThere(ArrayList<String> values) {
+    ArrayList<String> requiredItems = new ArrayList<String>();
+    requiredItems.add("id");
+    requiredItems.add("title");
+    requiredItems.add("description");
+    requiredItems.add("link");
+    requiredItems.add("image_link");
+    requiredItems.add("availability ");
+    requiredItems.add("price");
+    requiredItems.add("brand");
+    requiredItems.add("gtin");
+    requiredItems.add("mpn");
 
-    switch(value) {
-      case "id": id = true;
-      case "title": id = true;
-      case "description": id = true;
-      case "link": id = true;
-      case "image_link": id = true;
-      case "availability": id = true;
-      case "price": id = true;
-      case "brand": id = true;
-      case "gtin": id = true;
-      case "mpn": id = true;
+    for(String value : values) {
+      System.out.println("value= " + value);
     }
 
-    return (
-      id &&
-      title &&
-      description &&
-      link &&
-      image_link &&
-      availability  &&
-      price &&
-      brand &&
-      gtin &&
-      mpn
-    );
+    
+  }
+
+  public boolean getRequiredKeysValue() {
+    return this.isRequiredKeysValue;
   }
 }
 
@@ -162,3 +146,43 @@ brand
 gtin
 mpn
 */
+
+
+    // switch(value) {
+    //   case "id": id = true;
+    //   case "title": id = true;
+    //   case "description": id = true;
+    //   case "link": id = true;
+    //   case "image_link": id = true;
+    //   case "availability": id = true;
+    //   case "price": id = true;
+    //   case "brand": id = true;
+    //   case "gtin": id = true;
+    //   case "mpn": id = true;
+    // }
+    
+    // System.out.println(value +" is there." + (
+    //   id &&
+    //   title &&
+    //   description &&
+    //   link &&
+    //   image_link &&
+    //   availability  &&
+    //   price &&
+    //   brand &&
+    //   gtin &&
+    //   mpn
+    // ));
+
+    // this.isRequiredKeysValue = (
+    //   id &&
+    //   title &&
+    //   description &&
+    //   link &&
+    //   image_link &&
+    //   availability  &&
+    //   price &&
+    //   brand &&
+    //   gtin &&
+    //   mpn
+    // );
