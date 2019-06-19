@@ -16,8 +16,10 @@ public class ReadXMLFile {
   final URL feedUrl;
   private String feedId;
   private String activeProductId;
+  private boolean isFeedHeader = true;
   private static ValidateKeyValue validateUtil = new ValidateKeyValue();
   private static final PostgresFeedDaoImpl dao = new PostgresFeedDaoImpl();
+  private boolean isBeginOfItem = false;
 
   public ReadXMLFile(String feedUrl) {
     try {
@@ -30,7 +32,6 @@ public class ReadXMLFile {
   public void StreamXMLFile() throws XMLStreamException {
     Feed feed = null;
     try {
-      boolean isFeedHeader = true;
       // feed headers
       String feedLink = "";
       String publicationDate = "";
@@ -115,7 +116,8 @@ public class ReadXMLFile {
             activeProductId = itemId;
             break;
           case "image_link":
-            imageLink = getValuebyKey(line, eventReader).trim();
+            // imageLink = getValuebyKey(line, eventReader).trim();
+            imageLink = "https://www.envirochem.co.nz/wp-content/uploads/2018/07/Mower-Plus_001.jpg";
             break;
           case "item_group_id":
             itemGroupId = getValuebyKey(line, eventReader);
@@ -147,6 +149,9 @@ public class ReadXMLFile {
         } else if (line.isEndElement()) {
           if (line.asEndElement().getName().getLocalPart() == "item") {
 
+            // is end of item.
+            System.out.println("___________________END ITEM_______________")
+
             Product product = new Product();
             product.setTitle(title);
             product.setDescription(description);
@@ -171,6 +176,7 @@ public class ReadXMLFile {
 
             System.out.println("hash=" + product.getProductHashCode());
 
+            // hier check of productID en hash hetzelfde zijn if ja dan update if no dan nieuwe product.
             if (feed.addProduct(product)) {
               System.out.println("Added product to feed");
               dao.saveProduct(product, this.feedId);
@@ -204,7 +210,9 @@ public class ReadXMLFile {
     if (line instanceof Characters) {
       value = line.asCharacters().getData().trim();
 
-      validateUtil.checkKeyValue(key, value, this.feedId, this.activeProductId);
+      if(!this.isFeedHeader) {
+        validateUtil.checkKeyValue(key, value, this.feedId, this.activeProductId);
+      }
     }
 
     return value;

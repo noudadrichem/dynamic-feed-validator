@@ -22,6 +22,10 @@ public class Message {
     this.feedId = feedId;
   }
 
+  public Message(String productId, String feedId)  {
+    this(null, null, productId, null, feedId);
+  }
+
   public String getTitle() {
     return title;
   }
