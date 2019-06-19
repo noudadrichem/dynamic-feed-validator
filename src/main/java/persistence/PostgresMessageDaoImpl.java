@@ -16,7 +16,7 @@ public class PostgresMessageDaoImpl extends PostgresBaseDao {
       pstmt.setString(2, message.getDescription());
       pstmt.setString(3, message.getType());
       pstmt.setString(4, message.getfeedId());
-      pstmt.executeQuery();
+      pstmt.executeUpdate();
 
 			return true;
 		} catch (Exception e) {

@@ -13,13 +13,13 @@ import persistence.PostgresMessageDaoImpl;
 public class ValidateKeyValue {
 
   public final String PREFIX = "MESSAGE__=";
-  private static final PostgresMessageDaoImpl dao = new PostgresMessageDaoImpl();
+  private static final PostgresMessageDaoImpl messageDao = new PostgresMessageDaoImpl();
 
   public ValidateKeyValue() {}
 
   public void checkKeyValue(String key, String value, String feedId, String productId, boolean isEndOfItem) {
 
-    // System.out.println(key + "=" + value); // print key/values to console.
+    System.out.println(key + "=" + value); // print key/values to console.
 
     this.areAllRequiredKeysThere(value);
 
@@ -32,7 +32,7 @@ public class ValidateKeyValue {
         feedId
       );
 
-      dao.saveMessage(mes);
+      messageDao.saveMessage(mes);
     } else if (value.startsWith("http")) { // is value an URL?
 
       boolean isSafeUrl = value.matches("^(https)://");
@@ -44,7 +44,7 @@ public class ValidateKeyValue {
           "warning",
           feedId
         );
-        dao.saveMessage(mes);
+        messageDao.saveMessage(mes);
       } 
       if (!isURLValid(value)) { // is it a valid url?
         Message mes = new Message(
@@ -54,7 +54,7 @@ public class ValidateKeyValue {
           "error",
           feedId
         );
-        dao.saveMessage(mes);
+        messageDao.saveMessage(mes);
       }
 
       if(isUrlAnImageUrl(value)) { // is it an image URL?
@@ -66,7 +66,7 @@ public class ValidateKeyValue {
             "error",
             feedId
           );
-          dao.saveMessage(mes);
+          messageDao.saveMessage(mes);
         }
       }
     } // else if() {}

@@ -157,7 +157,7 @@ public class ReadXMLFile {
           if (line.asEndElement().getName().getLocalPart() == "item") {
             this.isEndOfItem = true;
 
-            if(!validateUtil.areAllRequiredKeysThere("")) {
+            if(validateUtil.areAllRequiredKeysThere("")) {
               Message mes = new Message(
                 "Not all required keys are found.",
                 "Make sure all required keys are there, check Google Merchant center for further information.",

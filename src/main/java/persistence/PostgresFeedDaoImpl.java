@@ -20,7 +20,7 @@ public class PostgresFeedDaoImpl extends PostgresBaseDao {
       pstmt.setString(4, feed.getFeedLink());
       pstmt.setString(5, feed.getPublicationDate());
       pstmt.setInt(6, 1);
-      pstmt.executeQuery();
+      pstmt.executeUpdate();
 
 			return true;
 		} catch (SQLException e) {
@@ -34,11 +34,12 @@ public class PostgresFeedDaoImpl extends PostgresBaseDao {
     try (Connection con = super.getConnection()) {
 
       PreparedStatement pstmt = con.prepareStatement(
-        "insert into product(hashed, feed_id) values(?, ?)"
+        "insert into product(hashed, feed_id, product_id_from_feed) values(?, ?, ?)"
       );
       pstmt.setString(1, product.getProductHashCode());
       pstmt.setString(2, feed_id);
-      pstmt.executeQuery();
+      pstmt.setString(3, product.getId());
+      pstmt.executeUpdate();
 
       return true;
     } catch (SQLException e) {
