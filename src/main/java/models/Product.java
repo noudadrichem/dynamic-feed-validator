@@ -2,11 +2,6 @@ package models;
 
 import org.apache.commons.codec.digest.DigestUtils;
 
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter
-@Setter
 public class Product {
 
   private String title;
