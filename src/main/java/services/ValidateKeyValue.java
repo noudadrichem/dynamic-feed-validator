@@ -89,8 +89,8 @@ public class ValidateKeyValue {
   private boolean isUrlValidImage(String url) {
     HttpResponse response = doGetRequet(url);
     String contentType = response.getFirstHeader("Content-Type").getValue();
-    // hier moet nog een check met png, jpg, jpeg.  
-    return true;
+
+    return contentType.split("/")[0].equals("image");
   }
 
   private boolean isURLValid(String url) {
@@ -104,7 +104,7 @@ public class ValidateKeyValue {
     HttpGet request = new HttpGet(url);
     try {
       return client.execute(request);
-      // next line voor image.
+      // next line voor image zodat de stream het niet over write..
     } catch (Exception e) {
       e.printStackTrace();
       return null;
@@ -144,58 +144,3 @@ public class ValidateKeyValue {
     return this.isRequiredKeysValue;
   }
 }
-
-/*
-
-REQUIRED KEYS:
-id
-title
-description
-link
-image_link
-availability 
-price
-brand
-gtin
-mpn
-*/
-
-
-    // switch(value) {
-    //   case "id": id = true;
-    //   case "title": id = true;
-    //   case "description": id = true;
-    //   case "link": id = true;
-    //   case "image_link": id = true;
-    //   case "availability": id = true;
-    //   case "price": id = true;
-    //   case "brand": id = true;
-    //   case "gtin": id = true;
-    //   case "mpn": id = true;
-    // }
-    
-    // System.out.println(value +" is there." + (
-    //   id &&
-    //   title &&
-    //   description &&
-    //   link &&
-    //   image_link &&
-    //   availability  &&
-    //   price &&
-    //   brand &&
-    //   gtin &&
-    //   mpn
-    // ));
-
-    // this.isRequiredKeysValue = (
-    //   id &&
-    //   title &&
-    //   description &&
-    //   link &&
-    //   image_link &&
-    //   availability  &&
-    //   price &&
-    //   brand &&
-    //   gtin &&
-    //   mpn
-    // );
