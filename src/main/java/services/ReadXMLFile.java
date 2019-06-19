@@ -73,9 +73,9 @@ public class ReadXMLFile {
           String key = line.asStartElement().getName().getLocalPart();
 
           if(key.equals("item")) {
-            keysInItem = new ArrayList<String>();
+            this.keysInItem = new ArrayList<String>();
           } else {
-            keysInItem.add(key);
+            this.keysInItem.add(key);
           }
 
           switch (key) {
@@ -166,18 +166,6 @@ public class ReadXMLFile {
 
             System.out.println("are all keys there?:");
             validateUtil.areAllRequiredKeysThere(this.keysInItem);
-
-            // if(!validateUtil.getRequiredKeysValue()) {
-            //   Message mes = new Message(
-            //     "Not all required keys are found.",
-            //     "Make sure all required keys are there, check Google Merchant center for further information.",
-            //     this.activeProductId,
-            //     "error",
-            //     this.feedId
-            //   );
-        
-            //   messageDao.saveMessage(mes);
-            // }
 
             // is end of item.
             System.out.println("___________________END_ITEM_______________");

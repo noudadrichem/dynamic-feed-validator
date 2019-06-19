@@ -15,20 +15,24 @@ public class ValidateKeyValue {
   public final String PREFIX = "MESSAGE__=";
   private static final PostgresMessageDaoImpl messageDao = new PostgresMessageDaoImpl();
   private boolean isRequiredKeysValue = false;
+  private String feedId;
+  private String productId;
 
   public ValidateKeyValue() {}
 
   public void checkKeyValue(String key, String value, String feedId, String productId, boolean isEndOfItem) {
+    this.productId = productId;
+    this.feedId = feedId;
 
     System.out.println(key + "=" + value); // print key/values to console.
 
     if (value.length() == 0) { // is value empty?
       Message mes = new Message(
         "Empty key found.",
-        key + " is empty in product with id " + productId + ".",
-        productId,
+        key + " is empty in product with id " + this.productId + ".",
+        this.productId,
         "error",
-        feedId
+        this.feedId
       );
 
       messageDao.saveMessage(mes);
@@ -39,9 +43,9 @@ public class ValidateKeyValue {
         Message mes = new Message(
           "Unsafe URL found.",
           key + " is an url that is unsafe, make sure to use HTTPS.",
-          productId,
+          this.productId,
           "warning",
-          feedId
+          this.feedId
         );
         messageDao.saveMessage(mes);
       } 
@@ -49,9 +53,9 @@ public class ValidateKeyValue {
         Message mes = new Message(
           "Unvalid URL found.",
           value + " is an url that is not valid and return a non success code.",
-          productId,
+          this.productId,
           "error",
-          feedId
+          this.feedId
         );
         messageDao.saveMessage(mes);
       }
@@ -61,9 +65,9 @@ public class ValidateKeyValue {
           Message mes = new Message(
             "Unvalid image found.",
             value + " is an image that is not valid and return a non image header.",
-            productId,
+            this.productId,
             "error",
-            feedId
+            this.feedId
           );
           messageDao.saveMessage(mes);
         }
@@ -113,18 +117,27 @@ public class ValidateKeyValue {
     requiredItems.add("title");
     requiredItems.add("description");
     requiredItems.add("link");
-    requiredItems.add("image_link");
-    requiredItems.add("availability ");
+    requiredItems.add("image_link");  
+    requiredItems.add("availability");
     requiredItems.add("price");
     requiredItems.add("brand");
     requiredItems.add("gtin");
     requiredItems.add("mpn");
 
-    for(String value : values) {
-      System.out.println("value= " + value);
-    }
+    for(String requiredItem : requiredItems) {
+      if(!values.contains(requiredItem)) {
+        System.out.println("values heeft required item " + requiredItem);
+        Message mes = new Message(
+          requiredItem + " is a required field.",
+          "Make sure to add "+requiredItem+" to item with id "+this.productId+".",
+          this.productId,
+          "error",
+          this.feedId
+      );
 
-    
+      messageDao.saveMessage(mes);
+      }
+    } 
   }
 
   public boolean getRequiredKeysValue() {
