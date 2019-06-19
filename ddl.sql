@@ -55,6 +55,6 @@ alter table email ADD CONSTRAINT feedIdEmail FOREIGN KEY (feed_id) REFERENCES fe
 
 
 -- first account
-insert into account(name, password, email_adress, role) values ('noud', 'test1234', 'noud@bannerwise.io', 'admin');
+insert into account(name, password, email_adress, role) values ('noud', '16d7a4fca7442dda3ad93c9a726597e4', 'noud@bannerwise.io', 'admin');
 
 
