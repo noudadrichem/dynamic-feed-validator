@@ -1,10 +1,12 @@
-package persistence;
+package persistence.message;
 
 import java.sql.*;
 
 import models.Message;
 
-public class PostgresMessageDaoImpl extends PostgresBaseDao {
+import persistence.PostgresBaseDao;
+
+public class PostgresMessageDao extends PostgresBaseDao {
 
   public boolean saveMessage(Message message) {
     try (Connection con = super.getConnection()) {

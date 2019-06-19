@@ -1,12 +1,13 @@
-package persistence;
+package persistence.feed;
 
 import java.sql.*;
 import java.text.*;
 
 import models.Feed;
 import models.Product;
+import persistence.PostgresBaseDao;
 
-public class PostgresFeedDaoImpl extends PostgresBaseDao {
+public class PostgresFeedDao extends PostgresBaseDao {
 
   public boolean saveFeed(Feed feed) throws ClassNotFoundException {
     try (Connection con = super.getConnection()) {
@@ -30,23 +31,20 @@ public class PostgresFeedDaoImpl extends PostgresBaseDao {
 		}
   }
 
-  public boolean saveProduct(Product product, String feed_id) throws ClassNotFoundException {
+  public boolean doesFeedExsist(String feedLink) throws ClassNotFoundException {
     try (Connection con = super.getConnection()) {
 
-      PreparedStatement pstmt = con.prepareStatement(
-        "insert into product(hashed, feed_id, product_id_from_feed) values(?, ?, ?)"
-      );
-      pstmt.setString(1, product.getProductHashCode());
-      pstmt.setString(2, feed_id);
-      pstmt.setString(3, product.getId());
-      pstmt.executeUpdate();
+      PreparedStatement ps = con.prepareStatement("SELECT * FROM feed WHERE feed_link = ?");
+			ps.setString(1, feedLink);
+			
+      ResultSet result = ps.executeQuery();
 
-      return true;
+      return result.next();
     } catch (SQLException e) {
       e.printStackTrace();
 
-      return false;
-    }
+			return false;
+		}
   }
 
 }
