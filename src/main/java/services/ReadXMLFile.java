@@ -15,14 +15,13 @@ public class ReadXMLFile {
 
   final URL feedUrl;
   private String feedId;
-  private static ValidateKeyValue validateUtil;
-  
+  private String activeProductId;
+  private static ValidateKeyValue validateUtil = new ValidateKeyValue();
   private static final PostgresFeedDaoImpl dao = new PostgresFeedDaoImpl();
 
   public ReadXMLFile(String feedUrl) {
     try {
       this.feedUrl = new URL(feedUrl);
-      this.validateUtil = new ValidateKeyValue();
     } catch (Exception e) {
       throw new RuntimeException(e);
     }
@@ -113,6 +112,7 @@ public class ReadXMLFile {
             break;
           case "id":
             itemId = getValuebyKey(line, eventReader);
+            activeProductId = itemId;
             break;
           case "image_link":
             imageLink = getValuebyKey(line, eventReader).trim();
@@ -142,7 +142,7 @@ public class ReadXMLFile {
             size = getValuebyKey(line, eventReader);
             break;
           default:
-            System.out.println("___no case specified for key: "+ key +"___");
+            // System.out.println("___no case specified for key: "+ key +"___");
           }
         } else if (line.isEndElement()) {
           if (line.asEndElement().getName().getLocalPart() == "item") {
@@ -164,6 +164,7 @@ public class ReadXMLFile {
             product.setMpn(mpn);
             product.setPrice(price);
             product.setProductType(productType);
+            product.setShippingCountry(shippingCountry);
             product.setShippingWeight(shippingWeight);
             product.setSize(size);
             product.setLink(link);
@@ -203,7 +204,7 @@ public class ReadXMLFile {
     if (line instanceof Characters) {
       value = line.asCharacters().getData().trim();
 
-      validateUtil.checkKeyValue(key, value);
+      validateUtil.checkKeyValue(key, value, this.feedId, this.activeProductId);
     }
 
     return value;
