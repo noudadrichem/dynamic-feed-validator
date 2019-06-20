@@ -1,4 +1,5 @@
 -- delete script
+drop table blueprint;
 drop table message;
 drop table email;
 drop table product;
@@ -32,8 +33,7 @@ create table message (
  title varchar(255) not null,
  description varchar(255),
  type varchar(8) not null,
- hashed varchar(255) not null,
- product_id varchar(5) not null
+ hashed varchar(255) not null
 );
 
 create table email (
@@ -42,17 +42,28 @@ create table email (
  name varchar(255)
 );
 
+create table blueprint (
+  blueprint_id SERIAL PRIMARY KEY not null,
+  key varchar(255)
+);
+
 alter table product ADD COLUMN feed_id varchar(255);
-alter table product ADD CONSTRAINT feedForeignKey FOREIGN KEY (feed_id) REFERENCES feed (feed_id);
+alter table product ADD CONSTRAINT feedForeignKey FOREIGN KEY (feed_id) REFERENCES feed(feed_id);
 
 alter table feed ADD COLUMN account_id int;   
 alter table feed ADD CONSTRAINT feedAccountKey FOREIGN KEY (account_id) REFERENCES account(account_id);
+
+alter table message ADD COLUMN product_id integer;
+alter table message ADD CONSTRAINT productIdMessage FOREIGN KEY (product_id) REFERENCES product(product_id);
 
 alter table message ADD COLUMN feed_id varchar(255);
 alter table message ADD CONSTRAINT feedIdMessage FOREIGN KEY (feed_id) REFERENCES feed(feed_id);
 
 alter table email ADD COLUMN feed_id varchar(255);
 alter table email ADD CONSTRAINT feedIdEmail FOREIGN KEY (feed_id) REFERENCES feed(feed_id);
+
+alter table blueprint ADD COLUMN feed_id varchar(255);
+alter table blueprint ADD CONSTRAINT feedIdBlueprint FOREIGN KEY (feed_id) REFERENCES feed(feed_id);
 
 
 -- first account
