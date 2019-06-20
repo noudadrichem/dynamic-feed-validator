@@ -68,5 +68,5 @@ public class PostgresProductDao extends PostgresBaseDao {
     }
 
     return tempList;
-	}
+  }
 }

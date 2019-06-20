@@ -87,12 +87,12 @@ public class ReadXMLFile {
                 isFeedHeader = false;
                 
                 if(feedDao.doesFeedExsist(feedLink)) {
-                  this.feed = new Feed(getRandomString(), title, description, feedLink, publicationDate);
+                  this.feed = new Feed(getRandomString(), title, description, feedLink);
                   this.feedId = this.feed.getId();
                   feedDao.saveFeed(this.feed);
                 } else {
                   String feedId = feedDao.getFeedIdByLink(feedLink);
-                  this.feed = new Feed(feedId, title, description, feedLink, publicationDate);
+                  this.feed = new Feed(feedId, title, description, feedLink);
                   this.feedId = this.feed.getId();
                 }
               }

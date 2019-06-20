@@ -5,7 +5,7 @@ import javax.json.JsonObjectBuilder;
 import javax.ws.rs.*;
 
 @Path("/ping")
-public class MainEndpoint {
+public class Ping {
   @GET
   @Produces("application/json")
   public String ping() {

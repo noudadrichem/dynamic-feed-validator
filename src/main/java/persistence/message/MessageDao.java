@@ -1,4 +1,4 @@
-package persistence;
+package persistence.message;
 
 public interface MessageDao {
      

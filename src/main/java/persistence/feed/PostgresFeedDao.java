@@ -2,6 +2,7 @@ package persistence.feed;
 
 import java.sql.*;
 import java.text.*;
+import java.util.ArrayList;
 
 import models.Feed;
 import models.Product;
@@ -65,6 +66,56 @@ public class PostgresFeedDao extends PostgresBaseDao {
 
 			return null;
 		}
+  }
+
+
+  public ArrayList<Feed> getAllFeedsByUser(String userId) throws ClassNotFoundException {
+    ArrayList<Feed> tempFeeds = new ArrayList<Feed>();
+    try (Connection con = super.getConnection()) {
+
+      PreparedStatement ps = con.prepareStatement("SELECT * FROM feed WHERE account_id = ?");
+      ps.setInt(1, Integer.parseInt(userId));
+      ResultSet result = ps.executeQuery();
+    
+      while(result.next()) {
+        tempFeeds.add(new Feed(
+          result.getString("feed_id"),
+          result.getString("title"),
+          result.getString("description"),
+          result.getString("feed_link")
+        ));
+      }
+      
+      return tempFeeds;
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+			return null;
+    }
+  }
+
+  public Feed getFeedByid(String feedId) throws ClassNotFoundException {
+    try (Connection con = super.getConnection()) {
+
+      PreparedStatement ps = con.prepareStatement("SELECT * FROM feed WHERE feed_id = ?");
+      ps.setString(1, feedId);
+      ResultSet result = ps.executeQuery();
+    
+      result.next();
+      return new Feed(
+        result.getString("feed_id"),
+        result.getString("title"),
+        result.getString("description"),
+        result.getString("feed_link")
+      );
+      // }
+      
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+			return null;
+    }
+
   }
 
 

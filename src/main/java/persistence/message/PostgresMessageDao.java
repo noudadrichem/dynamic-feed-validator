@@ -37,7 +37,7 @@ public class PostgresMessageDao extends PostgresBaseDao {
   	ArrayList<String> tempList = new ArrayList<String>();
 		
 		try (Connection con = super.getConnection()) {
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM message WHERE feed_id = ?");
+			PreparedStatement ps = con.prepareStatement("SELECT hashed FROM message WHERE feed_id = ?");
 			ps.setString(1, feedId);
 			
 			ResultSet result = ps.executeQuery();
@@ -46,6 +46,32 @@ public class PostgresMessageDao extends PostgresBaseDao {
 				tempList.add(
           result.getString("hashed")
         );
+			}
+			
+		} catch(Exception e) {
+      e.printStackTrace();
+    }
+
+    return tempList;
+  }
+  
+  public ArrayList<Message> getAllMessagesByFeedId(String feedId) {
+  	ArrayList<Message> tempList = new ArrayList<Message>();
+		
+		try (Connection con = super.getConnection()) {
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM message WHERE feed_id = ?");
+			ps.setString(1, feedId);
+			
+			ResultSet result = ps.executeQuery();
+			
+			while(result.next()) {
+				tempList.add(new Message(
+          result.getString("title"),
+          result.getString("description"),
+          result.getString("product_id"),
+          result.getString("type"),
+          result.getString("feed_id")
+        ));
 			}
 			
 		} catch(Exception e) {

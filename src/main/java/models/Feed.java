@@ -1,8 +1,6 @@
 package models;
 
 import java.util.ArrayList;
-import java.util.Date;
-
 import org.apache.commons.codec.digest.DigestUtils;
 
 public class Feed {
@@ -14,7 +12,7 @@ public class Feed {
   private String publicationDate;
   final private ArrayList<Product> products = new ArrayList<Product>();
 
-  public Feed(String id, String title, String description, String feedLink, String publicationDate) {
+  public Feed(String id, String title, String description, String feedLink) {
     this.id = id;
     this.title = title;
     this.description = description;
