@@ -7,8 +7,10 @@ import java.net.URL;
 import javax.xml.stream.*;
 import javax.xml.stream.events.*;
 
+import models.BlueprintKey;
 import models.Feed;
 import models.Product;
+import persistence.blueprint.PostgresBlueprintDao;
 import persistence.feed.PostgresFeedDao;
 import persistence.product.PostgresProductDao;
 
@@ -20,7 +22,7 @@ public class ReadXMLFile {
   private static ValidateKeyValue validateUtil = new ValidateKeyValue();
   private static final PostgresFeedDao feedDao = new PostgresFeedDao();
   private static final PostgresProductDao productDao = new PostgresProductDao();
-  private final BluePrint blueprint = new BluePrint();
+  private static final PostgresBlueprintDao blueprintDao = new PostgresBlueprintDao();
   private ArrayList<String> keysInItem = new ArrayList<String>();
   private Feed feed;
 
@@ -72,9 +74,7 @@ public class ReadXMLFile {
 
         if (line.isStartElement()) {
           String key = line.asStartElement().getName().getLocalPart();
-
-          blueprint.add(key);
-
+          
           if(key.equals("item")) {
             this.keysInItem = new ArrayList<String>();
           } else {
@@ -95,6 +95,10 @@ public class ReadXMLFile {
                   this.feed = new Feed(feedId, title, description, feedLink);
                   this.feedId = this.feed.getId();
                 }
+
+                // blue print key init here.
+                BlueprintKey blueprintKey = new BlueprintKey(key, this.feedId);
+                blueprintDao.saveBlueprint(blueprintKey);
               }
 
               this.isEndOfItem = false;

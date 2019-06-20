@@ -2,7 +2,7 @@ package services;
 
 import java.util.ArrayList;
 
-public class BluePrint {
+public class MakeBluePrint {
 
   private ArrayList<String> allUsedKeys = new ArrayList<String>();
 
@@ -16,5 +16,9 @@ public class BluePrint {
   public ArrayList<String> get() {
     return allUsedKeys;
   }
+
+  // public boolean save() {
+  //   dao.save()
+  // }
 
 }

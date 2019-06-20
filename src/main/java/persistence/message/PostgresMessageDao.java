@@ -21,7 +21,7 @@ public class PostgresMessageDao extends PostgresBaseDao {
         pstmt.setString(3, message.getType());
         pstmt.setString(4, message.getfeedId());
         pstmt.setString(5, message.getMessageHashCode());
-        pstmt.setString(6, message.getProductId());
+        pstmt.setInt(6, Integer.parseInt(message.getProductId()));
         pstmt.executeUpdate();  
 
         return true;

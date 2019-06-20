@@ -33,7 +33,8 @@ create table message (
  title varchar(255) not null,
  description varchar(255),
  type varchar(8) not null,
- hashed varchar(255) not null
+ hashed varchar(255) not null,
+ product_id integer not null
 );
 
 create table email (
@@ -53,8 +54,9 @@ alter table product ADD CONSTRAINT feedForeignKey FOREIGN KEY (feed_id) REFERENC
 alter table feed ADD COLUMN account_id int;   
 alter table feed ADD CONSTRAINT feedAccountKey FOREIGN KEY (account_id) REFERENCES account(account_id);
 
-alter table message ADD COLUMN product_id integer;
-alter table message ADD CONSTRAINT productIdMessage FOREIGN KEY (product_id) REFERENCES product(product_id);
+-- this bugs inside the code base because of line by line validation.
+-- alter table message ADD COLUMN product_id integer;
+-- alter table message ADD CONSTRAINT productIdMessage FOREIGN KEY (product_id) REFERENCES product(product_id);
 
 alter table message ADD COLUMN feed_id varchar(255);
 alter table message ADD CONSTRAINT feedIdMessage FOREIGN KEY (feed_id) REFERENCES feed(feed_id);
