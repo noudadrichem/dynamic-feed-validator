@@ -32,7 +32,8 @@ create table message (
  title varchar(255) not null,
  description varchar(255),
  type varchar(8) not null,
- hashed varchar(255)
+ hashed varchar(255) not null,
+ product_id varchar(5) not null
 );
 
 create table email (
