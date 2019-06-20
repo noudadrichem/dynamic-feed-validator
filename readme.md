@@ -10,19 +10,11 @@
 
 ## API endpoints:
 
-#### upload
-http://localhost:9090/api/xmlservice/upload
-```json
-{
-"url": "https://www.wirliebenhunter.de/backend/export/index/export.txt?feedID=1&hash=4ebfa063359a73c356913df45b3fbe7f"
-}
-```
-
 #### upload [POST]
 http://localhost:9090/api/xmlservice/upload
 ```json
 {
-"url": "https://www.wirliebenhunter.de/backend/export/index/export.txt?feedID=1&hash=4ebfa063359a73c356913df45b3fbe7f"
+"url": " xml feed url "
 }
 ```
 
