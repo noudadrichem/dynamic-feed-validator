@@ -20,6 +20,7 @@ public class ReadXMLFile {
   private static ValidateKeyValue validateUtil = new ValidateKeyValue();
   private static final PostgresFeedDao feedDao = new PostgresFeedDao();
   private static final PostgresProductDao productDao = new PostgresProductDao();
+  private final BluePrint blueprint = new BluePrint();
   private ArrayList<String> keysInItem = new ArrayList<String>();
   private Feed feed;
 
@@ -71,6 +72,8 @@ public class ReadXMLFile {
 
         if (line.isStartElement()) {
           String key = line.asStartElement().getName().getLocalPart();
+
+          blueprint.add(key);
 
           if(key.equals("item")) {
             this.keysInItem = new ArrayList<String>();
@@ -222,7 +225,6 @@ public class ReadXMLFile {
     }
   }
 
-  // validate here
   private String getValuebyKey(XMLEvent line, XMLEventReader eventReader) throws XMLStreamException {
     String value = "";
     String key = line.asStartElement().getName().getLocalPart();
