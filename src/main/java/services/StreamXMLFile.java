@@ -14,7 +14,7 @@ import persistence.blueprint.PostgresBlueprintDao;
 import persistence.feed.PostgresFeedDao;
 import persistence.product.PostgresProductDao;
 
-public class ReadXMLFile {
+public class StreamXMLFile {
 
   final URL feedUrl;
   private String feedId;
@@ -29,7 +29,7 @@ public class ReadXMLFile {
   private boolean isFeedHeader = true;
   private boolean isEndOfItem = false;
 
-  public ReadXMLFile(String feedUrl) {
+  public StreamXMLFile(String feedUrl) {
     try {
       this.feedUrl = new URL(feedUrl);
     } catch (Exception e) {

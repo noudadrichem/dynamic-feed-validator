@@ -12,10 +12,10 @@ public class ValidationThread extends Thread {
 
   public void run() {
     System.out.println("started thread for url=" + url);
-    ReadXMLFile readXMLFile = new ReadXMLFile(this.url);
+    StreamXMLFile streamXMLFile = new StreamXMLFile(this.url);
 
     try {
-      readXMLFile.StreamXMLFile();
+      streamXMLFile.StreamXMLFile();
     } catch (XMLStreamException e) {
       e.printStackTrace();
     }
