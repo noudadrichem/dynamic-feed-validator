@@ -44,11 +44,15 @@ public class FeedService {
 
     Feed feed = dao.getFeedByid(id);
 
-    job
+    if(feed.equals(null)) {
+      job.add("message", "Feed not found");
+    } else {
+      job
       .add("id", feed.getId())
       .add("title", feed.getTitle())
       .add("description", feed.getDescription())
       .add("feedLink", feed.getFeedLink());
+    }
 
     return job.build().toString();
   }

@@ -101,14 +101,14 @@ public class PostgresFeedDao extends PostgresBaseDao {
       ps.setString(1, feedId);
       ResultSet result = ps.executeQuery();
     
-      result.next();
-      return new Feed(
-        result.getString("feed_id"),
-        result.getString("title"),
-        result.getString("description"),
-        result.getString("feed_link")
-      );
-      // }
+      return result.next() 
+        ? new Feed(
+          result.getString("feed_id"),
+          result.getString("title"),
+          result.getString("description"),
+          result.getString("feed_link")
+          ) 
+        : null;
       
     } catch (SQLException e) {
       e.printStackTrace();
