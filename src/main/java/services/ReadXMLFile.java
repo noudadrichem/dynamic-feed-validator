@@ -36,7 +36,7 @@ public class ReadXMLFile {
 
   public void StreamXMLFile() throws XMLStreamException {
     try {
-      // feed headers
+      // feed headers:
       String feedLink = "";
       String publicationDate = "";
 
@@ -136,9 +136,7 @@ public class ReadXMLFile {
               activeProductId = itemId;
               break;
             case "image_link":
-              // hier moet een image queue komen
               imageLink = getValuebyKey(line, eventReader).trim();
-              // imageLink = "https://www.envirochem.co.nz/wp-content/uploads/2018/07/Mower-Plus_001.jpg"; // grote afbeelding
               break;
             case "item_group_id":
               itemGroupId = getValuebyKey(line, eventReader);
@@ -173,8 +171,6 @@ public class ReadXMLFile {
 
             validateUtil.areAllRequiredKeysThere(this.keysInItem);
 
-            System.out.println("_________END_ITEM______"); // is end of item.
-
             Product product = new Product();
             product.setTitle(title);
             product.setDescription(description);
@@ -201,13 +197,14 @@ public class ReadXMLFile {
             
             String currentProductHash = product.getProductHashCode();
             System.out.println("hash=" + currentProductHash);
-
+            
             ArrayList<String> allProductHashesForThisFeed = productDao.getAllStringHashes(this.feedId);
             if(!allProductHashesForThisFeed.contains(currentProductHash)) {
               productDao.saveProduct(product, this.feedId);
             }
-
+            
             line = eventReader.nextEvent();
+            System.out.println("_________END_ITEM______"); // is end of item.
             continue;
           }
         }
@@ -230,15 +227,23 @@ public class ReadXMLFile {
     String value = "";
     String key = line.asStartElement().getName().getLocalPart();
     line = eventReader.nextEvent();
+    
     if (line instanceof Characters) {
       value = line.asCharacters().getData().trim();
-
+      
       if(!this.isFeedHeader) {
-        validateUtil.checkKeyValue(key, value, this.feedId, this.activeProductId, this.isEndOfItem);
+        boolean isValidationSucces = validateUtil.checkKeyValue(key, value, this.feedId, this.activeProductId, this.isEndOfItem);
+        if(isValidationSucces) {
+          return value;
+        } else {
+          System.out.println("validation went wrong and stopped streaming");
+        }
+      } else {
+        return value;
       }
     }
 
-    return value;
+    return null;
   }
 
   public String getRandomString() {
@@ -246,5 +251,3 @@ public class ReadXMLFile {
   }
   
 }
-
-// source: https://www.vogella.com/tutorials/RSSFeed/article.html

@@ -18,7 +18,11 @@ public class ValidateKeyValue {
 
   public ValidateKeyValue() {}
 
-  public void checkKeyValue(String key, String value, String feedId, String productId, boolean isEndOfItem) {
+  public String SUFFIX() { 
+    return " in product with id " + this.productId + ".";
+  }
+
+  public boolean checkKeyValue(String key, String value, String feedId, String productId, boolean isEndOfItem) {
     this.productId = productId;
     this.feedId = feedId;
 
@@ -27,7 +31,7 @@ public class ValidateKeyValue {
     if (value.length() == 0) { // is value empty?
       Message mes = new Message(
         "Empty key found.",
-        key + " is empty in product with id " + this.productId + ".",
+        key + " is empty" + SUFFIX(),
         this.productId,
         "error",
         this.feedId
@@ -40,7 +44,7 @@ public class ValidateKeyValue {
       if(!isSafeUrl) { // is it a safe url?
         Message mes = new Message(
           "Unsafe URL found.",
-          key + " is an url that is unsafe, make sure to use HTTPS.",
+          key + " is an url that is unsafe, make sure to use HTTPS" + SUFFIX(),
           this.productId,
           "warning",
           this.feedId
@@ -50,7 +54,7 @@ public class ValidateKeyValue {
       if (!isURLValid(value)) { // is it a valid url?
         Message mes = new Message(
           "Unvalid URL found.",
-          value + " is an url that is not valid and return a non success code.",
+          value + " is an url that is not valid and return a non success code." + SUFFIX(),
           this.productId,
           "error",
           this.feedId
@@ -62,7 +66,7 @@ public class ValidateKeyValue {
         if(!isUrlValidImage(value)) { // is the content type really an image?
           Message mes = new Message(
             "Unvalid image found.",
-            value + " is an image that is not valid and return a non image header.",
+            value + " is an image that is not valid and return a non image header or is largen then 16mb." + SUFFIX(),
             this.productId,
             "error",
             this.feedId
@@ -71,6 +75,8 @@ public class ValidateKeyValue {
         }
       }
     } // else if() {}
+
+    return true;
   }
 
   private boolean isUrlAnImageUrl(String url) {
@@ -81,14 +87,23 @@ public class ValidateKeyValue {
     return (
       extension.equals("png") || 
       extension.equals("jpg") || 
+      extension.equals("gif") || 
+      extension.equals("bmp") || 
+      extension.equals("tif") || 
+      extension.equals("tiff") || 
       extension.equals("jpeg"));
   }
 
   private boolean isUrlValidImage(String url) {
     HttpResponse response = doGetRequet(url);
     String contentType = response.getFirstHeader("Content-Type").getValue();
+    String imageSizeValue = response.getFirstHeader("Content-Length").getValue();
+    int imageSize = Integer.parseInt(imageSizeValue);
 
-    return contentType.split("/")[0].equals("image");
+    return (
+      contentType.split("/")[0].equals("image") &&
+      imageSize < 16000000
+    );
   }
 
   private boolean isURLValid(String url) {

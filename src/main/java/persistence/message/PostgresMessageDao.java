@@ -12,16 +12,17 @@ public class PostgresMessageDao extends PostgresBaseDao {
   public boolean saveMessage(Message message) {
     try (Connection con = super.getConnection()) {
       if(!this.getAllMessageHashesByFeedId(message.getfeedId()).contains(message.getMessageHashCode())) {
-        System.out.println("deze message bestaat wel al maar oke");
+
         PreparedStatement pstmt = con.prepareStatement(
-          "insert into message(title, description, type, feed_id, hashed) values (?, ?, ? ,?, ?)"
+          "insert into message(title, description, type, feed_id, hashed, product_id) values (?, ?, ? ,?, ?, ?)"
         );
         pstmt.setString(1, message.getTitle());
         pstmt.setString(2, message.getDescription());
         pstmt.setString(3, message.getType());
         pstmt.setString(4, message.getfeedId());
         pstmt.setString(5, message.getMessageHashCode());
-        pstmt.executeUpdate();
+        pstmt.setString(6, message.getProductId());
+        pstmt.executeUpdate();  
 
         return true;
       }
