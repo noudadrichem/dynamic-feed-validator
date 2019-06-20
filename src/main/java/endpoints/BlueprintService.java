@@ -26,15 +26,13 @@ public class BlueprintService {
     if(blueprint.equals(null)) {
       job.add("message", "kapot");
     } else {
-      System.out.println(blueprint);
-      for(BlueprintKey key : blueprint.getKeys()) {
-        jab.add(key.getKey());
+      for(String key : blueprint.getKeys()) {
+        jab.add(key);
       }
 
       job
-        .add("id", blueprint.getBlueprintId())
-        .add("keys", jab)
-        .add("feedId", blueprint.getFeedId());
+        .add("feedId", blueprint.getFeedId())
+        .add("keys", jab);
     }
 
     return job.build().toString();

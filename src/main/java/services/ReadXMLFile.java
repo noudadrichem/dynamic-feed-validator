@@ -22,8 +22,8 @@ public class ReadXMLFile {
   private static ValidateKeyValue validateUtil = new ValidateKeyValue();
   private static final PostgresFeedDao feedDao = new PostgresFeedDao();
   private static final PostgresProductDao productDao = new PostgresProductDao();
-  private static final PostgresBlueprintDao blueprintDao = new PostgresBlueprintDao();
   private ArrayList<String> keysInItem = new ArrayList<String>();
+  private MakeBluePrint makeBluePrint = new MakeBluePrint();
   private Feed feed;
 
   private boolean isFeedHeader = true;
@@ -81,6 +81,10 @@ public class ReadXMLFile {
             this.keysInItem.add(key);
           }
 
+          if(!isFeedHeader) {
+            makeBluePrint.add(key);
+          }
+
           switch (key) {
             case "item":
               if (isFeedHeader) {
@@ -95,10 +99,6 @@ public class ReadXMLFile {
                   this.feed = new Feed(feedId, title, description, feedLink);
                   this.feedId = this.feed.getId();
                 }
-
-                // blue print key init here.
-                BlueprintKey blueprintKey = new BlueprintKey(key, this.feedId);
-                blueprintDao.saveBlueprint(blueprintKey);
               }
 
               this.isEndOfItem = false;
@@ -174,7 +174,7 @@ public class ReadXMLFile {
           }
         } else if (line.isEndElement()) {
           if (line.asEndElement().getName().getLocalPart() == "item") {
-            this.isEndOfItem = true;
+          this.isEndOfItem = true;
 
             validateUtil.areAllRequiredKeysThere(this.keysInItem);
 
@@ -213,6 +213,10 @@ public class ReadXMLFile {
             line = eventReader.nextEvent();
             System.out.println("_________END_ITEM______"); // is end of item.
             continue;
+          } else if (line.asEndElement().getName().getLocalPart() == "rss") {
+            System.out.println("feed is klaar met valideren van feed " + this.feedId);
+            System.out.println("starten met genereren blueprint.");
+            makeBluePrint.save(this.feedId);
           }
         }
       }
@@ -239,6 +243,7 @@ public class ReadXMLFile {
       
       if(!this.isFeedHeader) {
         boolean isValidationSucces = validateUtil.checkKeyValue(key, value, this.feedId, this.activeProductId, this.isEndOfItem);
+
         if(isValidationSucces) {
           return value;
         } else {
@@ -252,7 +257,7 @@ public class ReadXMLFile {
     return null;
   }
 
-  public String getRandomString() {
+  private String getRandomString() {
     return UUID.randomUUID().toString().replace("-", "");
   }
   

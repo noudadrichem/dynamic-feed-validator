@@ -4,38 +4,28 @@ import java.util.ArrayList;
 
 public class Blueprint {
 
-  private int blueprintId;
-  private ArrayList<BlueprintKey> keys;
+  private ArrayList<String> keys;
   private String feedId;
 
-  public Blueprint(int blueprintId, ArrayList<BlueprintKey> keys, String feedId) {
-    this.blueprintId = blueprintId;
+  public Blueprint(ArrayList<String> keys, String feedId) {
     this.keys = keys;
     this.feedId = feedId;
   }
 
-public int getBlueprintId() {
-	return blueprintId;
-}
+  public ArrayList<String> getKeys() {
+    return keys;
+  }
 
-public void setBlueprintId(int blueprintId) {
-	this.blueprintId = blueprintId;
-}
+  public boolean addKey(String key) {
+    return keys.add(key);
+  }
 
-public ArrayList<BlueprintKey> getKeys() {
-	return keys;
-}
+  public String getFeedId() {
+    return feedId;
+  }
 
-public boolean addKey(BlueprintKey key) {
-  return keys.add(key);
-}
-
-public String getFeedId() {
-	return feedId;
-}
-
-public void setFeedId(String feedId) {
-	this.feedId = feedId;
-}
+  public void setFeedId(String feedId) {
+    this.feedId = feedId;
+  }
 
 }

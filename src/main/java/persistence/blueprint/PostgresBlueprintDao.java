@@ -35,17 +35,13 @@ public class PostgresBlueprintDao extends PostgresBaseDao {
 			ps.setString(1, feedId);
       
       ResultSet result = ps.executeQuery();
-      int bluePrintId = result.getInt("blueprint_id");
-      ArrayList<BlueprintKey> keys = new ArrayList<BlueprintKey>();
+
+      ArrayList<String> keys = new ArrayList<String>();
       while(result.next()) {
-        keys.add(new BlueprintKey(
-          result.getString("key"),
-          result.getString("feed_id")
-        ));
+        keys.add(result.getString("key"));
       }
 
       return new Blueprint(
-        bluePrintId,
         keys,
         feedId
       );
