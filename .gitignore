@@ -6,6 +6,7 @@
 # Compiled class file
 *.class
 
+**/node_modules/**
 # Log file
 *.log
 
