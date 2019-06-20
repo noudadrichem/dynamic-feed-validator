@@ -81,6 +81,17 @@ public class PostgresMessageDao extends PostgresBaseDao {
     return tempList;
 	}
 
+  public boolean deleteMessage(String feedId) {
+		try (Connection con = super.getConnection()) {
+			PreparedStatement ps = con.prepareStatement("delete from message where feed_id = ?");
+			ps.setString(1, feedId);      
+      ps.execute();
 
+      return true;
+		} catch(Exception e) {
+      e.printStackTrace();
+      return false;
+    }
+  }
 
 }

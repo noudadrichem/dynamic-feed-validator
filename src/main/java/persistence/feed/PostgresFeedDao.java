@@ -115,9 +115,19 @@ public class PostgresFeedDao extends PostgresBaseDao {
 
 			return null;
     }
-
   }
 
+  public boolean deleteFeed(String feedId) {
+		try (Connection con = super.getConnection()) {
+			PreparedStatement ps = con.prepareStatement("delete from feed where feed_id = ?");
+      ps.setString(1, feedId);      
+      ps.execute();
 
+      return true;
+		} catch(Exception e) {
+      e.printStackTrace();
+      return false;
+    }
+  }
 
 }
