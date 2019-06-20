@@ -101,7 +101,7 @@ public class ValidateKeyValue {
     int imageSize = Integer.parseInt(imageSizeValue);
 
     return (
-      contentType.split("/")[0].equals("image") &&
+      contentType.split("/")[0].equals("image") ||
       imageSize < 16000000
     );
   }
