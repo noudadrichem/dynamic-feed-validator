@@ -8,7 +8,6 @@ import persistence.blueprint.PostgresBlueprintDao;
 public class MakeBluePrint {
 
   private static final PostgresBlueprintDao blueprintDao = new PostgresBlueprintDao();
-  private String feedId;
   private ArrayList<String> allUsedKeys = new ArrayList<String>();
 
   public boolean add(String key) {
@@ -18,18 +17,22 @@ public class MakeBluePrint {
     return false;
   }
 
-  public ArrayList<String> get() {
+  public ArrayList<String> getAllUsedKeys() {
     return allUsedKeys;
   }
 
-  public void save(String feedId) {
-    for(String key : allUsedKeys) {
-      blueprintDao.saveBlueprint(
-        new BlueprintKey(
-          key,
-          feedId
-        )
-      );
+  public void save(String feedId) throws ClassNotFoundException {
+    if(blueprintDao.doesBlueprintExsist(feedId)) {
+      for(String key : allUsedKeys) {
+        blueprintDao.saveBlueprint(
+          new BlueprintKey(
+            key,
+            feedId
+          )
+        );
+      }
+    } else {
+      System.out.println("onee toch niet");
     }
   }
 

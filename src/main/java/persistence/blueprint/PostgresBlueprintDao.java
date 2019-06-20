@@ -52,6 +52,20 @@ public class PostgresBlueprintDao extends PostgresBaseDao {
     }
   }
 
+  public boolean doesBlueprintExsist(String feedId) throws ClassNotFoundException {
+    try (Connection con = super.getConnection()) {
+      PreparedStatement ps = con.prepareStatement("select * from blueprint WHERE feed_id = ?");
+			ps.setString(1, feedId);
+			
+      ResultSet result = ps.executeQuery();
+
+      return !result.next();
+    } catch (SQLException e) {
+      e.printStackTrace();
+			return false;
+		}
+  }
+
   public boolean updateBlueprint(String columnName, String newValue, int blueprintId) {
 		try (Connection con = super.getConnection()) {
 			PreparedStatement ps = con.prepareStatement("update blueprint set ? = ? where blueprint_id = ?");
