@@ -1,3 +1,27 @@
-<p>
-  login works!
-</p>
+<div class="login">
+
+  <div class="ui login floated middle center card">
+    <div class="header">
+      <h1>Login</h1>
+    </div>
+    <div class="content">
+      <form class="ui form" id="loginForm" name="loginForm"
+        ng-submit="login(loginForm, formData)">
+        <div class="field">
+          <label>Email</label>
+          <div class="ui input">
+            <input type="email" name="email" value="info@noudadrichem.com" placeholder="Enter your email..." class="ng-pristine ng-untouched ng-valid-email ng-invalid ng-invalid-required">
+          </div>
+        </div>
+        <div class="field"><label>Password</label>
+          <div class="ui input" password="">
+            <input type="password" name="password" placeholder="Enter your password..." tabindex="2" required="" class="ng-pristine ng-untouched ng-invalid ng-invalid-required">
+          </div>
+        </div>
+        <a class="ui success fluid button" [routerLink]="['/home']" type="submit" ng-class="{ 'loading': loading }">Log in</a>
+      </form>
+    </div>
+  </div>
+
+
+</div>
