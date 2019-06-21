@@ -97,7 +97,7 @@ public class PostgresFeedDao extends PostgresBaseDao {
   public Feed getFeedByid(String feedId) throws ClassNotFoundException {
     try (Connection con = super.getConnection()) {
 
-      PreparedStatement ps = con.prepareStatement("SELECT * FROM feed WHERE feed_id = ?");
+      PreparedStatement ps = con.prepareStatement("select * from feed where feed_id = ?");
       ps.setString(1, feedId);
       ResultSet result = ps.executeQuery();
     
@@ -110,6 +110,7 @@ public class PostgresFeedDao extends PostgresBaseDao {
           ) 
         : null;
       
+
     } catch (SQLException e) {
       e.printStackTrace();
 
