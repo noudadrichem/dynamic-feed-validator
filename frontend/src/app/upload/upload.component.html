@@ -1,6 +1,26 @@
+<sidebar></sidebar>
 <div class="upload">
-  <sidebar></sidebar>
+  <header>
+    <h1>Validate your feed</h1>
+  </header>
 
-  <h1>upload</h1>
 
+  <div class="container">
+    <div class="upload-container">
+      <span class="input">
+        <label for="url-input">Feed url:</label>
+        <div class="ui input stretch">
+          <input [(ngModel)]="inputUrl">
+        </div>
+      </span>
+      <button class="ui primary button" (click)="startValidation()">Start validation</button>
+    </div>
+
+    <div *ngIf="isUploadSuccess && submitted" class="ui message success">
+      <p>wel gelukt</p>
+    </div>
+    <div *ngIf="!isUploadSuccess && submitted" class="ui message failure">
+      <p>niet gelukt</p>
+    </div>
+  </div>
 </div>

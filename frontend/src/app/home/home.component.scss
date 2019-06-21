@@ -1,24 +1,10 @@
 .home {
-  padding: 24px;
-  width: calc(100vw - 280px);
-  background: #fff;
-  min-height: 100vh;
-
   ul {
     padding: 0;
     list-style: none;
   }
   
   header {
-    display: flex;
-    flex: 1;
-    justify-content: space-between;
-    align-items: center;  
-
-    h1 {
-      font-weight: 700;
-    }
-
     .filters {
       display: flex;
       align-items: center;
