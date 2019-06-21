@@ -120,7 +120,9 @@ public class FeedService {
         messageDao.deleteMessage(feedId) &&
         dao.deleteFeed(feedId)
       );
-      messageBuilder.add("message", isSuccesfullyDeleted ? "Succesfully deleted feed." : "Failed to delete feed.");
+      messageBuilder
+        .add("message", isSuccesfullyDeleted ? "Succesfully deleted feed." : "Failed to delete feed.")
+        .add("success", isSuccesfullyDeleted);
 
       return messageBuilder.build().toString();
     } catch(Exception e) {
