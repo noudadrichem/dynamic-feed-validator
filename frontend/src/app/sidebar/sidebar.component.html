@@ -1,3 +1,19 @@
-<p>
-  sidebar works!
-</p>
+<div class="sidebar">
+
+  <div class="logo">
+    <img src="https://www.bannerwise.io/hubfs/www/bannerwise.svg" alt="Bannerwise logo">
+  </div>
+
+  <div class="feed-list">
+    <ul>
+      <li *ngFor="let feed of feeds" >
+        <a [routerLink]="['/home', feed.id]">{{ feed.title }}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="sidebar-footer">
+    <p>logout</p>
+  </div>
+
+</div>

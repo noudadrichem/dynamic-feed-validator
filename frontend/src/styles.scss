@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+::selection {
+  background-color: #95C7EC;
+  color: #282c37;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  display: flex;
+}
+
+ul {
+  padding-left: 24px;
+}
