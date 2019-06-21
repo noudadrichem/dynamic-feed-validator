@@ -7,11 +7,12 @@ import javax.json.JsonArrayBuilder;
 import javax.json.JsonObjectBuilder;
 import javax.ws.rs.*;
 
-
 import models.Feed;
 import models.Message;
+import persistence.blueprint.PostgresBlueprintDao;
 import persistence.feed.PostgresFeedDao;
 import persistence.message.PostgresMessageDao;
+import persistence.product.PostgresProductDao;
 import models.PostUrlObj;
 import services.ValidationThread;
 
@@ -19,6 +20,8 @@ import services.ValidationThread;
 public class FeedService {
   private PostgresFeedDao dao = new PostgresFeedDao();
   private PostgresMessageDao messageDao = new PostgresMessageDao();
+  private PostgresProductDao productDao = new PostgresProductDao();
+  private PostgresBlueprintDao bluePrintDao = new PostgresBlueprintDao();
 
   private final String USER_ID = "1";
 
@@ -79,8 +82,6 @@ public class FeedService {
   @Path("/upload")
   @Produces("application/json")
   public String uploadXMLFeedUrl(PostUrlObj uploadedObject) {
-    System.out.println("made contact");
-
     try {
       String XMLURL = uploadedObject.getUrl();
       JsonObjectBuilder messageBuilder = Json.createObjectBuilder();
@@ -90,8 +91,6 @@ public class FeedService {
 
         ValidationThread validationThread = new ValidationThread(XMLURL);
         validationThread.start();
-
-        System.out.println("validation thread status = " + validationThread.toString());
 
       } else {
         messageBuilder.add("message", "Not a valid URL");
@@ -104,6 +103,28 @@ public class FeedService {
       JsonObjectBuilder messageBuilder = Json.createObjectBuilder();
       messageBuilder.add("message", "Failed to upload URL");
 
+      return messageBuilder.build().toString();
+    }
+  }
+
+  @DELETE
+  @Path("/delete/{id}")
+  @Produces("application/json")
+  public String deleteFeed(@PathParam("id") String feedId) {
+    JsonObjectBuilder messageBuilder = Json.createObjectBuilder();
+
+    try {
+      boolean isSuccesfullyDeleted = (
+        bluePrintDao.deleteBlueprint(feedId) &&
+        productDao.deleteProdcut(feedId) &&
+        messageDao.deleteMessage(feedId) &&
+        dao.deleteFeed(feedId)
+      );
+      messageBuilder.add("message", isSuccesfullyDeleted ? "Succesfully deleted feed." : "Failed to delete feed.");
+
+      return messageBuilder.build().toString();
+    } catch(Exception e) {
+      messageBuilder.add("message", "Failed to delete feed.");
       return messageBuilder.build().toString();
     }
   }

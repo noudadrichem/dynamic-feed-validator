@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 import models.Blueprint;
 import models.BlueprintKey;
-import models.Message;
 
 import persistence.PostgresBaseDao;
 
@@ -83,10 +82,10 @@ public class PostgresBlueprintDao extends PostgresBaseDao {
     }
   }
 
-  public boolean deleteBlueprint(int blueprintId) {
+  public boolean deleteBlueprint(String feedId) {
 		try (Connection con = super.getConnection()) {
-			PreparedStatement ps = con.prepareStatement("delete from blueprint where blueprint_id = ?");
-			ps.setInt(1, blueprintId);      
+			PreparedStatement ps = con.prepareStatement("delete from blueprint where feed_id = ?");
+			ps.setString(1, feedId);
       ps.execute();
 
       return true;
