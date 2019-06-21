@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { ContainerComponent } from './container/container.component';
 import { HomeComponent } from './home/home.component';
 import { UploadComponent } from './upload/upload.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { UploadComponent } from './upload/upload.component';
     LoginComponent, 
     ContainerComponent,
     HomeComponent,
-    UploadComponent
+    UploadComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

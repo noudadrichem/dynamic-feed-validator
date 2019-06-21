@@ -1,6 +1,13 @@
 .home {
   padding: 24px;
-  width: calc(100vw - 340px);
+  width: calc(100vw - 280px);
+  background: #fff;
+  min-height: 100vh;
+
+  ul {
+    padding: 0;
+    list-style: none;
+  }
   
   header {
     display: flex;
@@ -8,13 +15,15 @@
     justify-content: space-between;
     align-items: center;  
 
+    h1 {
+      font-weight: 700;
+    }
+
     .filters {
       display: flex;
       align-items: center;
 
       ul {
-        padding: 0;
-        list-style: none;
         display: inline-flex;
 
         li {
@@ -25,6 +34,39 @@
 
           &:hover {
             background: #ABACAD;
+          }
+        }
+      }
+    }
+  }
+
+  .container { 
+    margin-top: 40px;
+    background-color: #F8F9FB;
+    border-radius: 4px;
+    padding: 12px;
+    border: 1px solid #EDF0F3;
+
+    .errors {
+      margin-bottom: 32px;
+    }
+
+    .errors,
+    .warnings {
+      h3 {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        > .chevron {
+          margin-left: 8px;
+          display: none;
+          transform: translateY(2px);
+        }
+
+        &:hover {
+          > .chevron {
+            display: inline-block;
           }
         }
       }
