@@ -14,7 +14,7 @@ public class PostgresProductDao extends PostgresBaseDao {
       PreparedStatement pstmt = con.prepareStatement(
         "insert into product(hashed, feed_id, product_id_from_feed) values(?, ?, ?)"
       );
-      pstmt.setString(1, product.getProductHashCode());
+      pstmt.setString(1, product.getProductHashCode()); 
       pstmt.setString(2, feed_id);
       pstmt.setString(3, product.getId());
       pstmt.executeUpdate();

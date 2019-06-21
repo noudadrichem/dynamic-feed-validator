@@ -43,16 +43,14 @@ public class FeedService {
     JsonObjectBuilder job = Json.createObjectBuilder();
 
     Feed feed = dao.getFeedByid(id);
+    System.out.println("feed:");
+    System.out.println(feed);
 
-    if(feed.equals(null)) {
-      job.add("message", "Feed not found");
-    } else {
-      job
-      .add("id", feed.getId())
-      .add("title", feed.getTitle())
-      .add("description", feed.getDescription())
-      .add("feedLink", feed.getFeedLink());
-    }
+    job
+    .add("id", feed.getId())
+    .add("title", feed.getTitle())
+    .add("description", feed.getDescription())
+    .add("feedLink", feed.getFeedLink());
 
     return job.build().toString();
   }
