@@ -1,0 +1,33 @@
+.home {
+  padding: 24px;
+  width: calc(100vw - 340px);
+  
+  header {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;  
+
+    .filters {
+      display: flex;
+      align-items: center;
+
+      ul {
+        padding: 0;
+        list-style: none;
+        display: inline-flex;
+
+        li {
+          padding: 8px 12px;
+          margin: 0 4px;
+          background: #F8F9FB;
+          cursor: pointer;
+
+          &:hover {
+            background: #ABACAD;
+          }
+        }
+      }
+    }
+  }
+}

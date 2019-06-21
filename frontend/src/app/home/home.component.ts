@@ -11,7 +11,9 @@ const { API_URL } = environment
 })
 export class HomeComponent implements OnInit {
 
-  feed: Object = {}
+  feed: Object = {};
+  errors: Array<any> = [];
+  warnings: Array<any> = [];
 
   constructor(
     private http: HttpClient,
@@ -27,11 +29,12 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  getSelectedFeed(feedId: string): void {
-     this.http.get(`http://localhost:9090/api/feed/${feedId}`)
+  getSelectedFeed(feedId: string): any {
+    this.http.get(`${API_URL}/feed/${feedId}`)
       .subscribe(feed => {
         this.feed = feed;
       })
   }
+
 
 }

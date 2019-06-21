@@ -1,6 +1,26 @@
 <div class="home">
+  <header>
+    <h2>{{ feed.title }}</h2>
 
-  home
-  <h1>active feed {{ feed.title }}</h1>
+    <div class="filters">
+      filters:
+      <ul>
+        <li>show all</li>
+        <li>errors</li>
+        <li>warnings</li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <div class="errors">
+      <h3>Errors</h3>
+      <ul>
+        <li *ngFor="let error of errors">{{ error.title }}</li>
+      </ul>
+    </div>
+
+  </div>
 
 </div>
