@@ -87,13 +87,17 @@ public class FeedService {
       JsonObjectBuilder messageBuilder = Json.createObjectBuilder();
 
       if(XMLURL.startsWith("http")) {
-        messageBuilder.add("message", "Succesfully upload URL");
+        messageBuilder
+          .add("message", "Succesfully upload URL")
+          .add("success", true);
 
         ValidationThread validationThread = new ValidationThread(XMLURL);
         validationThread.start();
 
       } else {
-        messageBuilder.add("message", "Not a valid URL");
+        messageBuilder
+          .add("message", "Not a valid URL")
+          .add("success", false);
       }
       
       return messageBuilder.build().toString();
@@ -101,7 +105,9 @@ public class FeedService {
     } catch(Exception e) {
       e.printStackTrace();
       JsonObjectBuilder messageBuilder = Json.createObjectBuilder();
-      messageBuilder.add("message", "Failed to upload URL");
+      messageBuilder
+        .add("message", "Failed to upload URL")
+        .add("success", false);
 
       return messageBuilder.build().toString();
     }
