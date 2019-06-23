@@ -15,7 +15,7 @@ public class ValidationThread extends Thread {
     StreamXMLFile streamXMLFile = new StreamXMLFile(this.url);
 
     try {
-      streamXMLFile.StreamXMLFile();
+      streamXMLFile.StreamFile();
     } catch (XMLStreamException e) {
       e.printStackTrace();
     }

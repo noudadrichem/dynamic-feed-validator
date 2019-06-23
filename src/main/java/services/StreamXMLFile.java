@@ -7,10 +7,8 @@ import java.net.URL;
 import javax.xml.stream.*;
 import javax.xml.stream.events.*;
 
-import models.BlueprintKey;
 import models.Feed;
 import models.Product;
-import persistence.blueprint.PostgresBlueprintDao;
 import persistence.feed.PostgresFeedDao;
 import persistence.product.PostgresProductDao;
 
@@ -37,7 +35,7 @@ public class StreamXMLFile {
     }
   }
 
-  public void StreamXMLFile() throws XMLStreamException {
+  public void StreamFile() throws XMLStreamException {
     try {
       // feed headers:
       String feedLink = "";
