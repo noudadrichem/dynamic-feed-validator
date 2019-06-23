@@ -60,6 +60,7 @@ public class StreamXMLFile {
       String productType = "";
       String shippingCountry = "";
       String shippingWeight = "";
+      String additionalImageLink = "";
       String size = "";
       String link = "";
 
@@ -142,6 +143,9 @@ public class StreamXMLFile {
               break;
             case "image_link":
               imageLink = getValuebyKey(line, eventReader).trim();
+              break;
+            case "additional_image_link":
+              additionalImageLink =  getValuebyKey(line, eventReader).trim();
               break;
             case "item_group_id":
               itemGroupId = getValuebyKey(line, eventReader);

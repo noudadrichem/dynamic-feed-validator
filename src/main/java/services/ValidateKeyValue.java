@@ -40,17 +40,17 @@ public class ValidateKeyValue {
       messageDao.saveMessage(mes);
     } else if (value.startsWith("http")) { // is value an URL?
 
-      boolean isSafeUrl = value.matches("^(https)://");
-      if(!isSafeUrl) { // is it a safe url?
+      if(!value.startsWith("https")) {
         Message mes = new Message(
           "Unsafe URL found.",
-          key + " is an url that is unsafe, make sure to use HTTPS" + SUFFIX(),
+          key + " " + value + " is an url that is unsafe, make sure to use HTTPS" + SUFFIX(),
           this.productId,
           "warning",
           this.feedId
         );
         messageDao.saveMessage(mes);
-      } 
+      }
+
       if (!isURLValid(value)) { // is it a valid url?
         Message mes = new Message(
           "Unvalid URL found.",
@@ -97,13 +97,19 @@ public class ValidateKeyValue {
   private boolean isUrlValidImage(String url) {
     HttpResponse response = doGetRequet(url);
     String contentType = response.getFirstHeader("Content-Type").getValue();
-    String imageSizeValue = response.getFirstHeader("Content-Length").getValue();
-    int imageSize = Integer.parseInt(imageSizeValue);
+    Header imageSizeValue = response.getFirstHeader("Content-Length");
 
-    return (
-      contentType.split("/")[0].equals("image") ||
-      imageSize < 16000000
-    );
+    if(imageSizeValue != null) {
+      int imageSize = Integer.parseInt(imageSizeValue.getValue());
+
+      return (
+        contentType.split("/")[0].equals("image") ||
+        imageSize < 16000000
+      );
+    } else {
+      return false;
+    }
+
   }
 
   private boolean isURLValid(String url) {
