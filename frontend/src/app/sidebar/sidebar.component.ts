@@ -20,15 +20,7 @@ export class SidebarComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.http.get(`${API_URL}/feed/all`)
-      .subscribe(allFeeds => {
-        this.feeds = allFeeds;
-      })
-
-    this.route.paramMap.subscribe(params => {
-      this.currentlySelectedFeed = params.get('feedid')
-      console.log(params.get('feedid'))
-    })
+    this.fetchFeeds()
   }
 
   deleteFeed(feedId): void {
@@ -38,6 +30,18 @@ export class SidebarComponent implements OnInit {
         console.log({ data })
         this.feeds = this.feeds.filter(f => f.id !== feedId)
       })
+  }
+
+  fetchFeeds(): void {
+    this.http.get(`${API_URL}/feed/all`)
+      .subscribe(allFeeds => {
+        this.feeds = allFeeds;
+      })
+
+    this.route.paramMap.subscribe(params => {
+      this.currentlySelectedFeed = params.get('feedid')
+      console.log(params.get('feedid'))
+    })
   }
 
 }
