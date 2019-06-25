@@ -10,7 +10,8 @@ const { API_URL } = environment
 })
 export class MessageComponent implements OnInit {
 
-  socket: WebSocket = new WebSocket(`${API_URL.replace('http', 'ws')}/message/1`);
+  socket: WebSocket;
+  echoText: String = "";
 
   constructor() { }
 
@@ -20,10 +21,43 @@ export class MessageComponent implements OnInit {
 
 
   connecSocket(): void {
+    console.log('trying to connect')
+    this.socket = new WebSocket('ws://localhost:9090/socket');
     this.socket.onmessage = evt => {
       console.log(evt.data);
     }
 
+    this.socket.onopen = (message) => { this.wsOpen(message);};
+    this.socket.onmessage = (message) => { this.wsGetMessage(message);};
+    this.socket.onclose = (message) => { this.wsClose(message);};
+    this.socket.onerror = (message) => { this.wsError(message);};
   } 
+
+  wsOpen(message){
+    this.echoText += "Connected ... \n";
+  }
+
+  wsSendMessage(){
+    this.socket.send("echo send from client")
+    this.echoText = "message has been send"
+    // this.echoText += "Message sended to the server : " + message.value + "\n";
+    // message.value = "";
+  }
+
+  wsCloseConnection(){
+    this.socket.close();
+  }
+
+  wsClose(message){
+    this.echoText += "Disconnect ... \n";
+  }
+
+  wsGetMessage(message){
+    this.echoText += "Message received from to the server : " + message.data + "\n";
+  }
+
+  wsError(message){
+    this.echoText += "Error ... \n";
+  }
 
 }
