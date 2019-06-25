@@ -30,6 +30,17 @@
     <url-pattern>/api/*</url-pattern>
   </servlet-mapping>
 
+
+  <!-- <servlet>
+    <servlet-name>socketServer</servlet-name>
+    <servlet-class>socket.Server</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>socketServer</servlet-name>
+    <url-pattern>/socket</url-pattern>
+  </servlet-mapping> -->
+
   <filter>
     <filter-name>CorsFilter</filter-name>
     <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
