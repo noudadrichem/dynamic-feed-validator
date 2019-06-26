@@ -18,6 +18,7 @@ public class StreamXMLFile {
   final URL feedUrl;
   private String feedId;
   private String activeProductId;
+  private String validationId;
   private static ValidateKeyValue validateUtil = new ValidateKeyValue();
   private static final PostgresFeedDao feedDao = new PostgresFeedDao();
   private static final PostgresProductDao productDao = new PostgresProductDao();
@@ -28,9 +29,10 @@ public class StreamXMLFile {
   private boolean isFeedHeader = true;
   private boolean isEndOfItem = false;
 
-  public StreamXMLFile(String feedUrl) {
+  public StreamXMLFile(String feedUrl, String validationId) {
     try {
       this.feedUrl = new URL(feedUrl);
+      this.validationId = validationId;
     } catch (Exception e) {
       throw new RuntimeException(e);
     }

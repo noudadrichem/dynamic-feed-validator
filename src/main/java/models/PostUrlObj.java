@@ -4,7 +4,7 @@ package models;
 public class PostUrlObj {
 
 	String url;
-	String uploadDate;
+	String validationId;
 
 	public String getUrl() {
 		return url;
@@ -14,17 +14,17 @@ public class PostUrlObj {
 		this.url = url;
 	}
 
-	public String getUploadDate() {
-		return uploadDate;
+	public String getValidationId() {
+		return validationId;
 	}
 
-	public void setUploadDate(String uploadDate) {
-		this.uploadDate = uploadDate;
+	public void setValidationId(String validationId) {
+		this.validationId = validationId;
 	}
 
 	@Override
 	public String toString() {
-		return "UploadedObject [url=" + url + ", uploadDate=" + uploadDate + "]";
+		return "UploadedObject [url=" + url + ", validationId=" + validationId + "]";
 	}
 
 }
