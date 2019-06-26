@@ -19,7 +19,11 @@
   </header>
 
   <div class="container">
+    <div class="ui message success" *ngIf="errors.length === 0 && warnings.length === 0">
+      Well done, no errors found!
+    </div>
     <card-container
+      *ngIf="errors.length > 0 && warnings.length > 0"
       [errors]="errors"
       [warnings]="warnings">
     </card-container>

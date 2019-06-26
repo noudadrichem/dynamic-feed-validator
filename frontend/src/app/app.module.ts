@@ -8,7 +8,6 @@ import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { MessageComponent } from './message/message.component';
 import { LoginComponent } from './login/login.component';
 import { ContainerComponent } from './container/container.component';
 import { HomeComponent } from './home/home.component';
@@ -24,7 +23,6 @@ const socketConfig: SocketIoConfig = {
   declarations: [
     AppComponent,
     SidebarComponent,
-    MessageComponent,
     LoginComponent, 
     ContainerComponent,
     HomeComponent,
