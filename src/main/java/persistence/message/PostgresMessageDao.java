@@ -1,17 +1,12 @@
 package persistence.message;
 
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.sql.*;
 import java.util.ArrayList;
 
-import javax.websocket.ContainerProvider;
 
 import models.Message;
 
 import persistence.PostgresBaseDao;
-import socket.SessionHandler;
 
 public class PostgresMessageDao extends PostgresBaseDao {
 

@@ -12,7 +12,6 @@ import models.Product;
 import persistence.feed.PostgresFeedDao;
 import persistence.product.PostgresProductDao;
 import socket.Server;
-import socket.SessionHandler;
 
 public class StreamXMLFile {
 
