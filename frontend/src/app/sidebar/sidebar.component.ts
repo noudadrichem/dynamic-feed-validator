@@ -23,15 +23,6 @@ export class SidebarComponent implements OnInit {
     this.fetchFeeds()
   }
 
-  deleteFeed(feedId): void {
-    console.log(feedId)
-    this.http.delete(`${API_URL}/feed/delete/${feedId}`)
-      .subscribe(data => {
-        console.log({ data })
-        this.feeds = this.feeds.filter(f => f.id !== feedId)
-      })
-  }
-
   fetchFeeds(): void {
     this.http.get(`${API_URL}/feed/all`)
       .subscribe(allFeeds => {

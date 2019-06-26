@@ -16,6 +16,9 @@ export class HomeComponent implements OnInit {
   errors: Array<any> = []
   warnings: Array<any> = []
   isFeedIsSelected: boolean = false
+  isErrorsShown: boolean = true
+  isWarningsShown: boolean = true
+  isSettingsIsShown: boolean = false
 
   constructor(
     private http: HttpClient,
@@ -41,4 +44,28 @@ export class HomeComponent implements OnInit {
         this.warnings = this.feed.messages.filter(m => m.type === 'warning')
       })
   }
+
+  showErrors(): void {
+    this.isErrorsShown = true;
+    this.isWarningsShown = false;
+  }
+  showWarnings(): void {
+    this.isWarningsShown = true;
+    this.isErrorsShown = false;
+  }
+  
+  showAllMessages(): void {
+    this.isErrorsShown = true;
+    this.isWarningsShown = true;
+  }
+
+  hideSettingsModal() {
+    console.log('hide')
+    this.isSettingsIsShown = false
+  }
+  showSettingsModal() {
+    console.log('show')
+    this.isSettingsIsShown = true
+  }
+
 }

@@ -8,21 +8,19 @@
   
   header {
     .filters {
-      display: flex;
-      align-items: center;
+      display: inline-flex;
+      flex-direction: column;
+
+      &-content {
+        display: flex;
+        align-items: center;
+      }
 
       ul {
-        display: inline-flex;
-
         li {
           padding: 8px 12px;
           margin: 0 4px;
-          background: #F8F9FB;
-          cursor: pointer;
-
-          &:hover {
-            background: #ABACAD;
-          }
+          font-size: 14px;
         }
       }
     }
