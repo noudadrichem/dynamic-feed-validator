@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from './../../environments/environment';
 const { API_URL } = environment
@@ -10,15 +10,13 @@ const { API_URL } = environment
 })
 export class UploadComponent implements OnInit {
 
-  inputUrl: String = "https://bannerwise-assets.s3.eu-central-1.amazonaws.com/xml/benchy.xml"
+  inputUrl: String = "https://werk.noudadrichem.com/feed-validator/benchy-bad-feed.xml"
   isUploadSuccess: boolean = false;
   submitted: boolean = false;
 
   constructor(private http: HttpClient,) {}
 
-  ngOnInit() {
-    console.log('moetje url')
-  }
+  ngOnInit() {}
 
   startValidation() {
     this.submitted = true;

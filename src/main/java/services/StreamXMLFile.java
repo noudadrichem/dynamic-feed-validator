@@ -11,6 +11,7 @@ import models.Feed;
 import models.Product;
 import persistence.feed.PostgresFeedDao;
 import persistence.product.PostgresProductDao;
+import socket.Server;
 
 public class StreamXMLFile {
 
@@ -92,12 +93,16 @@ public class StreamXMLFile {
                 if(feedDao.doesFeedExsist(feedLink)) {
                   this.feed = new Feed(getRandomString(), title, description, feedLink);
                   this.feedId = this.feed.getId();
+
                   feedDao.saveFeed(this.feed);
                 } else {
                   String feedId = feedDao.getFeedIdByLink(feedLink);
+
                   this.feed = new Feed(feedId, title, description, feedLink);
                   this.feedId = this.feed.getId();
                 }
+
+                System.out.println("Active feedId=" + this.feedId);
               }
 
               this.isEndOfItem = false;
@@ -244,12 +249,12 @@ public class StreamXMLFile {
       value = line.asCharacters().getData().trim();
       
       if(!this.isFeedHeader) {
-        boolean isValidationSucces = validateUtil.checkKeyValue(key, value, this.feedId, this.activeProductId, this.isEndOfItem);
 
+        boolean isValidationSucces = validateUtil.checkKeyValue(key, value, this.feedId, this.activeProductId, this.isEndOfItem);
         if(isValidationSucces) {
           return value;
         } else {
-          System.out.println("validation went wrong and stopped streaming");
+          System.out.println("validation went wrong...");
         }
       } else {
         return value;

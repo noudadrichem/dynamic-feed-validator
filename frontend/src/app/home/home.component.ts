@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
-import { environment } from './../../environments/environment'
 import { ActivatedRoute } from '@angular/router'
+import { environment } from './../../environments/environment'
 const { API_URL } = environment
 
 @Component({
