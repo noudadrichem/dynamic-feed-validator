@@ -10,26 +10,26 @@ public class PostgresBaseDao {
   public static final String USERNAME = "noud";
   public static final String PASSWORD = "test1234";
 
-  // protected final Connection getConnection() {
+  protected final Connection getConnection() {
 
-  //   Connection result = null;
+    Connection result = null;
 
-  //   try {
-  //     InitialContext ic = new InitialContext();
-  //     DataSource ds = (DataSource) ic.lookup("java:comp/env/jdbc/PostgresDS");
+    try {
+      InitialContext ic = new InitialContext();
+      DataSource ds = (DataSource) ic.lookup("java:comp/env/jdbc/PostgresDS");
 
-  //     result = ds.getConnection();
-  //   } catch (Exception e) {
-  //     throw new RuntimeException(e);
-  //   }
+      result = ds.getConnection();
+    } catch (Exception e) {
+      throw new RuntimeException(e);
+    }
 
-  //   return result;
-  // }
+    return result;
+  }
 
-  protected Connection getConnection() throws SQLException, ClassNotFoundException {
-    Connection con = null;
-    Class.forName("org.postgresql.Driver");
-    con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-    return con;
-}
+//   protected Connection getConnection() throws SQLException, ClassNotFoundException {
+    // Connection con = null;
+    // Class.forName("org.postgresql.Driver");
+    // con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+    // return con;
+//   }
 }
