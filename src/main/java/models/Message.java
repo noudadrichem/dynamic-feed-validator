@@ -25,7 +25,7 @@ public class Message {
     this.feedId = feedId;
   }
 
-  public Message(String title, String description, String feedId, String type) {
+  public Message(String title, String description, String type, String feedId) {
     this(title, description, "", type, feedId);
   }
 

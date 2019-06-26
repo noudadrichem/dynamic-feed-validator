@@ -31,8 +31,6 @@ public class MakeBluePrint {
           )
         );
       }
-    } else {
-      System.out.println("onee toch niet");
     }
   }
 
