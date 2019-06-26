@@ -15,10 +15,7 @@ export class HomeComponent implements OnInit {
   feed: any = {}
   errors: Array<any> = []
   warnings: Array<any> = []
-  isErrorsShown: boolean = true
-  isWarningsShown: boolean = true
   isFeedIsSelected: boolean = false
-  menuIsShown: boolean = false
 
   constructor(
     private http: HttpClient,
@@ -34,9 +31,6 @@ export class HomeComponent implements OnInit {
       }
     })
   }
-
-  toggleErrorShown(): void { this.isErrorsShown = !this.isErrorsShown; }
-  toggleWarningsShown(): void { this.isWarningsShown = !this.isWarningsShown; }
 
   getSelectedFeed(feedId: string): any {
     this.http.get(`${API_URL}/feed/${feedId}`)

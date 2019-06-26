@@ -14,6 +14,7 @@ import { ContainerComponent } from './container/container.component';
 import { HomeComponent } from './home/home.component';
 import { UploadComponent } from './upload/upload.component';
 import { CardComponent } from './card/card.component';
+import { CardContainerComponent } from './card-container/card-container.component';
 
 const socketConfig: SocketIoConfig = {
   url: 'http://localhost:9090/api/feed/subscribe'
@@ -28,7 +29,8 @@ const socketConfig: SocketIoConfig = {
     ContainerComponent,
     HomeComponent,
     UploadComponent,
-    CardComponent
+    CardComponent,
+    CardContainerComponent
   ],
   imports: [
     BrowserModule,

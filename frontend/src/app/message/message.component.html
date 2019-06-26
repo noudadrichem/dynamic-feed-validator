@@ -1,2 +1,5 @@
-<h1>{{ echoText }}</h1>
-<p>active session id: {{ activeSocketSessionId}} </p>
+<card-container
+  *ngIf="errors.length > 0 || warnings.length > 0"
+  [errors]="errors"
+  [warnings]="warnings"
+></card-container>

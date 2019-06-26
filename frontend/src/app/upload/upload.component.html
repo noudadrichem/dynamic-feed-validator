@@ -2,6 +2,7 @@
 <div class="upload">
   <header>
     <h1>Validate your feed</h1>
+
   </header>
 
 
@@ -13,7 +14,7 @@
           <input [(ngModel)]="inputUrl">
         </div>
       </span>
-      <button class="ui primary button" (click)="startValidation()">Start validation</button>
+      <button [disabled]="connected" class="ui primary button" (click)="startValidation()">Start validation</button>
     </div>
 
     <div *ngIf="isUploadSuccess && submitted" class="ui message success">

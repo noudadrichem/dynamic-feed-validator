@@ -1,0 +1,45 @@
+<div class="container" id="card-container">
+  <div class="errors">
+    <h3 (click)="toggleErrorShown()">Errors (total: {{ errors.length }})
+      <span class="chevron">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="square" stroke-linejoin="bevel"><path d="M6 9l6 6 6-6"/></svg>
+      </span>
+    </h3>
+    <ul *ngIf="isErrorsShown; else errorsNotShown">
+      <li *ngFor="let error of errors">
+        <card 
+          [title]="error.title" 
+          [description]="error.description"
+          [type]="error.type"
+          [productId]="error.productId">
+        </card>
+      </li>
+    </ul>
+    <ng-template #errorsNotShown>
+      errors hidden
+    </ng-template>
+  </div>
+
+  <div class="warnings">
+    <h3 (click)="toggleWarningsShown()">Warnings (total: {{ warnings.length }})
+      <span class="chevron">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="square" stroke-linejoin="bevel"><path d="M6 9l6 6 6-6"/></svg>
+      </span>
+    </h3>
+    <ul *ngIf="isWarningsShown; else warningsNotShown">
+      <li *ngFor="let warning of warnings">
+        <card 
+          [title]="warning.title" 
+          [description]="warning.description"
+          [type]="warning.type"
+          [productId]="warning.productId">
+        </card>
+      </li>
+    </ul>
+
+    <ng-template #warningsNotShown>
+      warnings hidden
+    </ng-template>
+  </div>
+
+</div>

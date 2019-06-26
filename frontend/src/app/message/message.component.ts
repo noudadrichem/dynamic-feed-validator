@@ -11,8 +11,12 @@ const { API_URL } = environment
 export class MessageComponent implements OnInit {
 
   socket: WebSocket
-  echoText: String = ""
   activeSocketSessionId: String
+  
+  echoText: String = ""
+  connected: boolean = false;
+  errors: Array<any> = []
+  warnings: Array<any> = []
 
   constructor() { }
 
@@ -28,14 +32,14 @@ export class MessageComponent implements OnInit {
       console.log(evt.data);
     }
 
-    this.socket.onopen = (message) => { this.wsOpen(message);};
+    this.socket.onopen = () => { this.wsOpen();};
     this.socket.onmessage = (message) => { this.wsGetMessage(message);};
     this.socket.onclose = (message) => { this.wsClose(message);};
     this.socket.onerror = (message) => { this.wsError(message);};
   } 
 
-  wsOpen(message){
-    this.echoText += "Connected ... \n";
+  wsOpen(){
+    this.connected = true
   }
 
   wsSendMessage(){
@@ -54,11 +58,14 @@ export class MessageComponent implements OnInit {
   }
 
   wsGetMessage(message){
-    console.log({message})
     message = JSON.parse(message.data)
+    console.log(message)
+
     if(message.type === 'init')  {
       this.activeSocketSessionId = message.id
       window.sessionStorage.setItem("sessionId", message.id)
+    } else {
+      this[message.type === 'error' ? 'errors' : 'warnings'].push(message)
     }
   }
 
