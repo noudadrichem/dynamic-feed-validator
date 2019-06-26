@@ -8,10 +8,12 @@ import javax.xml.stream.*;
 import javax.xml.stream.events.*;
 
 import models.Feed;
+import models.Message;
 import models.Product;
 import persistence.feed.PostgresFeedDao;
 import persistence.product.PostgresProductDao;
 import socket.Server;
+import socket.SessionHandler;
 
 public class StreamXMLFile {
 
@@ -171,12 +173,12 @@ public class StreamXMLFile {
             case "product_type":
               productType = getValuebyKey(line, eventReader);
               break;
-            case "shipping":
-              shippingCountry = getValuebyKey(line, eventReader);
-              break;
-            case "shipping_weight":
-              shippingWeight = getValuebyKey(line, eventReader);
-              break;
+            // case "shipping":
+            //   shippingCountry = getValuebyKey(line, eventReader);
+            //   break;
+            // case "shipping_weight":
+            //   shippingWeight = getValuebyKey(line, eventReader);
+            //   break;
             case "size":
               size = getValuebyKey(line, eventReader);
               break;
@@ -222,12 +224,20 @@ public class StreamXMLFile {
             }
             
             line = eventReader.nextEvent();
-            System.out.println("_________END_ITEM______"); // is end of item.
+            System.out.println("_________END_ITEM______"); // is end of feed item.
 
             continue;
           } else if (line.asEndElement().getName().getLocalPart() == "rss") {
-            System.out.println("feed is klaar met valideren van feed " + this.feedId);
-            System.out.println("starten met genereren blueprint.");
+            System.out.println("feed is done validating feed " + this.feedId);
+
+            SessionHandler sessionHandler = SessionHandler.getInstance();
+            sessionHandler.sendToSocket(new Message( // send final message to socket
+              "Done validating",
+              "This feed is done with validation",
+              "finale",
+              this.feedId
+            ), this.socketSessionId);
+
             makeBluePrint.save(this.feedId);
           }
         }

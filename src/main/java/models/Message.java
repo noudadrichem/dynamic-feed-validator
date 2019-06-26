@@ -25,6 +25,10 @@ public class Message {
     this.feedId = feedId;
   }
 
+  public Message(String title, String description, String feedId, String type) {
+    this(title, description, "", type, feedId);
+  }
+
   public String getMessageHashCode() {
     String md5productHash = DigestUtils.md5Hex(
       this.toString().trim().replace(" ", "")

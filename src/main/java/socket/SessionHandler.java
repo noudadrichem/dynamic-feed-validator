@@ -3,6 +3,8 @@ package socket;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.json.Json;
+import javax.json.JsonObjectBuilder;
 import javax.websocket.Session;
 
 import models.Message;
@@ -39,7 +41,20 @@ public class SessionHandler {
     sessions.add(session);
   }
 
-  public void sendMessage(String sessionId, String message) throws IOException {
-    getSession(sessionId).getBasicRemote().sendText(message);
+  public void sendToSocket(Message message, String socketSessionId) {
+    JsonObjectBuilder messageJsonObj = Json.createObjectBuilder();
+      messageJsonObj
+        .add("title", message.getTitle())
+        .add("description", message.getDescription())
+        .add("productId", message.getProductId())
+        .add("feedId", message.getfeedId())
+        .add("type", message.getType())
+        .add("hashed", message.getMessageHashCode());
+
+    try {
+      sessionHandler.getSession(socketSessionId).getBasicRemote().sendText(messageJsonObj.build().toString()); 
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 }
