@@ -8,7 +8,7 @@ import models.Message;
 
 import persistence.PostgresBaseDao;
 
-public class PostgresMessageDao extends PostgresBaseDao {
+public class PostgresMessageDao extends PostgresBaseDao implements MessageDao {
 
   public boolean saveMessage(Message message) {
     try (Connection con = super.getConnection()) {
@@ -79,6 +79,21 @@ public class PostgresMessageDao extends PostgresBaseDao {
     try (Connection con = super.getConnection()) {
       PreparedStatement ps = con.prepareStatement("delete from message where feed_id = ?");
       ps.setString(1, feedId);
+      ps.execute();
+
+      return true;
+    } catch (Exception e) {
+      e.printStackTrace();
+      return false;
+    }
+  }
+
+  public boolean updateMessage(String messageId, String key, String value) {
+    try (Connection con = super.getConnection()) {
+      PreparedStatement ps = con.prepareStatement("update message set where ?, ? where message_id = ?");
+      ps.setString(1, key);
+      ps.setString(2, value);
+      ps.setString(3, messageId);
       ps.execute();
 
       return true;

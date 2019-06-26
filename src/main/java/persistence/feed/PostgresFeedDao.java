@@ -1,14 +1,12 @@
 package persistence.feed;
 
 import java.sql.*;
-import java.text.*;
 import java.util.ArrayList;
 
 import models.Feed;
-import models.Product;
 import persistence.PostgresBaseDao;
 
-public class PostgresFeedDao extends PostgresBaseDao {
+public class PostgresFeedDao extends PostgresBaseDao implements FeedDao {
 
   public boolean saveFeed(Feed feed) throws ClassNotFoundException {
     try (Connection con = super.getConnection()) {

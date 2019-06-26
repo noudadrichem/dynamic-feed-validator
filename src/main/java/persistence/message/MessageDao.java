@@ -1,14 +1,18 @@
 package persistence.message;
 
+import java.util.ArrayList;
+
+import models.Message;
+
 public interface MessageDao {
      
-  public void get();
+  abstract public boolean saveMessage(Message message);
+
+  abstract public ArrayList<String> getAllMessageHashesByFeedId(String feedId);
    
-  public void getAll();
+  abstract public ArrayList<Message> getAllMessagesByFeedId(String feedId);
    
-  public void save();
-   
-  public void update();
-   
-  public void delete();
+  abstract public boolean deleteMessage(String feedId);
+  
+  abstract public boolean updateMessage(String messageId, String key, String value);
 }

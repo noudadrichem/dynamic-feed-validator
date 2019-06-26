@@ -1,14 +1,20 @@
-package persistence;
+package persistence.feed;
+
+import java.util.ArrayList;
+
+import models.Feed;
 
 public interface FeedDao {
      
-  public void get();
+  public boolean saveFeed(Feed feed) throws ClassNotFoundException;
    
-  public void getAll();
+  public boolean doesFeedExsist(String feedLink) throws ClassNotFoundException;
    
-  public void save();
+  public String getFeedIdByLink(String feedLink) throws ClassNotFoundException;
    
-  public void update();
+  public ArrayList<Feed> getAllFeedsByUser(String userId) throws ClassNotFoundException;
    
-  public void delete();
+  public Feed getFeedByid(String feedId) throws ClassNotFoundException;
+
+  public boolean deleteFeed(String feedId);
 }
