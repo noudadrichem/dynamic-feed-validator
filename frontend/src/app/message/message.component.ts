@@ -53,6 +53,7 @@ export class MessageComponent implements OnInit {
   }
 
   wsGetMessage(message){
+    console.log({message})
     this.echoText += "Message received from to the server : " + message.data + "\n";
   }
 
