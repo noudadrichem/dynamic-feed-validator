@@ -10,8 +10,9 @@ const { API_URL } = environment
 })
 export class MessageComponent implements OnInit {
 
-  socket: WebSocket;
-  echoText: String = "";
+  socket: WebSocket
+  echoText: String = ""
+  activeSocketSessionId: String
 
   constructor() { }
 
@@ -54,7 +55,11 @@ export class MessageComponent implements OnInit {
 
   wsGetMessage(message){
     console.log({message})
-    this.echoText += "Message received from to the server : " + message.data + "\n";
+    message = JSON.parse(message.data)
+    if(message.type === 'init')  {
+      this.activeSocketSessionId = message.id
+      window.sessionStorage.setItem("sessionId", message.id)
+    }
   }
 
   wsError(message){

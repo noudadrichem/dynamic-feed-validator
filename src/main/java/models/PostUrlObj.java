@@ -3,8 +3,9 @@ package models;
 
 public class PostUrlObj {
 
-	String url;
-	String validationId;
+	private String url;
+	private String validationId;
+	private String socketSessionId;
 
 	public String getUrl() {
 		return url;
@@ -21,6 +22,15 @@ public class PostUrlObj {
 	public void setValidationId(String validationId) {
 		this.validationId = validationId;
 	}
+
+	public String getSocketSessionId() {
+		return socketSessionId;
+	}
+
+	public void setSocketSessionId(String socketSessionId) {
+		this.socketSessionId = socketSessionId;
+	}
+
 
 	@Override
 	public String toString() {

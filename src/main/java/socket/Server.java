@@ -9,11 +9,14 @@ import javax.websocket.server.ServerEndpoint;
 public class Server {
 
   @OnOpen
-  public void onOpen(Session session) {
+  public void onOpen(Session session) throws IOException {
     System.out.println("Open Connection session id=" + session.getId());
+    SessionHandler handler = SessionHandler.setInstance();
+    handler.addSession(session);
 
-    // hier moet de session handler singleton gemaakt worden
-    SessionHandler.setInstance(session);
+    // send session id to frontend
+    session.getBasicRemote()
+      .sendText("{\"id\": \""+session.getId()+"\", \"type\": \"init\"}");
   }
 
   @OnClose

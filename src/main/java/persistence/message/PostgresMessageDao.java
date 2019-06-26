@@ -15,21 +15,8 @@ import socket.SessionHandler;
 
 public class PostgresMessageDao extends PostgresBaseDao {
 
-  public void sendToSocket() {
-    SessionHandler sessionHandler = SessionHandler.getInstance();
-
-    try {
-      sessionHandler.sendMessage("Dit komt vanuit message dao");
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-  }
-
   public boolean saveMessage(Message message) {
     try (Connection con = super.getConnection()) {
-
-      // server.emitMessage(message);
-      this.sendToSocket();
 
       if (!this.getAllMessageHashesByFeedId(message.getfeedId()).contains(message.getMessageHashCode())) {
 

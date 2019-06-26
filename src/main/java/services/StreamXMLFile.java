@@ -12,6 +12,7 @@ import models.Product;
 import persistence.feed.PostgresFeedDao;
 import persistence.product.PostgresProductDao;
 import socket.Server;
+import socket.SessionHandler;
 
 public class StreamXMLFile {
 
@@ -19,6 +20,7 @@ public class StreamXMLFile {
   private String feedId;
   private String activeProductId;
   private String validationId;
+  private String socketSessionId;
   private static ValidateKeyValue validateUtil = new ValidateKeyValue();
   private static final PostgresFeedDao feedDao = new PostgresFeedDao();
   private static final PostgresProductDao productDao = new PostgresProductDao();
@@ -29,10 +31,11 @@ public class StreamXMLFile {
   private boolean isFeedHeader = true;
   private boolean isEndOfItem = false;
 
-  public StreamXMLFile(String feedUrl, String validationId) {
+  public StreamXMLFile(String feedUrl, String validationId, String socketSessionId) {
     try {
       this.feedUrl = new URL(feedUrl);
       this.validationId = validationId;
+      this.socketSessionId = socketSessionId;
     } catch (Exception e) {
       throw new RuntimeException(e);
     }
@@ -253,7 +256,14 @@ public class StreamXMLFile {
       
       if(!this.isFeedHeader) {
 
-        boolean isValidationSucces = validateUtil.checkKeyValue(key, value, this.feedId, this.activeProductId, this.isEndOfItem);
+        boolean isValidationSucces = validateUtil.checkKeyValue(
+          key, 
+          value, 
+          this.feedId, 
+          this.activeProductId, 
+          this.isEndOfItem, 
+          this.socketSessionId
+        );
         if(isValidationSucces) {
           return value;
         } else {

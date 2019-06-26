@@ -91,7 +91,7 @@ public class FeedService {
           .add("message", "Succesfully upload URL")
           .add("success", true);
 
-        ValidationThread validationThread = new ValidationThread(XMLURL, uploadedObject.getValidationId());
+        ValidationThread validationThread = new ValidationThread(XMLURL, uploadedObject.getValidationId(), uploadedObject.getSocketSessionId());
         validationThread.start();
 
       } else {

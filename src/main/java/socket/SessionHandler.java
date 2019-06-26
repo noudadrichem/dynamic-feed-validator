@@ -1,7 +1,7 @@
 package socket;
 
 import java.io.IOException;
-import java.util.List;
+import java.util.ArrayList;
 
 import javax.websocket.Session;
 
@@ -10,16 +10,13 @@ import models.Message;
 public class SessionHandler {
 
   private static SessionHandler sessionHandler = null;
-  public Session session;
+  private static ArrayList<Session> sessions = new ArrayList<Session>();
 
-  // public ArrayList<\> subscribers;
-  private SessionHandler(Session session) {
-    this.session = session;
-  }
+  private SessionHandler() {}
 
-  public static SessionHandler setInstance(Session session) {
+  public static SessionHandler setInstance() {
     if (sessionHandler == null) {
-      sessionHandler = new SessionHandler(session);
+      sessionHandler = new SessionHandler();
     }
     return sessionHandler;
   }
@@ -28,16 +25,21 @@ public class SessionHandler {
     return sessionHandler;
   }
 
-  public void setSession(Session session) {
-    this.session = session;
+  public Session getSession(String id) {
+    Session tempSes = null;
+    for(Session session : sessions) {
+      if(session.getId().equals(id)) {
+        tempSes = session;
+      }
+    }
+    return tempSes;
   }
 
-  public Session getSession() {
-    return this.session;
+  public void addSession(Session session) {
+    sessions.add(session);
   }
 
-  public void sendMessage(String message) throws IOException {
-    // hier moet dan een session iets komen die een message stuurt
-    this.session.getBasicRemote().sendText(message);
+  public void sendMessage(String sessionId, String message) throws IOException {
+    getSession(sessionId).getBasicRemote().sendText(message);
   }
 }
