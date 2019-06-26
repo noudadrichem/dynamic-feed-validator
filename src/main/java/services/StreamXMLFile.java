@@ -219,6 +219,7 @@ public class StreamXMLFile {
             
             line = eventReader.nextEvent();
             System.out.println("_________END_ITEM______"); // is end of item.
+
             continue;
           } else if (line.asEndElement().getName().getLocalPart() == "rss") {
             System.out.println("feed is klaar met valideren van feed " + this.feedId);

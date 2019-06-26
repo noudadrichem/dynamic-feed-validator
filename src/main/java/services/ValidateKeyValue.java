@@ -26,7 +26,7 @@ public class ValidateKeyValue {
     this.productId = productId;
     this.feedId = feedId;
 
-    System.out.println(key + "=" + value); // print key/values to console.
+    // System.out.println(key + "=" + value); // print key/values to console.
 
     if (value.length() == 0) { // is value empty?
       Message mes = new Message(
@@ -40,7 +40,7 @@ public class ValidateKeyValue {
       messageDao.saveMessage(mes);
     } else if (value.startsWith("http")) { // is value an URL?
 
-      if(!value.startsWith("https")) {
+      if(!value.startsWith("https")) { // is value NOT a safe url
         Message mes = new Message(
           "Unsafe URL found.",
           key + " " + value + " is an url that is unsafe, make sure to use HTTPS" + SUFFIX(),

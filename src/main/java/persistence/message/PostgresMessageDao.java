@@ -1,24 +1,35 @@
 package persistence.message;
 
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.sql.*;
 import java.util.ArrayList;
+
+import javax.websocket.ContainerProvider;
 
 import models.Message;
 
 import persistence.PostgresBaseDao;
+import socket.SessionHandler;
 
 public class PostgresMessageDao extends PostgresBaseDao {
 
+  public void sendToSocket() {
+    SessionHandler sessionHandler = SessionHandler.getInstance();
 
-  public void connectToSocket() {
-    System.out.println("message dao connec to to socket...");
+    try {
+      sessionHandler.sendMessage("Dit komt vanuit message dao");
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 
   public boolean saveMessage(Message message) {
     try (Connection con = super.getConnection()) {
 
       // server.emitMessage(message);
-      this.connectToSocket();
+      this.sendToSocket();
 
       if (!this.getAllMessageHashesByFeedId(message.getfeedId()).contains(message.getMessageHashCode())) {
 
