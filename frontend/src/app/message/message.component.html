@@ -1,5 +1,9 @@
-<card-container
-  *ngIf="errors.length > 0 || warnings.length > 0"
-  [errors]="errors"
-  [warnings]="warnings"
-></card-container>
+<div class="container" *ngIf="errors.length > 0 || warnings.length > 0">
+  <card-container [errors]="errors" [warnings]="warnings"></card-container>
+
+  <div class="loading dot-wrapper" *ngIf="stilValidating">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+</div>

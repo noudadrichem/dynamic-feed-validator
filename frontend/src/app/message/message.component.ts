@@ -15,6 +15,7 @@ export class MessageComponent implements OnInit {
   
   echoText: String = ""
   connected: boolean = false;
+  stilValidating: boolean = true;
   errors: Array<any> = []
   warnings: Array<any> = []
 
@@ -23,8 +24,7 @@ export class MessageComponent implements OnInit {
   ngOnInit() {
     this.connecSocket();
   }
-
-
+  
   connecSocket(): void {
     console.log('trying to connect')
     this.socket = new WebSocket('ws://localhost:9090/socket');

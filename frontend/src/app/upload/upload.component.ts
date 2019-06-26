@@ -28,7 +28,6 @@ export class UploadComponent implements OnInit {
   ngOnInit() {}
 
   startValidation() {
-    this.submitted = true;
     const body = {
       url: this.inputUrl,
       validationId: uuidv4(),
@@ -38,6 +37,7 @@ export class UploadComponent implements OnInit {
     this.http.post(`${API_URL}/feed/upload`, body)
       .subscribe((data) => {
         this.isUploadSuccess = data['success'];
+        this.submitted = true;
 
         setTimeout(() => {
           this.submitted = false
