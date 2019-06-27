@@ -3,6 +3,7 @@
   <header>
     <h1>Validate your feed</h1>
     <div [ngClass]="['pulse', connected ? 'green' : 'red']"></div>
+    <button class="ui button small" (click)="connecSocket()">(re)connect</button>
   </header>
 
   <div class="container">

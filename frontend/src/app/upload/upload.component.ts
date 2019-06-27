@@ -17,7 +17,7 @@ export class UploadComponent implements OnInit {
   submitted: boolean = false;  
   echoText: String = ''
   connected: boolean = false;
-  stilValidating: boolean = true;
+  isStilValidating: boolean = true;
   errors: Array<any> = []
   warnings: Array<any> = []
 
@@ -33,7 +33,7 @@ export class UploadComponent implements OnInit {
   resetUI() {
     this.errors = []
     this.warnings = []
-    this.stilValidating = true;
+    this.isStilValidating = true;
   }
 
   startValidation() {
@@ -58,7 +58,8 @@ export class UploadComponent implements OnInit {
 
   connecSocket(): void {
     console.log('trying to connect')
-    this.socket = new WebSocket('ws://'+ window.location.host +'/socket');
+    const socketEndpoint = (window.location.protocol === 'https:' ? 'wss:' : 'ws:') + '//' + window.location.host + '/socket';
+    this.socket = new WebSocket(socketEndpoint)
 
     this.socket.onopen = () => this.webSocketOpen()
     this.socket.onclose = () => this.webSocketClose()
@@ -95,7 +96,7 @@ export class UploadComponent implements OnInit {
         window.sessionStorage.setItem('sessionId', message.id)
         break;
       case 'finale':
-        this.stilValidating = false
+        this.isStilValidating = false
         // TODO: feedModelService push feed from finale message from socket.
         this.feedModelService.trigger();
         break;
