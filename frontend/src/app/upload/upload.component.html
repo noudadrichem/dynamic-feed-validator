@@ -3,10 +3,10 @@
   <header>
     <h1>Validate your feed</h1>
 
-    <div>
+    <span class="socket-status">
       <div [ngClass]="['pulse', connected ? 'green' : 'red']"></div>
-      <button class="ui button small" (click)="connecSocket()">(re)connect</button>
-    </div>
+      <button class="ui button primary small" (click)="connecSocket()">(re)connect</button>
+    </span>
   </header>
 
   <div class="container">
@@ -36,13 +36,13 @@
       [isWarningsShown]="true">
     </card-container>
   
-    <div class="loading dot-wrapper" *ngIf="stilValidating">
+    <div class="loading dot-wrapper" *ngIf="isStilValidating">
       <div class="dot"></div>
       <div class="dot"></div>
       <div class="dot"></div>
     </div>
 
-    <div *ngIf="!stilValidating" class="ui message success">
+    <div *ngIf="!isStilValidating" class="ui message success">
       Succesfully validated your feed.
     </div>
   </div>

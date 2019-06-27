@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FeedHttpService } from '../services/feed-http.service'
 import { FeedModelService } from '../services/feed-model.service'
+import { environment } from '../../environments/environment';
+const { SOCKET_URL } = environment
 
 @Component({
   selector: 'app-upload',
@@ -58,8 +60,8 @@ export class UploadComponent implements OnInit {
 
   connecSocket(): void {
     console.log('trying to connect')
-    const socketEndpoint = (window.location.protocol === 'https:' ? 'wss:' : 'ws:') + '//' + window.location.host + '/socket';
-    this.socket = new WebSocket(socketEndpoint)
+
+    this.socket = new WebSocket(SOCKET_URL)
 
     this.socket.onopen = () => this.webSocketOpen()
     this.socket.onclose = () => this.webSocketClose()

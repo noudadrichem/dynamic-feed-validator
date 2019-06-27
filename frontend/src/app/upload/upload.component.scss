@@ -1,6 +1,14 @@
 .upload {
   margin-left: 280px;
 
+  header {
+    .socket-status {
+      .button {
+        margin-left: 24px;
+      }
+    }
+  }
+
   &-container {
     display: flex;
     align-items: flex-end;

@@ -19,6 +19,18 @@
 
   <dependencies>
     <dependency>
+      <groupId>org.glassfish.jersey.containers</groupId>
+      <artifactId>jersey-container-servlet</artifactId>
+      <version>2.26</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.glassfish.jersey.inject</groupId>
+      <artifactId>jersey-hk2</artifactId>
+      <version>2.26</version>
+    </dependency>
+
+    <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
       <version>4.0.0</version>
@@ -56,13 +68,6 @@
     </dependency>
 
     <dependency>
-      <groupId>org.glassfish</groupId>
-      <artifactId>javax.json</artifactId>
-      <version>1.0.4</version>
-    </dependency>
-
-
-    <dependency>
       <groupId>org.glassfish.jersey.media</groupId>
       <artifactId>jersey-media-json-jackson</artifactId>
       <version>2.27</version>
@@ -72,24 +77,6 @@
       <groupId>com.sun.jersey</groupId>
       <artifactId>jersey-json</artifactId>
       <version>1.8</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.glassfish.jersey.containers</groupId>
-      <artifactId>jersey-container-servlet</artifactId>
-      <version>2.26</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.glassfish.jersey.inject</groupId>
-      <artifactId>jersey-hk2</artifactId>
-      <version>2.26</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.glassfish.jersey.media</groupId>
-      <artifactId>jersey-media-json-jackson</artifactId>
-      <version>2.27</version>
     </dependency>
 
     <dependency>
@@ -115,7 +102,8 @@
 
   <build>
     <plugins>
-      <!-- <plugin>
+
+      <plugin>
         <groupId>org.apache.tomcat.maven</groupId>
         <artifactId>tomcat7-maven-plugin</artifactId>
         <version>2.2</version>
@@ -124,13 +112,13 @@
           <port>9090</port>
           <mode>both</mode>
         </configuration>
-      </plugin> -->
+      </plugin>
+
 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
         <version>2.3</version>
-
         <executions>
           <execution>
             <phase>package</phase>
@@ -139,33 +127,28 @@
             </goals>
             <configuration>
               <artifactItems>
-
                 <artifactItem>
                   <groupId>com.github.jsimone</groupId>
                   <artifactId>webapp-runner</artifactId>
                   <version>9.0.8.0</version>
                   <destFileName>webapp-runner.jar</destFileName>
                 </artifactItem>
-
                 <artifactItem>
                   <groupId>org.apache.tomcat</groupId>
                   <artifactId>tomcat-dbcp</artifactId>
                   <version>9.0.8</version>
                 </artifactItem>
-
                 <artifactItem>
                   <groupId>org.postgresql</groupId>
                   <artifactId>postgresql</artifactId>
                   <version>42.2.2</version>
                 </artifactItem>
-
                 <artifactItem>
                   <groupId>org.apache.tomcat.embed</groupId>
                   <artifactId>tomcat-embed-websocket</artifactId>
                   <version>9.0.21</version>
                   <destFileName>tomcat-embed-websocket.jar</destFileName>
                 </artifactItem>
-
               </artifactItems>
             </configuration>
           </execution>
