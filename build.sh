@@ -1,6 +1,6 @@
 #!/bin/sh
 echo '__________________BUILDING WAR__________________';
-sudo rm -rf target && \
+sudo rm -rf target/ && \
 echo '____removed target files____'
 mvn clean install && \
 cd frontend && \
