@@ -56,10 +56,10 @@
     </dependency>
 
     <dependency>
-			<groupId>org.glassfish</groupId>
-			<artifactId>javax.json</artifactId>
-			<version>1.0.4</version>
-		</dependency>
+      <groupId>org.glassfish</groupId>
+      <artifactId>javax.json</artifactId>
+      <version>1.0.4</version>
+    </dependency>
 
 
     <dependency>
@@ -75,22 +75,22 @@
     </dependency>
 
     <dependency>
-			<groupId>org.glassfish.jersey.containers</groupId>
-			<artifactId>jersey-container-servlet</artifactId>
-			<version>2.26</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.glassfish.jersey.inject</groupId>
-			<artifactId>jersey-hk2</artifactId>
-			<version>2.26</version>
-		</dependency>
+      <groupId>org.glassfish.jersey.containers</groupId>
+      <artifactId>jersey-container-servlet</artifactId>
+      <version>2.26</version>
+    </dependency>
 
     <dependency>
-			<groupId>org.glassfish.jersey.media</groupId>
-			<artifactId>jersey-media-json-jackson</artifactId>
-			<version>2.27</version>
-		</dependency>
+      <groupId>org.glassfish.jersey.inject</groupId>
+      <artifactId>jersey-hk2</artifactId>
+      <version>2.26</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.glassfish.jersey.media</groupId>
+      <artifactId>jersey-media-json-jackson</artifactId>
+      <version>2.27</version>
+    </dependency>
 
     <dependency>
       <groupId>commons-codec</groupId>
@@ -115,42 +115,62 @@
 
   <build>
     <plugins>
-      
+      <!-- <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
+          <path>/</path>
+          <port>9090</port>
+          <mode>both</mode>
+        </configuration>
+      </plugin> -->
 
       <plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<version>2.3</version>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.3</version>
 
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>copy</goal>
-						</goals>
-						<configuration>
-							<artifactItems>
-								<artifactItem>
-									<groupId>com.github.jsimone</groupId>
-									<artifactId>webapp-runner</artifactId>
-									<version>9.0.8.0</version>
-									<destFileName>webapp-runner.jar</destFileName>
-								</artifactItem>
-								<artifactItem>
-									<groupId>org.apache.tomcat</groupId>
-									<artifactId>tomcat-dbcp</artifactId>
-									<version>9.0.8</version>
-								</artifactItem>
-								<artifactItem>
-									<groupId>org.postgresql</groupId>
-									<artifactId>postgresql</artifactId>
-									<version>42.2.2</version>
-								</artifactItem>
-							</artifactItems>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>copy</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+
+                <artifactItem>
+                  <groupId>com.github.jsimone</groupId>
+                  <artifactId>webapp-runner</artifactId>
+                  <version>9.0.8.0</version>
+                  <destFileName>webapp-runner.jar</destFileName>
+                </artifactItem>
+
+                <artifactItem>
+                  <groupId>org.apache.tomcat</groupId>
+                  <artifactId>tomcat-dbcp</artifactId>
+                  <version>9.0.8</version>
+                </artifactItem>
+
+                <artifactItem>
+                  <groupId>org.postgresql</groupId>
+                  <artifactId>postgresql</artifactId>
+                  <version>42.2.2</version>
+                </artifactItem>
+
+                <artifactItem>
+                  <groupId>org.apache.tomcat.embed</groupId>
+                  <artifactId>tomcat-embed-websocket</artifactId>
+                  <version>${tomcat.version}</version>
+                  <destFileName>tomcat-embed-websocket.jar</destFileName>
+                </artifactItem>
+
+              </artifactItems>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
 
     </plugins>
   </build>
