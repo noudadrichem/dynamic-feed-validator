@@ -1,6 +1,6 @@
 #!/bin/sh
 echo '__________________BUILDING WAR__________________';
-
+sudo rm -rf ./target && \
 mvn clean install && \
 cd frontend && \
 npm run build && \
