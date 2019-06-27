@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { environment } from './../../environments/environment';
 import { ActivatedRoute } from '@angular/router'
-const { API_URL } = environment
+import { FeedHttpService } from '../services/feed-http.service'
+import { FeedModelService } from '../services/feed-model.service'
 
 @Component({
   selector: 'sidebar',
@@ -15,24 +14,26 @@ export class SidebarComponent implements OnInit {
   currentlySelectedFeed = "";
 
   constructor(
-    private http: HttpClient,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private feedHttpService: FeedHttpService,
+    private feedModelService: FeedModelService
   ) {}
 
   ngOnInit() {
     this.fetchFeeds()
+
+    this.feedModelService.onFeedUpdate()
+      .subscribe(data => {
+        this.fetchFeeds()
+      })
   }
 
   fetchFeeds(): void {
-    this.http.get(`${API_URL}/feed/all`)
+    this.feedHttpService.fetchFeeds()
       .subscribe(allFeeds => {
         this.feeds = allFeeds;
       })
 
-    this.route.paramMap.subscribe(params => {
-      this.currentlySelectedFeed = params.get('feedid')
-      console.log(params.get('feedid'))
-    })
+    this.route.paramMap.subscribe(params => this.currentlySelectedFeed = params.get('feedid'))
   }
-
 }

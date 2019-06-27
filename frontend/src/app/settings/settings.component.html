@@ -6,20 +6,32 @@
           <svg (click)="hideModal()" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="square" stroke-linejoin="bevel"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
         </div>
         <h1 class="ng-binding">Settings</h1>
+        <p>{{ feedId }}</p>
       </div>
       <div class="content flex display">
-        {{ feedId }}
-        <div>
-          blueprint here
-        </div>
-        <div>
-          total amount of messages
-        </div>
-        <div>
-          last validation date here
-        </div>
-        <div>
-          button to revalidate
+        <div class="ui grid">
+          <div class="six wide column">
+            <div>
+              <label>Total messages:</label>
+              {{ totalAmount }}
+            </div>
+            <div class="delete-feed-btn">
+              <button class="ui button primary small" (click)="isDeleteFeedShown = true" *ngIf="!isDeleteFeedShown">Delete feed</button>
+              <button class="ui button danger small" (click)="deleteFeed()" *ngIf="isDeleteFeedShown">You sure?</button>
+            </div>
+            <div>
+              <button class="ui button primary small">Revalidate</button>
+            </div>
+          </div>
+          <div class="six wide column">
+            <div>
+              <label>Blueprint:</label>
+              <!-- <p>A blueprint shows all the used keys inside a product of a feed. This blueprint is used to validate on key/value pairs.</p> -->
+              <ul>
+                <li *ngFor="let key of keys">{{ key }}</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -25,12 +25,21 @@
   </div>
 
   <div class="container" *ngIf="errors.length > 0 || warnings.length > 0">
-    <card-container [errors]="errors" [warnings]="warnings"></card-container>
+    <card-container 
+      [errors]="errors" 
+      [warnings]="warnings"
+      [isErrorsShown]="true"
+      [isWarningsShown]="true">
+    </card-container>
   
     <div class="loading dot-wrapper" *ngIf="stilValidating">
       <div class="dot"></div>
       <div class="dot"></div>
       <div class="dot"></div>
+    </div>
+
+    <div *ngIf="!stilValidating" class="ui message success">
+      Succesfully validated your feed.
     </div>
   </div>
 </div>

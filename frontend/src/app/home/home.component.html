@@ -38,6 +38,7 @@
     *ngIf="isSettingsIsShown"
     (emitter)="hideSettingsModal($event)"
     [feedId]="feed.id"
+    [totalAmount]="errors.length + warnings.length"
   ></settings>
 
 </div>
