@@ -139,7 +139,6 @@ public class ValidateKeyValue {
     requiredItems.add("price");
     requiredItems.add("brand");
     requiredItems.add("gtin");
-    requiredItems.add("mpn");
 
     for (String requiredItem : requiredItems) {
       if (!keysFromItem.contains(requiredItem)) {
