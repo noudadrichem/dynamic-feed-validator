@@ -941,7 +941,7 @@ var UploadComponent = /** @class */ (function () {
     UploadComponent.prototype.connecSocket = function () {
         var _this = this;
         console.log('trying to connect');
-        this.socket = new WebSocket('ws://localhost:9090/socket');
+        this.socket = new WebSocket('ws://' + window.location.host + '/socket');
         this.socket.onopen = function () { return _this.webSocketOpen(); };
         this.socket.onclose = function () { return _this.webSocketClose(); };
         this.socket.onmessage = function (message) { return _this.webSocketGetMessage(message); };

@@ -58,7 +58,7 @@ export class UploadComponent implements OnInit {
 
   connecSocket(): void {
     console.log('trying to connect')
-    this.socket = new WebSocket('ws://localhost:9090/socket');
+    this.socket = new WebSocket('ws://'+ window.location.host +'/socket');
 
     this.socket.onopen = () => this.webSocketOpen()
     this.socket.onclose = () => this.webSocketClose()
