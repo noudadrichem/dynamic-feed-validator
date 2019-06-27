@@ -14,7 +14,7 @@
 http://localhost:9090/api/xmlservice/upload
 ```json
 {
-"url": " xml feed url "
+  "url": " xml feed url "
 }
 ```
 
@@ -25,4 +25,13 @@ http://localhost:9090/api/feed/all
 http://localhost:9090/api/feed/[FEED_ID]
 
 #### Messages from feed from user (pseudo user) [GET]
- http://localhost:9090/api/message/all/[FEED_ID]
+http://localhost:9090/api/message/all/[FEED_ID]
+
+### Socket URL: [ws://]
+ws://localhost:9090/socket
+
+
+### See Heroku logs:
+```bash
+heroku logs --tail -a bw-dynamic-feed-validator
+```
