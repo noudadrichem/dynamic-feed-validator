@@ -1,10 +1,12 @@
 #!/bin/sh
 echo '__________________BUILDING WAR__________________';
 sudo rm -rf target/ && \
+ls -1
 echo '____removed target files____'
 mvn clean install && \
 cd frontend && \
-npm run build && \
+sudo rm -rf dist
+sudo npm run build && \
 cd .. && \
 cp -R ./frontend/dist/. ./src/main/webapp
 
