@@ -30,4 +30,10 @@
     padding-top: 8px;
     margin-left: 16px;
   }
+
+  &.empty-state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

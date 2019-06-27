@@ -18,5 +18,13 @@
     cursor: pointer;
     margin-right: 8px;
     transform: translateY(2px);
+
+    * {
+      transition: 170ms linear;
+    }
+
+    svg.shown {
+      transform: rotate(-90deg);
+    }
   }
 }
