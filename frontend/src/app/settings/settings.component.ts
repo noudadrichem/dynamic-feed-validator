@@ -48,7 +48,7 @@ export class SettingsComponent implements OnInit {
       .subscribe(data => {
         if(data.success) {
           this.hideModal()
-          this.feedModelService.trigger();
+          this.feedModelService.fetchTrigger();
         }
       })
   }

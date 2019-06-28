@@ -58,6 +58,12 @@ export class HomeComponent implements OnInit {
       .subscribe(() => this.router.navigate(['/home']))
   }
 
+  revalidate() {
+    console.log('validate')
+    this.feedModelService.uploadTrigger(this.feed.feedLink)
+    this.router.navigateByUrl('/upload', { state: { url: this.feed.feedLink }})
+  }
+
   showErrors(): void {
     this.isErrorsShown = true;
     this.isWarningsShown = false;
