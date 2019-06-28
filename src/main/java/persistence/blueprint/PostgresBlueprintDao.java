@@ -10,6 +10,8 @@ import persistence.PostgresBaseDao;
 
 public class PostgresBlueprintDao extends PostgresBaseDao {
 
+  private String dikke = "jatoch";
+
   public boolean saveBlueprint(BlueprintKey blueprintKey) {
     try (Connection con = super.getConnection()) {
 
