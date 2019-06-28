@@ -259,9 +259,31 @@ public class StreamXMLFile {
     String value = "";
     String key = line.asStartElement().getName().getLocalPart();
     line = eventReader.nextEvent();
+
+    // switch(line.getEventType()) {
+    //   case XMLStreamConstants.CHARACTERS:
+    //     System.out.println(key+"=CHARACTERS");
+    //     System.out.println(key+"="+line.asCharacters().getData());
+    //   break;
+    //   case XMLStreamConstants.CDATA:
+    //     System.out.println(key+"=CDATA");
+    //     System.out.println(key+"="+line.asCharacters().getData());
+    //   break;
+    // }
+
+    /**
+    switch(line.getEventType)
+      case XMLStreamConstants.CDATA:
+        System.out.print("<![CDATA[");
+        start = xmlr.getTextStart();
+        length = xmlr.getTextLength();
+        System.out.print(new String(xmlr.getTextCharacters(), start, length));
+        System.out.print("]]>");
+      break;
+     */
     
     if (line instanceof Characters) {
-      value = line.asCharacters().getData().trim();
+      value = line.asCharacters().getData();
       
       if(!this.isFeedHeader) {
 

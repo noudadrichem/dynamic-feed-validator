@@ -14,7 +14,8 @@ export class UploadComponent implements OnInit {
   socket: WebSocket
   activeSocketSessionId: String
 
-  inputUrl: String = 'https://werk.noudadrichem.com/feed-validator/benchy-bad-feed.xml'
+  // inputUrl: String = 'https://werk.noudadrichem.com/feed-validator/benchy-bad-feed.xml'
+  inputUrl: String = 'https://werk.noudadrichem.com/feed-validator/qeuze-google-feed-small.xml'
   isUploadSuccess: boolean = false;
   submitted: boolean = false;  
   echoText: String = ''
