@@ -13,6 +13,8 @@ public class PostgresMessageDao extends PostgresBaseDao implements MessageDao {
   public boolean saveMessage(Message message) {
     try (Connection con = super.getConnection()) {
 
+      System.out.println("from postgresmesssage dao" + message.getProductId());
+
       if (!this.getAllMessageHashesByFeedId(message.getfeedId()).contains(message.getMessageHashCode())) {
 
         PreparedStatement pstmt = con.prepareStatement(
@@ -22,7 +24,7 @@ public class PostgresMessageDao extends PostgresBaseDao implements MessageDao {
         pstmt.setString(3, message.getType());
         pstmt.setString(4, message.getfeedId());
         pstmt.setString(5, message.getMessageHashCode());
-        pstmt.setInt(6, Integer.parseInt(message.getProductId()));
+        pstmt.setString(6, message.getProductId());
         pstmt.executeUpdate();
 
         return true;

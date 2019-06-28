@@ -38,28 +38,42 @@ public class ValidateKeyValue {
     this.sessionHandler = SessionHandler.getInstance();
 
 
-    // System.out.println(key + "=" + value); // print key/values to console.
+    System.out.println(key + "=" + value + SUFFIX()); // print key/values to console.
 
     if (value.length() == 0) { // is value empty?
-      Message mes = new Message("Empty key found.", key + " is empty" + SUFFIX(), this.productId, "error", this.feedId);
+      Message mes = new Message(
+        "Empty key found.", 
+        key + " is empty" + SUFFIX(),
+        this.productId,
+        "error",
+        this.feedId
+      );
 
       messageDao.saveMessage(mes);
       sessionHandler.sendToSocket(mes, this.socketSessionId);
     } else if (value.startsWith("http")) { // is value an URL?
 
       if (!value.startsWith("https")) { // is value NOT a safe url
-        Message mes = new Message("Unsafe URL found.",
-            key + " " + value + " is an url that is unsafe, make sure to use HTTPS" + SUFFIX(), this.productId,
-            "warning", this.feedId);
+        Message mes = new Message(
+          "Unsafe URL found.",
+          key + " " + value + " is an url that is unsafe, make sure to use HTTPS" + SUFFIX(),
+          this.productId,
+          "warning",
+          this.feedId
+        );
 
         messageDao.saveMessage(mes);
         sessionHandler.sendToSocket(mes, this.socketSessionId);
       }
 
       if (!isURLValid(value)) { // is it a valid url?
-        Message mes = new Message("Unvalid URL found.",
-            value + " is an url that is not valid and return a non success code." + SUFFIX(), this.productId, "error",
-            this.feedId);
+        Message mes = new Message(
+          "Unvalid URL found.",
+          value + " is an url that is not valid and return a non success code." + SUFFIX(), 
+          this.productId, 
+          "error",
+          this.feedId
+        );
 
         messageDao.saveMessage(mes);
         sessionHandler.sendToSocket(mes, this.socketSessionId);
@@ -67,9 +81,13 @@ public class ValidateKeyValue {
 
       if (isUrlAnImageUrl(value)) { // is it an image URL?
         if (!isUrlValidImage(value)) { // is the content type really an image?
-          Message mes = new Message("Unvalid image found.",
-              value + " is an image that is not valid and return a non image header or is largen then 16mb." + SUFFIX(),
-              this.productId, "error", this.feedId);
+          Message mes = new Message(
+            "Unvalid image found.",
+            value + " is an image that is not valid and return a non image header or is largen then 16mb." + SUFFIX(),
+            this.productId,
+            "error",
+            this.feedId
+          );
 
           messageDao.saveMessage(mes);
           sessionHandler.sendToSocket(mes, this.socketSessionId);
@@ -123,7 +141,7 @@ public class ValidateKeyValue {
     try {
       return client.execute(request);
     } catch (Exception e) {
-      e.printStackTrace();
+      System.out.println("ERROR: on url=" + url);
       return null;
     }
   }
@@ -145,7 +163,7 @@ public class ValidateKeyValue {
         Message mes = new Message(
           requiredItem + " is a required field.",
           "Make sure to add " + requiredItem + " to item with id " + this.productId + ".", 
-          this.productId, 
+          this.productId,
           "error",
           this.feedId
         );
