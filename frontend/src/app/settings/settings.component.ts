@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router'
 import { FeedHttpService } from '../services/feed-http.service' 
 import { FeedModelService } from '../services/feed-model.service' 
 
@@ -23,7 +22,6 @@ export class SettingsComponent implements OnInit {
   constructor(
     private feedHttpService: FeedHttpService,
     private feedModelService: FeedModelService,
-    private router: Router
   ) {}
 
   ngOnInit() {
@@ -33,14 +31,6 @@ export class SettingsComponent implements OnInit {
 
   hideModal() {
     this.emitter.emit(false);
-  }
-
-  deleteFeed(): void {
-    this.feedHttpService.deleteFeed(this.feedId)
-      .subscribe(data => {
-        console.log(data)
-        this.router.navigate(['/upload'])
-      })
   }
 
   fetchBluePrint(): void {

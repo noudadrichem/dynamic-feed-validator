@@ -8,6 +8,7 @@
   
   header {
     .filters {
+      margin-left: 32px;
       display: inline-flex;
       flex-direction: column;
 
@@ -22,6 +23,14 @@
           margin: 0 4px;
           font-size: 14px;
         }
+      }
+    }
+
+    .delete-feed-btn {
+      margin-right: 12px;
+
+      button {
+        min-width: 94px;
       }
     }
   }

@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { ActivatedRoute } from '@angular/router'
 import { environment } from './../../environments/environment'
+import { FeedHttpService } from '../services/feed-http.service'
+import { Router } from '@angular/router'
+import { FeedModelService } from '../services/feed-model.service' 
 const { API_URL } = environment
 
 @Component({
@@ -22,7 +25,10 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router,
+    private feedHttpService: FeedHttpService,
+    private feedModelService: FeedModelService,
     ) {}
 
   ngOnInit() {
@@ -35,7 +41,7 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  getSelectedFeed(feedId: string): any {
+  getSelectedFeed(feedId: string): Object {
     this.http.get(`${API_URL}/feed/${feedId}`)
       .subscribe(feed => {
         this.feed = feed
@@ -43,6 +49,13 @@ export class HomeComponent implements OnInit {
         this.errors = this.feed.messages.filter(m => m.type === 'error')
         this.warnings = this.feed.messages.filter(m => m.type === 'warning')
       })
+
+      return this.feed
+  }
+
+  deleteFeed(): void {
+    this.feedHttpService.deleteFeed(this.feed.id)
+      .subscribe(() => this.router.navigate(['/home']))
   }
 
   showErrors(): void {
@@ -60,11 +73,9 @@ export class HomeComponent implements OnInit {
   }
 
   hideSettingsModal() {
-    console.log('hide')
     this.isSettingsIsShown = false
   }
   showSettingsModal() {
-    console.log('show')
     this.isSettingsIsShown = true
   }
 

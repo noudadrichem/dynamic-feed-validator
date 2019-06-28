@@ -1,6 +1,6 @@
 <div id="card-container">
   <div class="errors">
-    <h3>Errors (total: {{ errors.length }})</h3>
+    <h4>Errors (total: {{ errors.length }})</h4>
 
     <ul *ngIf="isErrorsShown">
       <li *ngFor="let error of errors">
@@ -15,7 +15,7 @@
   </div>
 
   <div class="warnings">
-    <h3>Warnings (total: {{ warnings.length }})</h3>
+    <h4>Warnings (total: {{ warnings.length }})</h4>
 
     <ul *ngIf="isWarningsShown">
       <li *ngFor="let warning of warnings">
