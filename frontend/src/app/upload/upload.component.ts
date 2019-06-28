@@ -33,14 +33,6 @@ export class UploadComponent implements OnInit {
 
   ngOnInit() {
     this.connecSocket();
-
-    // this.feedModelService.onUploadUpdate()
-    //   .subscribe(url => {
-    //     console.log('upload url', url)
-    //   })
-
-    // this.inputUrl = this.activatedRoute.paramMap
-    //   .pipe(map(() => window.history.state.url))
  
     this.activatedRoute.paramMap.pipe(map(ja => window.history.state.url))
       .subscribe(url => {
