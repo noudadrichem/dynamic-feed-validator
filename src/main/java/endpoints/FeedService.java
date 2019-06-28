@@ -133,7 +133,28 @@ public class FeedService {
       return messageBuilder.build().toString();
     } catch(Exception e) {
       messageBuilder.add("message", "Failed to delete feed.");
+
       return messageBuilder.build().toString();
     }
+  }
+
+
+  @PUT
+  @Path("/update/{id}")
+  @Produces("application/json")
+  public String updateFeed(@PathParam("id") String feedId, Feed feedObjectToUpdate) {
+    JsonObjectBuilder messageBuilder = Json.createObjectBuilder();
+
+    System.out.println(feedObjectToUpdate);
+
+    String newFeedTitle = feedObjectToUpdate.getTitle();
+    boolean isUpdateSuccess = dao.updateFeed(feedId, "title", newFeedTitle);
+
+    messageBuilder
+      .add("message", isUpdateSuccess ? "Update title has been succesfull" : "No succes in updating title")
+      .add("success", isUpdateSuccess);
+
+
+    return messageBuilder.build().toString();
   }
 }

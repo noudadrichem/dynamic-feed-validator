@@ -17,4 +17,6 @@ public interface FeedDao {
   public Feed getFeedByid(String feedId) throws ClassNotFoundException;
 
   public boolean deleteFeed(String feedId);
+
+  public boolean updateFeed(String feedId, String key, String value);
 }

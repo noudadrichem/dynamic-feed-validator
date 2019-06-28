@@ -129,4 +129,21 @@ public class PostgresFeedDao extends PostgresBaseDao implements FeedDao {
     }
   }
 
+
+  public boolean updateFeed(String feedId, String key, String value) {
+		try (Connection con = super.getConnection()) {
+      // TODO: Figure out a way to make key dynamic
+			PreparedStatement ps = con.prepareStatement("update feed set title = ? where feed_id = ?");
+			ps.setString(1, value);
+			ps.setString(2, feedId);
+			ps.executeUpdate();
+
+      return true;
+			
+		} catch(Exception e) {
+      e.printStackTrace();
+      return false;
+    }
+  }
+
 }

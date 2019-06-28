@@ -11,10 +11,7 @@ public class MakeBluePrint {
   private ArrayList<String> allUsedKeys = new ArrayList<String>();
 
   public boolean add(String key) {
-    if(!allUsedKeys.contains(key)) {
-      return allUsedKeys.add(key);
-    }
-    return false;
+    return !allUsedKeys.contains(key) ? allUsedKeys.add(key) : false;
   }
 
   public ArrayList<String> getAllUsedKeys() {

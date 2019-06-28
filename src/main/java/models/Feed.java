@@ -20,6 +20,8 @@ public class Feed {
     // this.publicationDate = publicationDate;
   }
 
+  public Feed() {}
+
   public String getProductHashCode() {
     String md5productHash = DigestUtils.md5Hex(
       this.toString().trim().replace(" ", "")
