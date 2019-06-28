@@ -19,7 +19,7 @@ export class UploadComponent implements OnInit {
   submitted: boolean = false;  
   echoText: String = ''
   connected: boolean = false;
-  isStilValidating: boolean = true;
+  isStilValidating: boolean = false;
   errors: Array<any> = []
   warnings: Array<any> = []
 
@@ -35,11 +35,12 @@ export class UploadComponent implements OnInit {
   resetUI() {
     this.errors = []
     this.warnings = []
-    this.isStilValidating = true;
+    this.isStilValidating = false
   }
 
   startValidation() {
     this.resetUI()
+    this.isStilValidating = true
 
     const body: Object = {
       url: this.inputUrl,
