@@ -145,15 +145,12 @@ public class FeedService {
   public String updateFeed(@PathParam("id") String feedId, Feed feedObjectToUpdate) {
     JsonObjectBuilder messageBuilder = Json.createObjectBuilder();
 
-    System.out.println(feedObjectToUpdate);
-
     String newFeedTitle = feedObjectToUpdate.getTitle();
     boolean isUpdateSuccess = dao.updateFeed(feedId, "title", newFeedTitle);
 
     messageBuilder
       .add("message", isUpdateSuccess ? "Update title has been succesfull" : "No succes in updating title")
       .add("success", isUpdateSuccess);
-
 
     return messageBuilder.build().toString();
   }

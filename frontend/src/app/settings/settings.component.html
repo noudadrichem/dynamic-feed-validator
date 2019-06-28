@@ -3,24 +3,35 @@
     <div class="ui manage modal flex vertical transition visible active">
       <div class="header">
         <div class="close">
-          <svg (click)="hideModal()" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="square" stroke-linejoin="bevel"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          <svg (click)="hideModal()" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+            fill="none" stroke="#000000" stroke-width="2" stroke-linecap="square" stroke-linejoin="bevel">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
         </div>
-        <h1 class="ng-binding">Settings</h1>
-        <p>{{ feedId }}</p>
+        <h1 class="ng-binding">Feed information</h1>
       </div>
       <div class="content flex display">
         <div class="ui grid">
           <div class="six wide column">
+
+            <div class="edit-feed-name field">
+              <label for="edit-feed-name">Feed name:</label>
+              <div class="ui input">
+                <input [(ngModel)]="feedNameLocal" type="text">
+              </div>
+            </div>
+
+            <div class="edit-feed-name field">
+              <label for="edit-feed-name">URL:</label>
+              <div class="ui input">
+                <input [(ngModel)]="feedUrl" type="text">
+              </div>
+            </div>
+
             <div>
               <label>Total messages:</label>
               {{ totalAmount }}
-            </div>
-            <div class="delete-feed-btn">
-              <button class="ui button primary small" (click)="isDeleteFeedShown = true" *ngIf="!isDeleteFeedShown">Delete feed</button>
-              <button class="ui button danger small" (click)="deleteFeed()" *ngIf="isDeleteFeedShown">You sure?</button>
-            </div>
-            <div>
-              <button class="ui button primary small" disabled>Revalidate</button>
             </div>
           </div>
           <div class="six wide column">
@@ -34,6 +45,9 @@
           </div>
         </div>
       </div>
+      <div class="actions">
+        <button class="ui default outline left button" (click)="hideModal()">Cancel</button> 
+        <button class="ui success button" [disabled]="feedName === feedNameLocal" (click)="saveChanges()">Save new name</button></div>
     </div>
   </div>
 </div>

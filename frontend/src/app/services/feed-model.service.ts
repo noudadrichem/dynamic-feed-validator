@@ -5,18 +5,26 @@ import { Observable, Subject } from 'rxjs';
 export class FeedModelService {
   constructor() {}
 
-  private subject = new Subject<any>();
+  private fetchSubject = new Subject<any>();
+  private uploadSubject = new Subject<any>();
   private feeds: Array<Object> = []
 
-  onFeedUpdate() {
-    console.log('on update feed model service')
-    return this.subject.asObservable();
+  onFeedUpdate(): Observable<any> {
+    return this.fetchSubject.asObservable()
   }
 
-  trigger() {
-    console.log('trigger feed model service')
-    this.subject.next()
-  }  
+  onUploadUpdate(): Observable<any> {
+    return this.uploadSubject.asObservable()
+  }
+
+  fetchTrigger() {
+    this.fetchSubject.next()
+  }
+
+  uploadTrigger(url) {
+    console.log('upload trigger', url)
+    this.uploadSubject.next({ url })
+  }
 
   getFeeds(): Array<Object> {
     return this.feeds;

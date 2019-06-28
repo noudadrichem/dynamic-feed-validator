@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FeedHttpService } from '../services/feed-http.service'
 import { FeedModelService } from '../services/feed-model.service'
 import { environment } from '../../environments/environment';
+import { ActivatedRoute } from '@angular/router';
+import { map } from 'rxjs/operators';
 const { SOCKET_URL } = environment
 
 @Component({
@@ -19,27 +21,46 @@ export class UploadComponent implements OnInit {
   submitted: boolean = false;  
   echoText: String = ''
   connected: boolean = false;
-  isStilValidating: boolean = true;
+  isStilValidating: boolean = false;
   errors: Array<any> = []
   warnings: Array<any> = []
 
   constructor(
     private feedHttpService: FeedHttpService,
-    private feedModelService: FeedModelService
+    private feedModelService: FeedModelService,
+    public activatedRoute: ActivatedRoute
     ) {}
 
   ngOnInit() {
     this.connecSocket();
+
+    // this.feedModelService.onUploadUpdate()
+    //   .subscribe(url => {
+    //     console.log('upload url', url)
+    //   })
+
+    // this.inputUrl = this.activatedRoute.paramMap
+    //   .pipe(map(() => window.history.state.url))
+ 
+    this.activatedRoute.paramMap.pipe(map(ja => window.history.state.url))
+      .subscribe(url => {
+        if(url !== undefined) {
+          this.inputUrl = url
+          this.startValidation()
+        }
+      })
+      
   }
 
   resetUI() {
     this.errors = []
     this.warnings = []
-    this.isStilValidating = true;
+    this.isStilValidating = false
   }
 
   startValidation() {
     this.resetUI()
+    this.isStilValidating = true
 
     const body: Object = {
       url: this.inputUrl,
@@ -100,7 +121,7 @@ export class UploadComponent implements OnInit {
       case 'finale':
         this.isStilValidating = false
         // TODO: feedModelService push feed from finale message from socket.
-        this.feedModelService.trigger();
+        this.feedModelService.fetchTrigger();
         break;
       case 'error':
         this.errors.push(message) 

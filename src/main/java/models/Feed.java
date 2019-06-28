@@ -20,6 +20,7 @@ public class Feed {
     // this.publicationDate = publicationDate;
   }
 
+  // emptry consstructor required for REST pojo mapping.
   public Feed() {}
 
   public String getProductHashCode() {
@@ -27,7 +28,6 @@ public class Feed {
       this.toString().trim().replace(" ", "")
     ).toUpperCase();
 
-    // assertThat(md5productHash.equals(hash)).isTrue();
     return md5productHash;
   }
 

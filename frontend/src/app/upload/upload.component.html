@@ -28,7 +28,7 @@
     </div>
   </div>
 
-  <div class="container" *ngIf="errors.length > 0 || warnings.length > 0">
+  <div class="container">
     <card-container 
       [errors]="errors" 
       [warnings]="warnings"
@@ -42,7 +42,7 @@
       <div class="dot"></div>
     </div>
 
-    <div *ngIf="!isStilValidating" class="ui message success">
+    <div *ngIf="!isStilValidating && isUploadSuccess" class="ui message success">
       Succesfully validated your feed.
     </div>
   </div>
