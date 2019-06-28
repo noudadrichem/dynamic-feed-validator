@@ -28,4 +28,8 @@ export class FeedHttpService {
   fetchFeedBluePrint(feedId: String): Observable<any> {
     return this.http.get(`${API_URL}/blueprint/${feedId}`)
   }
+
+  updateFeed(feedId: String, body: Object): Observable<any> {
+    return this.http.put(`${API_URL}/feed/update/${feedId}`, body)
+  }
 }

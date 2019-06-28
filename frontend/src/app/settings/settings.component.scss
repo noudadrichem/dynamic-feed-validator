@@ -18,6 +18,11 @@
       .delete-feed-btn {
         margin-bottom: 12px;
       }
+
+      .field {
+        display: flex;
+        flex-direction: column;
+      }
     }
   }
 }
