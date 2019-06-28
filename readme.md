@@ -1,6 +1,6 @@
 # Dynamic feed Validator
 
-> http://localhost:9090/webapp/api/ping
+> https://bw-dynamic-feed-validator.herokuapp.com/login
 
 ## Link test feed: 
 - https://werk.noudadrichem.com/feed-validator/benchy-bad-feed.xml (3)
@@ -35,3 +35,6 @@ ws://localhost:9090/socket
 ```bash
 heroku logs --tail -a bw-dynamic-feed-validator
 ```
+
+### test: 
+http://localhost:9090/webapp/api/ping
