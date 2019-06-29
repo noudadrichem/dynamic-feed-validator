@@ -12,14 +12,13 @@ public class PostgresFeedDao extends PostgresBaseDao implements FeedDao {
     try (Connection con = super.getConnection()) {
 
       PreparedStatement pstmt = con.prepareStatement(
-        "insert into feed(feed_id, title, description, feed_link, publication_date, account_id) values(?,?,?,?,?,?)"
+        "insert into feed(feed_id, title, description, feed_link, account_id) values(?,?,?,?,?)"
       );
       pstmt.setString(1, feed.getId());
       pstmt.setString(2, feed.getTitle());
       pstmt.setString(3, feed.getDescription());
       pstmt.setString(4, feed.getFeedLink());
-      pstmt.setString(5, feed.getPublicationDate());
-      pstmt.setInt(6, 1);
+      pstmt.setInt(5, 1); // user id is 1 bij default.
       pstmt.executeUpdate();
 
 			return true;
