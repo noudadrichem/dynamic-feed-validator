@@ -17,7 +17,7 @@ import socket.SessionHandler;
 
 public class ValidateKeyValue {
 
-  private static final PostgresMessageDao messageDao = new PostgresMessageDao();
+  private static PostgresMessageDao messageDao = new PostgresMessageDao();
   private String feedId;
   private String productId;
   private String socketSessionId;

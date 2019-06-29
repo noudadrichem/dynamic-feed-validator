@@ -12,7 +12,7 @@ import persistence.blueprint.PostgresBlueprintDao;
 @Path("/blueprint")
 public class BlueprintService {
   
-  private PostgresBlueprintDao dao = new PostgresBlueprintDao();
+  private static PostgresBlueprintDao dao = new PostgresBlueprintDao();
 
   @GET
   @Path("/{feedId}")

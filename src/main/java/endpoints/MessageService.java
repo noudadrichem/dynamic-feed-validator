@@ -11,7 +11,7 @@ import persistence.message.PostgresMessageDao;
 @Path("/message")
 public class MessageService {
   
-  private PostgresMessageDao dao = new PostgresMessageDao();
+  private static PostgresMessageDao dao = new PostgresMessageDao();
 
   @GET
   @Path("/all/{feedId}")
