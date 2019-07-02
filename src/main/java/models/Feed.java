@@ -9,7 +9,6 @@ public class Feed {
   private String description;
   private String feedLink;
   private String id;
-  private String publicationDate;
   final private ArrayList<Product> products = new ArrayList<Product>();
 
   public Feed(String id, String title, String description, String feedLink) {
@@ -17,7 +16,6 @@ public class Feed {
     this.title = title;
     this.description = description;
     this.feedLink = feedLink;
-    // this.publicationDate = publicationDate;
   }
 
   // emptry consstructor required for REST pojo mapping.
@@ -67,14 +65,6 @@ public class Feed {
     return feedLink;
   }
 
-  public void setPublicationDate(String publicationDate) {
-    this.publicationDate = publicationDate;
-  } 
-
-  public String getPublicationDate() {
-    return publicationDate;
-  }
-
   public boolean addProduct(Product product) {
     if(!products.contains(product)) {
       products.add(product);
@@ -93,7 +83,6 @@ public class Feed {
     return "feed=[id=" + this.id 
     + " description=" + this.description 
     + " title=" + this.title 
-    + " pubicationDate = "+ this.publicationDate 
     + " productCount="+ this.products.size() 
     +"]";
   }

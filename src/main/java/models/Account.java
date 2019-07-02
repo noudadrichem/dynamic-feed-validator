@@ -4,15 +4,15 @@ public class Account {
   private String id;
   private String name;
   private String password;
-  private String emailAdress;
-  private String rol;
+  private String emailAddress;
+  private String role;
 
-  public Account(String id, String name, String password, String emailAdress, String rol) {
+  public Account(String id, String name, String password, String emailAddress, String role) {
     this.id = id;
     this.name = name;
     this.password = password;
-    this.emailAdress = emailAdress;
-    this.rol = rol;
+    this.emailAddress = emailAddress;
+    this.role = role;
   }
 
   public String getId() {
@@ -40,18 +40,18 @@ public class Account {
   }
 
   public String getEmailAdress() {
-    return emailAdress;
+    return emailAddress;
   }
 
-  public void setEmailAdress(String emailAdress) {
-    this.emailAdress = emailAdress;
+  public void setEmailAdress(String emailAddress) {
+    this.emailAddress = emailAddress;
   }
 
   public String getRol() {
-    return rol;
+    return role;
   }
 
-  public void setRol(String rol) {
-    this.rol = rol;
+  public void setRol(String role) {
+    this.role = role;
   }
 }

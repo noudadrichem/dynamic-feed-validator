@@ -34,7 +34,6 @@ public class Message {
       this.toString().trim().replace(" ", "")
     ).toUpperCase();
 
-    // assertThat(md5productHash.equals(hash)).isTrue();
     this.hash = md5productHash;
     return md5productHash;
   }

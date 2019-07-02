@@ -18,10 +18,10 @@ import services.ValidationThread;
 
 @Path("/feed")
 public class FeedService {
-  private PostgresFeedDao dao = new PostgresFeedDao();
-  private PostgresMessageDao messageDao = new PostgresMessageDao();
-  private PostgresProductDao productDao = new PostgresProductDao();
-  private PostgresBlueprintDao bluePrintDao = new PostgresBlueprintDao();
+  private static PostgresFeedDao dao = new PostgresFeedDao();
+  private static PostgresMessageDao messageDao = new PostgresMessageDao();
+  private static PostgresProductDao productDao = new PostgresProductDao();
+  private static PostgresBlueprintDao bluePrintDao = new PostgresBlueprintDao();
 
   private final String USER_ID = "1";
 

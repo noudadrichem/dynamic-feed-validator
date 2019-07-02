@@ -23,8 +23,8 @@ public class StreamXMLFile {
   private String validationId;
   private String socketSessionId;
   private static ValidateKeyValue validateUtil = new ValidateKeyValue();
-  private static final PostgresFeedDao feedDao = new PostgresFeedDao();
-  private static final PostgresProductDao productDao = new PostgresProductDao();
+  private static PostgresFeedDao feedDao = new PostgresFeedDao();
+  private static PostgresProductDao productDao = new PostgresProductDao();
   private ArrayList<String> keysInItem = new ArrayList<String>();
   private MakeBluePrint makeBluePrint = new MakeBluePrint();
   private Feed feed;

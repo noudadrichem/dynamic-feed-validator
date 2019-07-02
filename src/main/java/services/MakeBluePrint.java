@@ -7,7 +7,8 @@ import persistence.blueprint.PostgresBlueprintDao;
 
 public class MakeBluePrint {
 
-  private static final PostgresBlueprintDao blueprintDao = new PostgresBlueprintDao();
+  private static PostgresBlueprintDao blueprintDao = new PostgresBlueprintDao();
+
   private ArrayList<String> allUsedKeys = new ArrayList<String>();
 
   public boolean add(String key) {
