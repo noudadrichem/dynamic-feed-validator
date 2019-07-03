@@ -11,11 +11,13 @@
     <g:processing_time>0.8731</g:processing_time>
   </config>
   <channel>
+   <title>Batterijland bad feed</title>
+    <description>Feed voor batterijland</description>
+    <link>https://werk.noudadrichem.com/feed-validator/batterijland-bad-feed.xml</link>
     <item>
       <g:id>2501</g:id>
       <g:title>Accu Maglite 3500mAh 6V MagCharger</g:title>
       <g:description>Accu Maglite MagCharger. Deze 6V NiMH 3,5Ah batterij is geschikt voor alle Mag-lite Magcharger modellen en heeft het oude NiCd Maglight type vervangen.</g:description>
-      <g:gtin>38739088150</g:gtin>
       <g:brand>MagLite</g:brand>
       <g:mpn>420800</g:mpn>
       <g:link>https://www.batterijenland.nl/accu-maglite-3500mah-nimh-magcharger</g:link>
@@ -84,7 +86,7 @@
       <g:google_product_category>Elektronica &gt; Accessoires voor elektronica &gt; Voeding &gt; Accu's en batterijen</g:google_product_category>
       <g:product_type>Zoek op batterijmerk &gt; Ansmann &gt; Oplaadbare batterijen &gt; AA oplaadbaar</g:product_type>
       <g:price>18.95 EUR</g:price>
-      <g:image_link>https://www.batterijenland.nl/media/catalog/product/a/n/ansmann-aa-2850-batterijenland_1.jpg</g:image_link>
+      <g:image_link>https://www.batterijenland.nl/media/catalog/product/a/n/ansmann-aa-2850-battearijenland_1.jpg</g:image_link>
       <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/a/n/ansmann-aa-2850-batterijenland.jpg</g:additional_image_link>
       <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/a/n/ansmann-aa-2850-batterijenland_2.jpg</g:additional_image_link>
       <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/T/_/T_ansmann-oplaadbaar-2850mah-aa-battery-batterijenland.jpg</g:additional_image_link>
@@ -158,7 +160,6 @@
       <g:id>2724</g:id>
       <g:title>Ansmann Max-E AAA 800mAh NiMH</g:title>
       <g:description>Ansmann Max-E AAA oplaadbare batterijen NiMH met een capaciteit van 800mAh zijn direct uit de verpakking te gebruiken en hebben een lage zelfontlading. Daardoor behoudt deze accu lange tijd zijn spanning. Deze technologie maakt Ansmann batterijen geschikt voor dagelijks gebruik in allerhande apparatuur.</g:description>
-      <g:gtin>4013674350421</g:gtin>
       <g:brand>Ansmann</g:brand>
       <g:mpn>170804</g:mpn>
       <g:link>https://www.batterijenland.nl/ansmann-max-e-aaa-800mah-nimh</g:link>
@@ -177,7 +178,7 @@
     <item>
       <g:id>2730</g:id>
       <g:title>Ansmann Max-E D 5000mAh NiMH</g:title>
-      <g:description>Ansmann Max-E D-cell oplaadbare batterijen NiMH met een capaciteit van 5000mAh zijn direct uit de verpakking te gebruiken en hebben een lage zelfontlading. Daardoor behoudt deze accu lange tijd zijn spanning. Ansmann maxE batterijen zijn geschikt voor dagelijks gebruik in diverse apparatuur, zoals zaklampen en dergelijke.</g:description>
+      <g:description></g:description>
       <g:gtin>4013674030927</g:gtin>
       <g:brand>Ansmann</g:brand>
       <g:mpn>170819</g:mpn>
