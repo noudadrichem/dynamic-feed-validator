@@ -95,6 +95,10 @@ public class StreamXMLFile {
             case "item":
               if (isFeedHeader) {
                 isFeedHeader = false;
+
+                if(title.equals("")) {
+                  title = "Empty feed title";
+                }
                 
                 if(feedDao.doesFeedExsist(feedLink)) {
                   this.feed = new Feed(getRandomString(), title, description, feedLink);
