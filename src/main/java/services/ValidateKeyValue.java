@@ -1,10 +1,6 @@
 package services;
 
-import java.io.IOException;
 import java.util.*;
-
-import javax.json.Json;
-import javax.json.JsonObjectBuilder;
 
 import org.apache.http.*;
 import org.apache.http.client.*;
