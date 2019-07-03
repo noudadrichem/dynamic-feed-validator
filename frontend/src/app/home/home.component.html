@@ -36,7 +36,7 @@
     </div>
 
     <card-container
-      *ngIf="errors.length > 0 && warnings.length > 0"
+      *ngIf="errors.length > 0 || warnings.length > 0"
       [errors]="errors"
       [warnings]="warnings"
       [isErrorsShown]="isErrorsShown"
