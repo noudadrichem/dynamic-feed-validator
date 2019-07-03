@@ -59,7 +59,6 @@ export class HomeComponent implements OnInit {
   }
 
   revalidate() {
-    console.log('validate')
     this.feedModelService.uploadTrigger(this.feed.feedLink)
     this.router.navigateByUrl('/upload', { state: { url: this.feed.feedLink }})
   }

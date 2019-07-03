@@ -37,7 +37,12 @@ export class UploadComponent implements OnInit {
       .subscribe(url => {
         if(url !== undefined) {
           this.inputUrl = url
-          this.startValidation()
+          const interval = setInterval(() => {
+            if(this.connected) {
+              this.startValidation()
+              clearInterval(interval)
+            }
+          }, 500)
         }
       })
       
