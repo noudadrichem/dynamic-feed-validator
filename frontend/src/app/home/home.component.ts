@@ -13,7 +13,7 @@ const { API_URL } = environment
   styleUrls: ['./home.component.scss']
 })
 
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit {  
 
   feed: any = {}
   errors: Array<any> = []

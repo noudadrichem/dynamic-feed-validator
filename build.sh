@@ -1,8 +1,9 @@
 #!/bin/sh
 echo '__________________BUILDING WAR__________________';
 sudo rm -rf target/ && \
-heroku repo:purge_cache -a bw-dynamic-feed-validator
-ls -1
+sudo heroku repo:purge_cache -a bw-dynamic-feed-validator
+sudo heroku repo:reset -a bw-dynamic-feed-validator 
+
 echo '____removed target files____'
 mvn clean install && \
 cd frontend && \
