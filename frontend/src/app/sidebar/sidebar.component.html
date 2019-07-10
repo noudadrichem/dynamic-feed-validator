@@ -1,0 +1,31 @@
+<div class="sidebar">
+  <div class="logo">
+    <a [routerLink]="['/home']">
+      <img src="https://www.bannerwise.io/hubfs/www/bannerwise.svg" alt="Bannerwise logo">
+    </a>
+  </div>
+  
+  <div class="new-validation">
+    <a [routerLink]="['/upload']" class="ui success button">Validate feed</a>
+  </div>
+
+  <div class="feed-list">
+    <label>Your feeds:</label>
+    <ul>
+      <li *ngFor="let feed of feeds" [ngClass]="[feed.id === currentlySelectedFeed ? 'active' : 'not-active']">
+        <a [routerLink]="['/home', feed.id]">{{ feed.title }}</a>
+
+        <!-- <div *ngIf="feed.id === currentlySelectedFeed" class="delete" (click)="deleteFeed(feed.id)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="square" stroke-linejoin="bevel"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+        </div> -->
+      </li>
+    </ul>
+  </div>
+
+  <div class="sidebar-footer">
+    <a [routerLink]="['/login']" class="logout">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="square" stroke-linejoin="bevel"><path d="M10 3H6a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h4M16 17l5-5-5-5M19.8 12H9"/></svg>
+    </a>
+  </div>
+
+</div>

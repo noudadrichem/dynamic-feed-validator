@@ -1,0 +1,14 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: noud 
+      POSTGRES_PASSWORD: test1234 
+    ports:
+      - 5432:5432
+  ui:
+    image: adminer
+    ports:
+      - 1000:8080
+

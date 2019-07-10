@@ -1,0 +1,30 @@
+.card {
+  display: flex;
+  margin-bottom: 12px;
+  border-radius: 4px;
+  padding: 8px;
+
+  &.error {
+    border: 1px solid #F71B39;
+    background-color: #FFFBFC;
+  }
+
+  &.warning {
+    border: 1px solid #F79C1B;
+    background-color: #FEFCF9;
+  }
+
+  .chevron {
+    cursor: pointer;
+    margin-right: 8px;
+    transform: translateY(2px);
+
+    * {
+      transition: 170ms linear;
+    }
+
+    svg.shown {
+      transform: rotate(-90deg);
+    }
+  }
+}

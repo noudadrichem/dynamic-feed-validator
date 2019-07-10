@@ -1,0 +1,48 @@
+.home {
+  margin-left: 280px;
+
+  ul {
+    padding: 0;
+    list-style: none;
+  }
+  
+  header {
+    .filters {
+      margin-left: 32px;
+      display: inline-flex;
+      flex-direction: column;
+
+      &-content {
+        display: flex;
+        align-items: center;
+      }
+
+      ul {
+        li {
+          padding: 8px 12px;
+          margin: 0 4px;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .delete-feed-btn {
+      margin-right: 12px;
+
+      button {
+        min-width: 94px;
+      }
+    }
+  }
+
+  .settings {
+    padding-top: 8px;
+    margin-left: 16px;
+  }
+
+  &.empty-state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

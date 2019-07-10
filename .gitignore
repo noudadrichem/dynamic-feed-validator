@@ -197,7 +197,8 @@ $RECYCLE.BIN/
 src/main/webapp/*.js
 src/main/webapp/*.html
 src/main/webapp/*.json
-src/main/webapp/*.text
+src/main/webapp/*.txt
 src/main/webapp/*.map
 src/main/webapp/*.css
+src/main/webapp/favicon.ico
 src/main/webapp/assets/

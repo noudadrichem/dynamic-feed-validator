@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:g="http://base.google.com/ns/1.0" version="2.0" encoding="utf-8">
+  <config>
+    <g:system>Magento</g:system>
+    <g:extension>Magmodules_Googleshopping</g:extension>
+    <g:extension_version>1.7.3</g:extension_version>
+    <g:store>Main Website</g:store>
+    <g:url>https://www.batterijenland.nl/</g:url>
+    <g:products>348</g:products>
+    <g:generated>2019-07-03 05:00:03</g:generated>
+    <g:processing_time>0.8731</g:processing_time>
+  </config>
+  <channel>
+   <title>Batterijland bad feed</title>
+    <description>Feed voor batterijland</description>
+    <link>https://werk.noudadrichem.com/feed-validator/batterijland-bad-feed.xml</link>
+    <item>
+      <g:id>2501</g:id>
+      <g:title>Accu Maglite 3500mAh 6V MagCharger</g:title>
+      <g:description>Accu Maglite MagCharger. Deze 6V NiMH 3,5Ah batterij is geschikt voor alle Mag-lite Magcharger modellen en heeft het oude NiCd Maglight type vervangen.</g:description>
+      <g:brand>MagLite</g:brand>
+      <g:mpn>420800</g:mpn>
+      <g:link>https://www.batterijenland.nl/accu-maglite-3500mah-nimh-magcharger</g:link>
+      <g:availability>in stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:google_product_category>Hardware &gt; Zaklampen</g:google_product_category>
+      <g:product_type>Zaklampen &gt; Maglite &gt; Maglite MagCharger</g:product_type>
+      <g:price>26.95 EUR</g:price>
+      <g:image_link>https://www.batterijenland.nl/media/catalog/product/S/_/S_maglite-batterij_3500mah.jpg</g:image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/T/_/T_maglite-batterij_3500mah.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/V/_/V_maglite-batterij_3500mah.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/T/_/T_batterij_magcharger_vervangen_1_.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/S/_/S_batterij_magcharger_vervangen_1__4.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/V/_/V_batterij_magcharger_vervangen_1_.jpg</g:additional_image_link>
+    </item>
+    <item>
+      <g:id>2717</g:id>
+      <g:title>Ansmann AAA 1100mAh NiMH</g:title>
+      <g:description>Ansmann AAA Oplaadbare batterijen NiMH met een capaciteit van 1100mAh zijn ideaal voor zowel professioneel gebruik als voor gebruikers die hoge eisen stellen aan oplaadbare batterijen. De hoge capaciteit maakt deze Ansmann accu's uitermate geschikt voor gebruik in digitale camera's, MP3 spelers, flitsapparatuur en overige apparaten die veel energie behoeven.</g:description>
+      <g:gtin>4013674035236</g:gtin>
+      <g:brand>Ansmann</g:brand>
+      <g:mpn>170803</g:mpn>
+      <g:link>https://www.batterijenland.nl/ansmann-aaa-1100mah-nimh</g:link>
+      <g:availability>in stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:google_product_category>Elektronica &gt; Accessoires voor elektronica &gt; Voeding &gt; Accu's en batterijen</g:google_product_category>
+      <g:product_type>Zoek op batterijmerk &gt; Ansmann &gt; Oplaadbare batterijen &gt; AAA oplaadbaar</g:product_type>
+      <g:price>14.95 EUR</g:price>
+      <g:image_link>https://www.batterijenland.nl/media/catalog/product/a/n/ansmann-aaa-1100mah-batterijenland_1.jpg</g:image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/a/n/ansmann-aaa-1100mah-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/a/n/ansmann-aaa-1100mah-batterijenland_2.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/T/_/T_ansmann-oplaadbaar-1100mah-aaa-battery-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/S/_/S_ansmann-oplaadbaar-1100mah-aaa-battery-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/V/_/V_ansmann-oplaadbaar-1100mah-aaa-battery-batterijenland.jpg</g:additional_image_link>
+    </item>
+    <item>
+      <g:id>2719</g:id>
+      <g:title>Ansmann D 10.000mAh NiMH</g:title>
+      <g:description>Ansmann oplaadbare batterijen D-cell NiMH met een capaciteit van 10.000mAh. De hoge capaciteit maakt ze zeer geschikt voor gebruik in apparatuur die veel stroom vraagt zoals radio's en beatboxen. Ansmann is als Duits batterijenmerk een vertrouwd leverancier van kwaliteitsbatterijen.</g:description>
+      <g:gtin>4013674030644</g:gtin>
+      <g:brand>Ansmann</g:brand>
+      <g:mpn>170820</g:mpn>
+      <g:link>https://www.batterijenland.nl/ansmann-d-10000mah-nimh</g:link>
+      <g:availability>in stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:google_product_category>Elektronica &gt; Accessoires voor elektronica &gt; Voeding &gt; Accu's en batterijen</g:google_product_category>
+      <g:product_type>Zoek op batterijmerk &gt; Ansmann &gt; Oplaadbare batterijen &gt; D oplaadbaar</g:product_type>
+      <g:price>29.95 EUR</g:price>
+      <g:image_link>https://www.batterijenland.nl/media/catalog/product/a/n/ansmann-d-10000mah-nh20-batterijenland_1.jpg</g:image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/a/n/ansmann-d-10000mah-nh20-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/a/n/ansmann-d-10000mah-nh20-batterijenland_2.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/T/_/T_ansmann-oplaadbaar-10000mah-d-battery-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/S/_/S_ansmann-oplaadbaar-10000mah-d-battery-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/V/_/V_ansmann-oplaadbaar-10000mah-d-battery-batterijenland.jpg</g:additional_image_link>
+    </item>
+    <item>
+      <g:id>2722</g:id>
+      <g:title>Ansmann AA 2850mAh NiMH</g:title>
+      <g:description>Ansmann AA oplaadbare batterijen NiMH met een capaciteit van 2850mAh zijn ideaal voor zowel professioneel gebruik als voor gebruikers die hoge eisen stellen aan oplaadbare batterijen. De hoge capaciteit van 2850mAh maakt deze accu's uitermate geschikt voor gebruik in digitale camera's, flitsapparatuur en overige apparaten die veel energie behoeven.</g:description>
+      <g:gtin>4013674352128</g:gtin>
+      <g:brand>Ansmann</g:brand>
+      <g:mpn>170889</g:mpn>
+      <g:link>https://www.batterijenland.nl/ansmann-aa-2850mah-nimh</g:link>
+      <g:availability>in stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:google_product_category>Elektronica &gt; Accessoires voor elektronica &gt; Voeding &gt; Accu's en batterijen</g:google_product_category>
+      <g:product_type>Zoek op batterijmerk &gt; Ansmann &gt; Oplaadbare batterijen &gt; AA oplaadbaar</g:product_type>
+      <g:price>18.95 EUR</g:price>
+      <g:image_link>https://www.batterijenland.nl/media/catalog/product/a/n/ansmann-aa-2850-battearijenland_1.jpg</g:image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/a/n/ansmann-aa-2850-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/a/n/ansmann-aa-2850-batterijenland_2.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/T/_/T_ansmann-oplaadbaar-2850mah-aa-battery-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/S/_/S_ansmann-oplaadbaar-2850mah-aa-battery-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/V/_/V_ansmann-oplaadbaar-2850mah-aa-battery-batterijenland.jpg</g:additional_image_link>
+    </item>
+    <item>
+      <g:id>2556</g:id>
+      <g:title>Ansmann Powerline 2</g:title>
+      <g:description>Ansmann Microprocessor gestuurde stekkerlader voor het opladen van een en/of twee 9V oplaadbare batterijen. Deze 9V oplader is geschikt voor het laden van NiMH accu's. De batterijlader heeft een druppellaadfunctie en kan ultrasnel 9V blokjes opladen.</g:description>
+      <g:gtin>4013674107049</g:gtin>
+      <g:brand>Ansmann</g:brand>
+      <g:mpn>171102</g:mpn>
+      <g:link>https://www.batterijenland.nl/ansmann-powerline-2</g:link>
+      <g:availability>in stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:google_product_category>Elektronica &gt; Accessoires voor elektronica &gt; Stroom &gt; Accu-accessoires &gt; Universele acculaders</g:google_product_category>
+      <g:product_type>Zoek op batterijmerk &gt; Ansmann &gt; Batterijopladers</g:product_type>
+      <g:price>27.95 EUR</g:price>
+      <g:image_link>https://www.batterijenland.nl/media/catalog/product/a/n/ansmann-powerline-2-lader-batterijenland_1.jpg</g:image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/a/n/ansmann-powerline-2-lader-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/a/n/ansmann-powerline-2-lader-batterijenland_2.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/a/n/ansmann-powerline-2-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/a/n/ansmann-powerline-2-batterijenland_1.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/a/n/ansmann-powerline-2-batterijenland_2.jpg</g:additional_image_link>
+    </item>
+    <item>
+      <g:id>2564</g:id>
+      <g:title>Ansmann Basic 5 Plus Universeel lader</g:title>
+      <g:description>Voordelige universeel lader van Ansmann voor het opladen van AA en AAA rechargeable batterijen, alsmede voor het laden van D-cell batterijen, C-cell batterijen en 9V accu's. De laadstroom is laag, het laadproces kan dus geruime tijd duren. De oplader is niet microprocessor gestuurd en het laadproces dient handmatig bewaakt te worden.</g:description>
+      <g:gtin>4013674207305</g:gtin>
+      <g:brand>Ansmann</g:brand>
+      <g:mpn>171115</g:mpn>
+      <g:link>https://www.batterijenland.nl/ansmann-basic-5-plus-universeel-lader</g:link>
+      <g:availability>in stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:google_product_category>Elektronica &gt; Accessoires voor elektronica &gt; Stroom &gt; Accu-accessoires &gt; Universele acculaders</g:google_product_category>
+      <g:product_type>Zoek op batterijmerk &gt; Ansmann &gt; Batterijopladers</g:product_type>
+      <g:price>23.95 EUR</g:price>
+      <g:image_link>https://www.batterijenland.nl/media/catalog/product/S/_/S_ansmann-basic-5-plus-batterijlader-batterijenland.jpg</g:image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/T/_/T_ansmann-basic-5-plus-batterijlader-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/V/_/V_ansmann-basic-5-plus-batterijlader-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/T/_/T_ansmann-basic-5-universeel-lader-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/S/_/S_ansmann-basic-5-universeel-lader-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/V/_/V_ansmann-basic-5-universeel-lader-batterijenland.jpg</g:additional_image_link>
+    </item>
+    <item>
+      <g:id>2567</g:id>
+      <g:title>Ansmann Energy 16 Plus</g:title>
+      <g:description>Microprocessor gestuurde high-tech universeel oplader en onderhoudsstation voor oplaadbare batterijen. De Ansmann Energy 16 Plus is een zeer geavanceerde batterijlader waarmee je de levensduur van accu's kunt verlengen. Deze lader is geschikt voor het laden van 1-12 Mini-Penlite (AAA) of Penlite (AA), 1-6 Baby (C) of Mono (D) en 9v accu`s.</g:description>
+      <g:gtin>4013674011025</g:gtin>
+      <g:brand>Ansmann</g:brand>
+      <g:mpn>171118</g:mpn>
+      <g:link>https://www.batterijenland.nl/ansmann-energy-16-plus</g:link>
+      <g:availability>in stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:google_product_category>Elektronica &gt; Accessoires voor elektronica &gt; Stroom &gt; Accu-accessoires &gt; Universele acculaders</g:google_product_category>
+      <g:product_type>Zoek op batterijmerk &gt; Ansmann &gt; Batterijopladers</g:product_type>
+      <g:price>119.95 EUR</g:price>
+      <g:image_link>https://www.batterijenland.nl/media/catalog/product/a/n/ansmann_energy_16_batterijenland_1.jpg</g:image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/a/n/ansmann_energy_16_batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/a/n/ansmann_energy_16_batterijenland_2.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/T/_/T_ansmann-energy-16-lader.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/S/_/S_ansmann-energy-16-lader.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/V/_/V_ansmann-energy-16-lader.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/T/_/T_ansmann-energy-16-plus-lader.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/S/_/S_ansmann-energy-16-plus-lader.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/V/_/V_ansmann-energy-16-plus-lader.jpg</g:additional_image_link>
+    </item>
+    <item>
+      <g:id>2724</g:id>
+      <g:title>Ansmann Max-E AAA 800mAh NiMH</g:title>
+      <g:description>Ansmann Max-E AAA oplaadbare batterijen NiMH met een capaciteit van 800mAh zijn direct uit de verpakking te gebruiken en hebben een lage zelfontlading. Daardoor behoudt deze accu lange tijd zijn spanning. Deze technologie maakt Ansmann batterijen geschikt voor dagelijks gebruik in allerhande apparatuur.</g:description>
+      <g:brand>Ansmann</g:brand>
+      <g:mpn>170804</g:mpn>
+      <g:link>https://www.batterijenland.nl/ansmann-max-e-aaa-800mah-nimh</g:link>
+      <g:availability>in stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:google_product_category>Elektronica &gt; Accessoires voor elektronica &gt; Voeding &gt; Accu's en batterijen</g:google_product_category>
+      <g:product_type>Zoek op batterijmerk &gt; Ansmann &gt; Oplaadbare batterijen &gt; AAA oplaadbaar</g:product_type>
+      <g:price>12.95 EUR</g:price>
+      <g:image_link>https://www.batterijenland.nl/media/catalog/product/a/n/ansmann-aaa-800mah-maxe-batterijenland_1.jpg</g:image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/a/n/ansmann-aaa-800mah-maxe-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/a/n/ansmann-aaa-800mah-maxe-batterijenland_2.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/T/_/T_ansmann-oplaadbaar-800mah-aaa-battery-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/S/_/S_ansmann-oplaadbaar-800mah-aaa-battery-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/V/_/V_ansmann-oplaadbaar-800mah-aaa-battery-batterijenland.jpg</g:additional_image_link>
+    </item>
+    <item>
+      <g:id>2730</g:id>
+      <g:title>Ansmann Max-E D 5000mAh NiMH</g:title>
+      <g:description> </g:description>
+      <g:gtin>4013674030927</g:gtin>
+      <g:brand>Ansmann</g:brand>
+      <g:mpn>170819</g:mpn>
+      <g:link>https://www.batterijenland.nl/ansmann-max-e-d-5000mah-nimh</g:link>
+      <g:availability>in stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:google_product_category>Elektronica &gt; Accessoires voor elektronica &gt; Voeding &gt; Accu's en batterijen</g:google_product_category>
+      <g:product_type>Zoek op batterijmerk &gt; Ansmann &gt; Oplaadbare batterijen &gt; D oplaadbaar</g:product_type>
+      <g:price>19.95 EUR</g:price>
+      <g:image_link>https://www.batterijenland.nl/media/catalog/product/a/n/ansmann-d-5000mah-batterijenland_1.jpg</g:image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/a/n/ansmann-d-5000mah-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/a/n/ansmann-d-5000mah-batterijenland_2.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/T/_/T_ansmann-oplaadbaar-5000mah-d-battery-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/S/_/S_ansmann-oplaadbaar-5000mah-d-battery-batterijenland_1.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/V/_/V_ansmann-oplaadbaar-5000mah-d-battery-batterijenland.jpg</g:additional_image_link>
+    </item>
+    <item>
+      <g:id>2740</g:id>
+      <g:title>Varta 4-pack AAA 800mAh Ready to Use NiMH</g:title>
+      <g:description>Varta Ready2Use AAA Oplaadbare Batterijen NiMH met een capaciteit van 800mAh. De naam van deze oplaadbare Varta batterijen zegt genoeg. Deze accu's zijn al volledig opgeladen op het moment dat ze uit de verpakking gehaald worden en kunnen onmiddellijk in bijvoorbeeld een digitale camera of MP3-speler gebruikt worden.</g:description>
+      <g:gtin>4008496550616</g:gtin>
+      <g:brand>Varta</g:brand>
+      <g:mpn>140881</g:mpn>
+      <g:link>https://www.batterijenland.nl/varta-aaa-800mah-ready2use-nimh-4-pack</g:link>
+      <g:availability>in stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:google_product_category>Elektronica &gt; Accessoires voor elektronica &gt; Voeding &gt; Accu's en batterijen</g:google_product_category>
+      <g:product_type>Zoek op batterijmerk &gt; Varta &gt; Oplaadbare batterijen &gt; AAA batterijen</g:product_type>
+      <g:price>11.50 EUR</g:price>
+      <g:image_link>https://www.batterijenland.nl/media/catalog/product/v/a/varta-power-accu-ready2use-800mah_1.jpg</g:image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/v/a/varta-power-accu-ready2use-800mah.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/v/a/varta-power-accu-ready2use-800mah_2.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/v/a/varta-power-accu-aaa-800mah-batterijenland.png</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/v/a/varta-power-accu-aaa-800mah-batterijenland_1.png</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/v/a/varta-power-accu-aaa-800mah-batterijenland_2.png</g:additional_image_link>
+    </item>
+    <item>
+      <g:id>2747</g:id>
+      <g:title>Varta 2-pack AAA 1000mAh Ready to Use NiMH</g:title>
+      <g:description>Varta AAA Oplaadbare Batterijen Ready2Use NiMH met een hoge capaciteit van 1000mAh. Deze Varta batterijen zijn geschikt voor gebruik in elektronische apparaten zoals digitale camera's, zaklampen, MP3 spelers en andere apparatuur die veel energie nodig heeft. De lage zelfontlading van deze batterijen zorgt dat ze klaar zijn voor direct gebruik.</g:description>
+      <g:gtin>4008496538621</g:gtin>
+      <g:brand>Varta</g:brand>
+      <g:mpn>140837</g:mpn>
+      <g:link>https://www.batterijenland.nl/varta-aaa-1000mah-ready-to-use-nimh-2-pack</g:link>
+      <g:availability>in stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:google_product_category>Elektronica &gt; Accessoires voor elektronica &gt; Voeding &gt; Accu's en batterijen</g:google_product_category>
+      <g:product_type>Zoek op batterijmerk &gt; Varta &gt; Oplaadbare batterijen &gt; AAA batterijen</g:product_type>
+      <g:price>7.99 EUR</g:price>
+      <g:image_link>https://www.batterijenland.nl/media/catalog/product/v/a/varta-ready2use-aaa-power-1000mah-2-pack-batterijenland_1.jpg</g:image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/v/a/varta-ready2use-aaa-power-1000mah-2-pack-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/v/a/varta-ready2use-aaa-power-1000mah-2-pack-batterijenland_2.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/v/a/varta-aaa-power-ready2use-nimh-batterijenland.png</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/v/a/varta-aaa-power-ready2use-nimh-batterijenland_1.png</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/v/a/varta-aaa-power-ready2use-nimh-batterijenland_2.png</g:additional_image_link>
+    </item>
+    <item>
+      <g:id>2758</g:id>
+      <g:title>Varta 4-pack AAA 1000mAh Ready to Use NiMH</g:title>
+      <g:description>Varta AAA Oplaadbare Batterijen NiMH met een capaciteit van 1000mAh. Deze Varta batterijen zijn dankzij de hoge capaciteit speciaal geschikt voor gebruik in elektronische apparaten zoals digitale camera's, zaklampen, MP3 spelers en andere apparatuur die veel energie nodig heeft.</g:description>
+      <g:gtin>4008496594375</g:gtin>
+      <g:brand>Varta</g:brand>
+      <g:mpn>140803</g:mpn>
+      <g:link>https://www.batterijenland.nl/varta-aaa-1000mah-ready-to-use-nimh-4-pack</g:link>
+      <g:availability>in stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:google_product_category>Elektronica &gt; Accessoires voor elektronica &gt; Voeding &gt; Accu's en batterijen</g:google_product_category>
+      <g:product_type>Zoek op batterijmerk &gt; Varta &gt; Oplaadbare batterijen &gt; AAA batterijen</g:product_type>
+      <g:price>12.50 EUR</g:price>
+      <g:image_link>https://www.batterijenland.nl/media/catalog/product/v/a/varta_1000mah_aaa_1257_oplaadbaar_batterijenland_1.jpg</g:image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/v/a/varta_1000mah_aaa_1257_oplaadbaar_batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/v/a/varta_1000mah_aaa_1257_oplaadbaar_batterijenland_2.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/T/_/T_varta-oplaadbaar-1000mah-aaa-battery-batterijenland_2.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/S/_/S_varta-oplaadbaar-1000mah-aaa-battery-batterijenland_2.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/V/_/V_varta-oplaadbaar-1000mah-aaa-battery-batterijenland_2.jpg</g:additional_image_link>
+    </item>
+    <item>
+      <g:id>2616</g:id>
+      <g:title>Energizer AAA alkaline LR03</g:title>
+      <g:description>Energizer Ultra Plus AAA alkaline batterijen zijn van een betrouwbare hoge kwaliteit en bieden optimale prestaties. Deze LR03 batterijen zijn geschikt voor dagelijks gebruik in diverse apparatuur.</g:description>
+      <g:gtin>7638900247893</g:gtin>
+      <g:brand>Energizer</g:brand>
+      <g:mpn>120303</g:mpn>
+      <g:link>https://www.batterijenland.nl/energizer-aaa-alkaline-lr03</g:link>
+      <g:availability>in stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:google_product_category>Elektronica &gt; Accessoires voor elektronica &gt; Voeding &gt; Accu's en batterijen</g:google_product_category>
+      <g:product_type>Zoek op batterijmerk &gt; Energizer &gt; Alkaline batterijen &gt; AAA batterijen</g:product_type>
+      <g:price>3.99 EUR</g:price>
+      <g:image_link>https://www.batterijenland.nl/media/catalog/product/e/n/energizer-alkaline-power-lr03-batterijenland_3_1.jpg</g:image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/e/n/energizer-alkaline-power-lr03-batterijenland_4.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/e/n/energizer-alkaline-power-lr03-batterijenland_2_2.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/T/_/T_energizer-lr03-aaa-alkaline-battery-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/S/_/S_energizer-lr03-aaa-alkaline-battery-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/V/_/V_energizer-lr03-aaa-alkaline-battery-batterijenland.jpg</g:additional_image_link>
+    </item>
+    <item>
+      <g:id>2617</g:id>
+      <g:title>Energizer AA Alkaline LR06</g:title>
+      <g:description>Energizer alkaline batterijen AA zijn van een betrouwbare hoge kwaliteit en bieden optimale prestaties. Alkaline AA batterijen zijn ook bekend als LR6 of penlite batterijen.</g:description>
+      <g:gtin>7638900374810</g:gtin>
+      <g:brand>Energizer</g:brand>
+      <g:mpn>120306</g:mpn>
+      <g:link>https://www.batterijenland.nl/energizer-aa-alkaline-lr06</g:link>
+      <g:availability>in stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:google_product_category>Elektronica &gt; Accessoires voor elektronica &gt; Voeding &gt; Accu's en batterijen</g:google_product_category>
+      <g:product_type>Zoek op batterijmerk &gt; Energizer &gt; Alkaline batterijen &gt; AA batterijen</g:product_type>
+      <g:price>3.99 EUR</g:price>
+      <g:image_link>https://www.batterijenland.nl/media/catalog/product/e/n/energizer-alkaline-power-aa-batterijenland_2_1.jpg</g:image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/e/n/energizer-alkaline-power-aa-batterijenland_3.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/e/n/energizer-alkaline-power-aa-batterijenland_1_1.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/T/_/T_energizer-lr06-aa-alkaline-battery-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/S/_/S_energizer-lr06-aa-alkaline-battery-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/V/_/V_energizer-lr06-aa-alkaline-battery-batterijenland.jpg</g:additional_image_link>
+    </item>
+    <item>
+      <g:id>2923</g:id>
+      <g:title>Duracell AAAA Ultra LR61</g:title>
+      <g:description>Duracell Alkaline batterij AAAA voor gebruik in kleine apparaten zoals laser pointers, PDA en voice-recorders. De 4xA batterij is een klein batterijtje en staat ook bekend als LR61. AAAA battery koop je goedkoop online bij Batterijenland.</g:description>
+      <g:gtin>5000394041660</g:gtin>
+      <g:brand>Duracell</g:brand>
+      <g:mpn>999100</g:mpn>
+      <g:link>https://www.batterijenland.nl/duracell-aaaa-ultra-lr61</g:link>
+      <g:availability>in stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:google_product_category>Elektronica &gt; Accessoires voor elektronica &gt; Voeding &gt; Accu's en batterijen</g:google_product_category>
+      <g:product_type>Zoek op batterijmerk &gt; Duracell &gt; Alkaline batterijen &gt; Overige typen</g:product_type>
+      <g:price>1.75 EUR</g:price>
+      <g:image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell-mx2500-lr61-aaaa_1_1.jpg</g:image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell-mx2500-lr61-aaaa_3.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell-mx2500-lr61-aaaa_2_1.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/T/_/T_duracell-lr61-aaaa-lady-battery-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/S/_/S_duracell-lr61-aaaa-lady-battery-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/V/_/V_duracell-lr61-aaaa-lady-battery-batterijenland.jpg</g:additional_image_link>
+    </item>
+    <item>
+      <g:id>2619</g:id>
+      <g:title>Energizer C Alkaline LR14</g:title>
+      <g:description>Energizer LR14 alkaline batterijen zijn van een betrouwbare hoge kwaliteit en zijn geschikt voor gebruik in bijvoorbeeld speelgoed. Een LR14 batterij is tevens bekend als Baby, MN1400, C-cell of Engelse staaf.</g:description>
+      <g:gtin>7638900202663</g:gtin>
+      <g:brand>Energizer</g:brand>
+      <g:mpn>120314</g:mpn>
+      <g:link>https://www.batterijenland.nl/energizer-c-alkaline-lr14</g:link>
+      <g:availability>in stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:google_product_category>Elektronica &gt; Accessoires voor elektronica &gt; Voeding &gt; Accu's en batterijen</g:google_product_category>
+      <g:product_type>Zoek op batterijmerk &gt; Energizer &gt; Alkaline batterijen &gt; C batterijen</g:product_type>
+      <g:price>3.99 EUR</g:price>
+      <g:image_link>https://www.batterijenland.nl/media/catalog/product/e/n/energizer-alkaline-power-lr14-c-battery-batterijenland_1.jpg</g:image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/e/n/energizer-alkaline-power-lr14-c-battery-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/e/n/energizer-alkaline-power-lr14-c-battery-batterijenland_2.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/T/_/T_energizer-alkaline-power-lr14-c-alkaline-battery-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/S/_/S_energizer-alkaline-power-lr14-c-alkaline-battery-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/V/_/V_energizer-alkaline-power-lr14-c-alkaline-battery-batterijenland.jpg</g:additional_image_link>
+    </item>
+    <item>
+      <g:id>2620</g:id>
+      <g:title>Energizer D Alkaline LR20</g:title>
+      <g:description>Een LR20 alkaline batterij van Energizer is tevens bekend als en/of vervanger voor LR20A, AM-1, AM1, HP11, Kodak KD, K4A, Toshiba LR20N, Rayovac 6D, 813, Varta 4020, D, Panasonic AM2, E95, Mono, SUM1 en BA3030/U</g:description>
+      <g:gtin>7638900297331</g:gtin>
+      <g:brand>Energizer</g:brand>
+      <g:mpn>120320</g:mpn>
+      <g:link>https://www.batterijenland.nl/energizer-d-alkaline-lr20</g:link>
+      <g:availability>in stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:google_product_category>Elektronica &gt; Accessoires voor elektronica &gt; Voeding &gt; Accu's en batterijen</g:google_product_category>
+      <g:product_type>Zoek op batterijmerk &gt; Energizer &gt; Alkaline batterijen &gt; D batterijen</g:product_type>
+      <g:price>4.99 EUR</g:price>
+      <g:image_link>https://www.batterijenland.nl/media/catalog/product/e/n/energizer-alkaline-power-d-lr20-batterijenland_1.jpg</g:image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/e/n/energizer-alkaline-power-d-lr20-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/e/n/energizer-alkaline-power-d-lr20-batterijenland_2.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/T/_/T_energizer-lr20-d-alkaline-battery-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/S/_/S_energizer-lr20-d-alkaline-battery-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/V/_/V_energizer-lr20-d-alkaline-battery-batterijenland.jpg</g:additional_image_link>
+    </item>
+    <item>
+      <g:id>2621</g:id>
+      <g:title>Energizer 9V Alkaline 6LR61</g:title>
+      <g:description>Energizer 9V alkaline batterij staat ook bekend als 6LR61 batterij of 6LF22. Energizer alkaline batterijen zijn van een betrouwbare hoge kwaliteit en bieden optimale prestaties. Een 9 Volt blokje of blokbatterij is ook een veel gebruikte term voor dit type.</g:description>
+      <g:gtin>7638900297409</g:gtin>
+      <g:brand>Energizer</g:brand>
+      <g:mpn>120361</g:mpn>
+      <g:link>https://www.batterijenland.nl/energizer-9v-alkaline-6lr61</g:link>
+      <g:availability>in stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:google_product_category>Elektronica &gt; Accessoires voor elektronica &gt; Voeding &gt; Accu's en batterijen</g:google_product_category>
+      <g:product_type>Zoek op batterijmerk &gt; Energizer &gt; Alkaline batterijen &gt; 9V batterijen</g:product_type>
+      <g:price>3.99 EUR</g:price>
+      <g:image_link>https://www.batterijenland.nl/media/catalog/product/e/n/energizer-alkaline-power-9v-batterijenland.jpg</g:image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/e/n/energizer-alkaline-power-9v-batterijenland_1.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/e/n/energizer-alkaline-power-9v-batterijenland_2.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/T/_/T_energizer-6lr61-9v-alkaline-battery-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/S/_/S_energizer-6lr61-9v-alkaline-battery-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/V/_/V_energizer-6lr61-9v-alkaline-battery-batterijenland.jpg</g:additional_image_link>
+    </item>
+    <item>
+      <g:id>2622</g:id>
+      <g:title>Duracell AAA Plus Power LR03</g:title>
+      <g:description>Duracell Plus Power AAA batterijen gaan nog langer mee en zijn speciaal ontwikkeld voor dagelijks gebruik. Een andere naam voor dit type alkaline batterij is LR03, potlood batterij of MN2400. Duracel is het vertrouwde merk voor al uw batterijen.</g:description>
+      <g:gtin>5000394099524</g:gtin>
+      <g:brand>Duracell</g:brand>
+      <g:mpn>110303</g:mpn>
+      <g:link>https://www.batterijenland.nl/duracell-aaa-plus-power-lr03</g:link>
+      <g:availability>in stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:google_product_category>Elektronica &gt; Accessoires voor elektronica &gt; Voeding &gt; Accu's en batterijen</g:google_product_category>
+      <g:product_type>Zoek op batterijmerk &gt; Duracell &gt; Alkaline batterijen &gt; AAA batterijen</g:product_type>
+      <g:price>4.50 EUR</g:price>
+      <g:image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell-plus-power-alkaline-aaa-lr03-micro-battery-batterijenland_1_1.jpg</g:image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell-plus-power-alkaline-aaa-lr03-micro-battery-batterijenland_3.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell-plus-power-alkaline-aaa-lr03-micro-battery-batterijenland_2_1.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/T/_/T_duracell-aaa-plus-power-battery-lr03-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/S/_/S_duracell-aaa-plus-power-battery-lr03-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/V/_/V_duracell-aaa-plus-power-battery-lr03-batterijenland.jpg</g:additional_image_link>
+    </item>
+    <item>
+      <g:id>2623</g:id>
+      <g:title>Duracell AA Plus Power LR06</g:title>
+      <g:description>Duracell Plus Power AA batterijen gaan nog langer mee en zijn speciaal ontwikkeld voor dagelijks gebruik. Een andere naam voor dit type alkaline batterij is LR6, penlite, LR06 of MN1500.Duracel is het vertrouwde merk voor al uw batterijen.</g:description>
+      <g:gtin>5000394099494</g:gtin>
+      <g:brand>Duracell</g:brand>
+      <g:mpn>110306</g:mpn>
+      <g:link>https://www.batterijenland.nl/duracell-aa-plus-power-lr06</g:link>
+      <g:availability>in stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:google_product_category>Elektronica &gt; Accessoires voor elektronica &gt; Voeding &gt; Accu's en batterijen</g:google_product_category>
+      <g:product_type>Zoek op batterijmerk &gt; Duracell &gt; Alkaline batterijen &gt; AA batterijen</g:product_type>
+      <g:price>4.50 EUR</g:price>
+      <g:image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell-plus-power-aa-lr06-alkaline-battery-batterijenland_1.jpg</g:image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell-plus-power-aa-lr06-alkaline-battery-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell-plus-power-aa-lr06-alkaline-battery-batterijenland_2.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell-plus-power-aa-lr06-alkaline-battery-batterijenland_3.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell-plus-power-aa-lr06-alkaline-battery-batterijenland_1_1.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell-plus-power-aa-lr06-alkaline-battery-batterijenland_2_1.jpg</g:additional_image_link>
+    </item>
+    <item>
+      <g:id>2625</g:id>
+      <g:title>Duracell C Plus Power LR14</g:title>
+      <g:description>Duracell C Plus Power batterijen gaat nog langer mee en zijn speciaal ontwikkeld voor dagelijks gebruik. Een andere naam voor dit type alkaline batterij is LR14 of MN1400.</g:description>
+      <g:gtin>5000394023215</g:gtin>
+      <g:brand>Duracell</g:brand>
+      <g:mpn>110314</g:mpn>
+      <g:link>https://www.batterijenland.nl/duracell-c-plus-power-lr14</g:link>
+      <g:availability>in stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:google_product_category>Elektronica &gt; Accessoires voor elektronica &gt; Voeding &gt; Accu's en batterijen</g:google_product_category>
+      <g:product_type>Zoek op batterijmerk &gt; Duracell &gt; Alkaline batterijen &gt; C batterijen</g:product_type>
+      <g:price>4.50 EUR</g:price>
+      <g:image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell-plus-power-lr14-c-alkaline-battery-batterijenland_1.jpg</g:image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell-plus-power-lr14-c-alkaline-battery-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell-plus-power-lr14-c-alkaline-battery-batterijenland_2.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/T/_/T_duracell-plus-power-duralock-lr14-c-alkaline-battery-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/S/_/S_duracell-plus-power-duralock-lr14-c-alkaline-battery-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/V/_/V_duracell-plus-power-duralock-lr14-c-alkaline-battery-batterijenland.jpg</g:additional_image_link>
+    </item>
+    <item>
+      <g:id>2627</g:id>
+      <g:title>Duracell 9V Plus Power 6LF22</g:title>
+      <g:description>Duracell 9V Plus Power batterijen gaat nog langer mee en zijn speciaal ontwikkeld voor dagelijks gebruik. Een andere naam voor dit type alkaline 9V blokje is 6LR61 of MN1604.</g:description>
+      <g:gtin>5000394063099</g:gtin>
+      <g:brand>Duracell</g:brand>
+      <g:mpn>110361</g:mpn>
+      <g:link>https://www.batterijenland.nl/duracell-9v-plus-power-6lf22</g:link>
+      <g:availability>in stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:google_product_category>Elektronica &gt; Accessoires voor elektronica &gt; Voeding &gt; Accu's en batterijen</g:google_product_category>
+      <g:product_type>Zoek op batterijmerk &gt; Duracell &gt; Alkaline batterijen &gt; 9V batterijen</g:product_type>
+      <g:price>4.50 EUR</g:price>
+      <g:image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell-plus-power-9v-blokje-battery-batterijenland_1.jpg</g:image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell-plus-power-9v-blokje-battery-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell-plus-power-9v-blokje-battery-batterijenland_2.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/T/_/T_duracell-plus-power-duralock-6lr61-9v-alkaline-battery-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/S/_/S_duracell-plus-power-duralock-6lr61-9v-alkaline-battery-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/V/_/V_duracell-plus-power-duralock-6lr61-9v-alkaline-battery-batterijenland.jpg</g:additional_image_link>
+    </item>
+    <item>
+      <g:id>2628</g:id>
+      <g:title>Duracell AAA UltraPower LR03</g:title>
+      <g:description>Duracell Ultra Power AAA batterijen gaan langer mee en zijn nog krachtiger. Deze ultra alkaline batterij is speciaal ontwikkeld voor speciale (en wat duurdere) toepassingen zoals digitale camera's en radio grafisch bestuurbaar speelgoed. Een andere naam voor deze Duracell batterij is LR03 of MX2400.</g:description>
+      <g:gtin>5000394002692</g:gtin>
+      <g:brand>Duracell</g:brand>
+      <g:mpn>110403</g:mpn>
+      <g:link>https://www.batterijenland.nl/duracell-aaa-ultra-power-lr03</g:link>
+      <g:availability>in stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:google_product_category>Elektronica &gt; Accessoires voor elektronica &gt; Voeding &gt; Accu's en batterijen</g:google_product_category>
+      <g:product_type>Zoek op batterijmerk &gt; Duracell &gt; Alkaline batterijen &gt; AAA batterijen</g:product_type>
+      <g:price>5.99 EUR</g:price>
+      <g:image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell-ultra-power-aaa-alkaline-batterijenland_1.jpg</g:image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell-ultra-power-aaa-alkaline-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell-ultra-power-aaa-alkaline-batterijenland_2.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/T/_/T_duracell-ultra-power-lr03-aaa-battery-alkaline-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/S/_/S_duracell-ultra-power-lr03-aaa-battery-alkaline-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/V/_/V_duracell-ultra-power-lr03-aaa-battery-alkaline-batterijenland.jpg</g:additional_image_link>
+    </item>
+    <item>
+      <g:id>2630</g:id>
+      <g:title>Duracell C UltraPower LR14</g:title>
+      <g:description>Duracell Ultra Power C batterijen met Duralock gaan langer mee en zijn nog krachtiger. Deze ultra alkaline batterij is speciaal ontwikkeld voor speciale (en wat duurdere) toepassingen zoals radio grafisch bestuurbaar speelgoed. Een andere naam voor deze Duracell batterij is LR14 of MX1400.</g:description>
+      <g:gtin>5000394002852</g:gtin>
+      <g:brand>Duracell</g:brand>
+      <g:mpn>110414</g:mpn>
+      <g:link>https://www.batterijenland.nl/duracell-c-ultra-power-lr14</g:link>
+      <g:availability>in stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:google_product_category>Elektronica &gt; Accessoires voor elektronica &gt; Voeding &gt; Accu's en batterijen</g:google_product_category>
+      <g:product_type>Zoek op batterijmerk &gt; Duracell &gt; Alkaline batterijen &gt; C batterijen</g:product_type>
+      <g:price>5.99 EUR</g:price>
+      <g:image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell_ultra_power_lr14_c_batterijenland_1.jpg</g:image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell_ultra_power_lr14_c_batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell_ultra_power_lr14_c_batterijenland_2.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/T/_/T_duracell-ultra-power-lr14-c-battery-alkaline-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/S/_/S_duracell-ultra-power-lr14-c-battery-alkaline-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/V/_/V_duracell-ultra-power-lr14-c-battery-alkaline-batterijenland.jpg</g:additional_image_link>
+    </item>
+    <item>
+      <g:id>2631</g:id>
+      <g:title>Duracell D UltraPower LR20</g:title>
+      <g:description>Duracell Ultra Power D batterijen met Duralock gaan langer mee en zijn nog krachtiger. Deze ultra alkaline batterij is speciaal ontwikkeld voor speciale (en wat duurdere) toepassingen zoals radio grafisch bestuurbaar speelgoed en beatboxen. Een andere naam voor deze Duracell batterij is LR20 of MX1300.</g:description>
+      <g:gtin>5000394002906</g:gtin>
+      <g:brand>Duracell</g:brand>
+      <g:mpn>110420</g:mpn>
+      <g:link>https://www.batterijenland.nl/duracell-d-ultrapower-lr20</g:link>
+      <g:availability>in stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:google_product_category>Elektronica &gt; Accessoires voor elektronica &gt; Voeding &gt; Accu's en batterijen</g:google_product_category>
+      <g:product_type>Zoek op batterijmerk &gt; Duracell &gt; Alkaline batterijen &gt; D batterijen</g:product_type>
+      <g:price>6.25 EUR</g:price>
+      <g:image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell_ultra_power_lr20_d_alkaline_batterijenland_1.jpg</g:image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell_ultra_power_lr20_d_alkaline_batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell_ultra_power_lr20_d_alkaline_batterijenland_2.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/T/_/T_duracell-ultra-power-lr20-d-battery-alkaline-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/S/_/S_duracell-ultra-power-lr20-d-battery-alkaline-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/V/_/V_duracell-ultra-power-lr20-d-battery-alkaline-batterijenland.jpg</g:additional_image_link>
+    </item>
+    <item>
+      <g:id>2632</g:id>
+      <g:title>Duracell 9V UltraPower 6LR61</g:title>
+      <g:description>Duracell Ultra Power 9V batterijen met Duralock gaan langer mee en zijn nog krachtiger. Deze ultra alkaline batterij 9V is speciaal ontwikkeld voor speciale (en wat duurdere) toepassingen alsmede voor rookmelders. Een andere naam voor deze Duracell batterij is 6LR61 of MX1604.</g:description>
+      <g:gtin>5000394002951</g:gtin>
+      <g:brand>Duracell</g:brand>
+      <g:mpn>110461</g:mpn>
+      <g:link>https://www.batterijenland.nl/duracell-9v-ultra-power-6lr61</g:link>
+      <g:availability>in stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:google_product_category>Elektronica &gt; Accessoires voor elektronica &gt; Voeding &gt; Accu's en batterijen</g:google_product_category>
+      <g:product_type>Zoek op batterijmerk &gt; Duracell &gt; Alkaline batterijen &gt; 9V batterijen</g:product_type>
+      <g:price>5.99 EUR</g:price>
+      <g:image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell_ultra_power_9v_batterijenland_1.jpg</g:image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell_ultra_power_9v_batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell_ultra_power_9v_batterijenland_2.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell-ultra-power-alkaline-9v-.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell-ultra-power-alkaline-9v-_1.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell-ultra-power-alkaline-9v-_2.jpg</g:additional_image_link>
+    </item>
+    <item>
+      <g:id>2774</g:id>
+      <g:title>Duracell 3V 1220</g:title>
+      <g:description>Duracell CR1220 3V batterij is een lithium batterij geschikt voor gebruik onder meer rekenmachine, moederbord en weegschalen. De knoopcel batterij CR 1220 is tevens bekend als BR1220, DL1220, Timex PA, Univer Cel 565, SB-T13, ECR1220, 5012LC, L04, ECR1220, 280-208, DL1220B, BR1220-1W, CR1220-1W, KCR1220 en LM1220 knoopbatterij.</g:description>
+      <g:gtin>5000394030305</g:gtin>
+      <g:brand>Duracell</g:brand>
+      <g:mpn>110565</g:mpn>
+      <g:link>https://www.batterijenland.nl/duracell-3v-1220</g:link>
+      <g:availability>in stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:google_product_category>Elektronica &gt; Accessoires voor elektronica &gt; Voeding &gt; Accu's en batterijen</g:google_product_category>
+      <g:product_type>Zoek op batterijmerk &gt; Duracell &gt; Knoopcellen &gt; Knoopcellen lithium</g:product_type>
+      <g:price>1.99 EUR</g:price>
+      <g:image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell-cr1220-knoopcel-battery-batterijenland_1.jpg</g:image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell-cr1220-knoopcel-battery-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/d/u/duracell-cr1220-knoopcel-battery-batterijenland_2.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/T/_/T_duracell-cr1220-dl1220-lithium-3v-knoopcel-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/S/_/S_duracell-cr1220-dl1220-lithium-3v-knoopcel-batterijenland.jpg</g:additional_image_link>
+      <g:additional_image_link>https://www.batterijenland.nl/media/catalog/product/V/_/V_duracell-cr1220-dl1220-lithium-3v-knoopcel-batterijenland.jpg</g:additional_image_link>
+    </item>
+  </channel>
+</rss>

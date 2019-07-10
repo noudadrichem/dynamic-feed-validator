@@ -1,0 +1,49 @@
+<sidebar></sidebar>
+<div class="upload">
+  <header>
+    <h1>Validate your feed</h1>
+
+    <span class="socket-status">
+      <div [ngClass]="['pulse', connected ? 'green' : 'red']"></div>
+      <button class="ui button primary small" (click)="connecSocket()">(re)connect</button>
+    </span>
+  </header>
+
+  <div class="container">
+    <div class="upload-container">
+      <span class="input">
+        <label for="url-input">Feed url:</label>
+        <div class="ui input stretch">
+          <input [(ngModel)]="inputUrl">
+        </div>
+      </span>
+      <button [disabled]="!connected" class="ui primary button" (click)="startValidation()">Start validation</button>
+    </div>
+
+    <div *ngIf="isUploadSuccess && submitted" class="ui message success">
+      <p>Feed validation succesfully started...</p>
+    </div>
+    <div *ngIf="!isUploadSuccess && submitted" class="ui message failure">
+      <p>There has been a failure uploading your feed URL</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <card-container 
+      [errors]="errors" 
+      [warnings]="warnings"
+      [isErrorsShown]="true"
+      [isWarningsShown]="true">
+    </card-container>
+  
+    <div class="loading dot-wrapper" *ngIf="isStilValidating">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <div *ngIf="!isStilValidating && isUploadSuccess" class="ui message success">
+      Succesfully validated your feed.
+    </div>
+  </div>
+</div>

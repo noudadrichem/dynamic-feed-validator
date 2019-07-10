@@ -1,0 +1,10 @@
+<div [ngClass]="['card', type]">
+  <div (click)="toggleDescription()" class="chevron">
+    <svg [ngClass]="[isDescriptionShown ? 'shown' : '']" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="square" stroke-linejoin="bevel"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+
+  <div>
+    <p class="title">{{title}}</p>
+    <p *ngIf="isDescriptionShown" class="description">{{ description }}</p>
+  </div>
+</div>

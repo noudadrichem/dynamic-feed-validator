@@ -1,0 +1,28 @@
+.modal {
+  .header {
+    .close {
+      float: right;
+      transform: rotate(45deg);
+    }
+  }
+
+  .content  {
+    padding: 24px;
+    justify-content: center;
+    overflow-y: auto !important;
+
+    .ui.grid {
+      width: 100%;
+      margin: 0;
+
+      .delete-feed-btn {
+        margin-bottom: 12px;
+      }
+
+      .field {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}

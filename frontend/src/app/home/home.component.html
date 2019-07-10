@@ -1,0 +1,59 @@
+<sidebar></sidebar>
+<div class="home" *ngIf="isFeedIsSelected">
+  <header>
+    <span>
+      <h2>{{ feed.title }}</h2>
+
+      <div class="filters">
+        <div class="filters-content">
+          <!-- <label>filters:</label> -->
+          <ul class="ui secondary pointing menu">
+            <li [ngClass]="['item', isErrorsShown && isWarningsShown ? 'active' : '']" (click)="showAllMessages()">show all</li>
+            <li [ngClass]="['item', isErrorsShown && !isWarningsShown ? 'active' : '']" (click)="showErrors()">errors</li>
+            <li [ngClass]="['item', !isErrorsShown && isWarningsShown? 'active' : '']" (click)="showWarnings()">warnings</li>
+          </ul>
+        </div>
+      </div>
+    </span>
+
+    <span>
+      <div class="delete-feed-btn">
+        <button class="ui button primary small" (click)="isDeleteFeedShown = true" *ngIf="!isDeleteFeedShown">Delete feed</button>
+        <button class="ui button danger small" (click)="deleteFeed()" *ngIf="isDeleteFeedShown">You sure?</button>
+      </div>
+      <div>
+        <button class="ui button primary small" (click)="revalidate()">Revalidate</button>
+      </div>
+      <div class="settings" (click)="showSettingsModal()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#93959B" stroke-width="2" stroke-linecap="square" stroke-linejoin="bevel"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+      </div>
+    </span>
+  </header>
+
+  <div class="container">
+    <div class="ui message success" *ngIf="errors.length === 0 && warnings.length === 0">
+      Well done, no errors found!
+    </div>
+
+    <card-container
+      *ngIf="errors.length > 0 || warnings.length > 0"
+      [errors]="errors"
+      [warnings]="warnings"
+      [isErrorsShown]="isErrorsShown"
+      [isWarningsShown]="isWarningsShown">
+    </card-container>
+  </div>
+
+  <settings
+    *ngIf="isSettingsIsShown"
+    (emitter)="hideSettingsModal($event)"
+    [feedId]="feed.id"
+    [feedName]="feed.title"
+    [feedUrl]="feed.feedLink"
+    [totalAmount]="errors.length + warnings.length"
+  ></settings>
+</div>
+
+<div class="home empty-state" *ngIf="!isFeedIsSelected">
+  <img src="../../assets/visual-emptystate-bannerset.svg" alt="empty state visual">
+</div>
