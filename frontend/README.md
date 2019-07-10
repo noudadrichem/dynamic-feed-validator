@@ -1,1 +1,0 @@
-# dynamic feed validator frontend

@@ -194,10 +194,10 @@ $RECYCLE.BIN/
 
 # End of https://www.gitignore.io/api/java,macos,maven,windows,jetbrains+all,visualstudiocode
 
-./src/main/webapp/*.js
-./src/main/webapp/*.html
-./src/main/webapp/*.json
-./src/main/webapp/*.text
-./src/main/webapp/*.map
-./src/main/webapp/*.css
-./src/main/webapp/assets
+src/main/webapp/*.js
+src/main/webapp/*.html
+src/main/webapp/*.json
+src/main/webapp/*.text
+src/main/webapp/*.map
+src/main/webapp/*.css
+src/main/webapp/assets/
