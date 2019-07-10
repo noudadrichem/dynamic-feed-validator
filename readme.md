@@ -1,17 +1,20 @@
-# 🧠⚗️ Dynamic Feed Validator
+# 🔍👨🏻‍💻️ Dynamic Feed Validator (School Assignment)
 
-## URL:
-> https://bw-dynamic-feed-validator.herokuapp.com/login
+Validates Google Merchant product feeds by streaming XML RSS feeds via Java and push notifications to an Angular front-end via WebSockets.
 
-## Link test feed: 
-- https://werk.noudadrichem.com/feed-validator/benchy-bad-feed.xml (3)
-- https://werk.noudadrichem.com/feed-validator/benchy-good-feed.xml (3)
+![](demo.gif)
+> _Assignment made as propedeuse assesement at Hogeschool Utrecht 2019, this project is not related to Bannerwise and is fully isolated from the Bannerwise platform._
+
+## Demo:
+https://bw-dynamic-feed-validator.herokuapp.com/upload
+
+## Test links: 
+- https://werk.noudadrichem.com/feed-validator/benchy-bad-feed.xml
+- https://werk.noudadrichem.com/feed-validator/benchy-good-feed.xml
 - https://werk.noudadrichem.com/feed-validator/batterijland-bad-feed.xml 
-- https://werk.noudadrichem.com/feed-validator/qeuze-google-feed-small.xml
-- https://www.wirliebenhunter.de/backend/export/index/export.txt?feedID=1&hash=4ebfa063359a73c356913df45b3fbe7f (5500) TE LANG
 
 
-## Stack:
+## Stack that is used:
 - Java EE
 - Jersey
 - Tomcat
@@ -20,7 +23,6 @@
 
 
 ## API endpoints:
-
 #### upload [POST]
 /api/xmlservice/upload
 ```json
@@ -29,10 +31,10 @@
 }
 ```
 
-#### Feeds van from  user (pseudo user) [GET] 
+#### Feeds from  user (pseudo user) [GET] 
 /api/feed/all
 
-#### Single feed van from  user (pseudo user) [GET] 
+#### Single feed from  user (pseudo user) [GET] 
 /api/feed/[FEED_ID]
 
 #### Messages from feed from user (pseudo user) [GET]
