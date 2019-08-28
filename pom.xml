@@ -109,7 +109,7 @@
         <version>2.2</version>
         <configuration>
           <path>/</path>
-          <port>9090</port>
+          <port>9080</port>
           <mode>both</mode>
         </configuration>
       </plugin>
